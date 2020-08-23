@@ -9,7 +9,7 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @content = Content.new(content_params)
+    @content = Content.new(contents_params)
     @content.user = current_user
       if @content.save
         redirect_to contents_path(@user)
