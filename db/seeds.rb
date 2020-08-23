@@ -5,11 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroy categories"
+Category.destroy_all
+puts "Create categories"
 
-Category.create(name: "Plaits")
+afro = Category.create(name: "Afro")
 Category.create(name: "Bantu Knots")
 Category.create(name: "Dreadlocks")
-Category.create(name: "Afro")
+Category.create(name: "Plaits")
 Category.create(name: "Weaves")
 Category.create(name: "Extensions")
 Category.create(name: "Faux Locks")
@@ -22,3 +25,54 @@ Category.create(name: "Natural")
 Category.create(name: "Artificial")
 Category.create(name: "Chemical Treatment")
 Category.create(name: "Protection")
+
+puts "Destroy users"
+User.destroy_all
+puts "Create users"
+
+puts "Create users"
+user_1 = User.new(email: "littlemissafro@gmail.com", password: "123456")
+user_1.save!
+
+user_2 = User.new(email: "littlemissdreadlocks@gmail.com", password: "123456")
+user_2.save!
+
+user_3 = User.new(email: "littlemissweave@gmail.com", password: "123456")
+user_3.save!
+
+user_4 = User.new(email: "littlemissnatural@gmail.com", password: "123456")
+user_4.save!
+
+puts "Destroy content"
+Content.destroy_all
+puts "Create contents"
+
+afro_tutorial_1 = Content.new(
+    user: user_1, 
+    title: "The Ultimate AFRO Tutorial", 
+    description: "How-to...",
+    content_type: "Video",
+    video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
+)
+afro_tutorial_1.category = afro
+
+afro_tutorial_1.save
+
+dreads_tutorial_1 = Content.new(
+    user: user_1, 
+    title: "How to make Instant Dreadlocks in 2020", 
+    description: "How-to...",
+    content_type: "Video",
+    video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
+)
+dreads_tutorial_1.save
+
+
+bantu_tutorial_1 = Content.new(
+    user: user_1, 
+    title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair", 
+    description: "How-to...",
+    content_type: "Video",
+    video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
+)
+bantu_tutorial_1.save
