@@ -4,8 +4,6 @@ class Content < ApplicationRecord
   has_many :contents_categories
   has_many :categories, through: :contents_categories
 
-  validates :name, presence: true
-  has_one_attached :video
   has_many_attached :images
 
   validates :title, presence: true, uniqueness: true

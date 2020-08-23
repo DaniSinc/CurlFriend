@@ -11,7 +11,6 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     @content.user = current_user
-<<<<<<< HEAD
       if @content.save
         redirect_to contents_path(@user)
       else
@@ -30,12 +29,6 @@ class ContentsController < ApplicationController
       redirect_to dashboard_path
     else
       render :edit
-=======
-    if @content.save
-      redirect_to contents_path(@user)
-    else
-      render :new
->>>>>>> 4eff38c7d4e7d3b1e3cce823af5eda2a4a03f2a1
     end
   end
 end
