@@ -2,3 +2,32 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.index_container {
+    margin: auto;
+    max-width: 800px;
+}
+
+.search-form {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 400px;
+}
+
+.form-control {
+  text-align: center;
+}
+
+.all_cards {
+
+}
+
+.card {
+    display: flex;
+    
+}
+
+.content_info {
+
+}
