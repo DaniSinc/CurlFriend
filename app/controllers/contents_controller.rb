@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
     @contents = Content.all
   end
 
-  def def new
+  def new
     @content = Content.new
     @category = ["plaits", "bantu knots", "dreadlocks", "afro", "weaves", "extensions", "faux locks", "perms", "relaxed", "s-curl", "jerri-curl", "headscarves and headwraps"]
   end
@@ -17,8 +17,22 @@ class ContentsController < ApplicationController
         render :new
       end
   end
+ 
+  def edit
+    @content = Content.find(params[:id])
+  end
 
-  Private
+  def update
+    @content = Content.find(params[:id])
+
+    if @content.update(content_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+  end
+
+ Private
   def contents_params
     params.require(:content).permit(:title, :category, :description, :photo)
   end
