@@ -32,7 +32,8 @@ class ContentsController < ApplicationController
     end
   end
 
- Private
+ private
+ 
   def contents_params
     params.require(:content).permit(:title, :category, :description, :photo)
   end
