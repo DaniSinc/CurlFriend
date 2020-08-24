@@ -4,7 +4,23 @@
       <%= simple_form_for(@content) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :content_type, as: :radio_buttons, collection: [['Blog post'], ['Step-by-Step'], ['Video']], id: "content_type" %>
+        <fieldset class="form-group radio_buttons required content_content_type">
+          <legend class="col-form-label pt-0">Content type <abbr title="required">*</abbr></legend>
+          <input type="hidden" name="content[content_type]" value="">
+          <div class="form-check" id="blog-post">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <label class="form-check-label collection_radio_buttons" for="content_content_type_">Blog post</label>
+          </div>
+          <div class="form-check" id="step-by-step">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <label class="form-check-label collection_radio_buttons" for="content_content_type_">Step-by-Step</label>
+          </div>
+          <div class="form-check" id="video">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <label class="form-check-label collection_radio_buttons" for="content_content_type_">Video</label>
+          </div>
+        </fieldset>
+
         <div class="photo_input hidden">
           <%= f.input :photo, as: :file, id: "photo" %>
         </div>
