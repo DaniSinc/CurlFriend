@@ -26,7 +26,7 @@ user_4.save!
 
 puts "Create contents"
 
-afro_tutorial_1 = Content.new(
+afro_video_1 = Content.new(
     user_id: user_1.id, 
     title: "The Ultimate AFRO Tutorial", 
     description: "How-to...",
@@ -35,9 +35,9 @@ afro_tutorial_1 = Content.new(
     style: "Afro",
     video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
 )
-afro_tutorial_1.save
+afro_video_1.save
 
-dreads_tutorial_1 = Content.new(
+dreads_video_1 = Content.new(
     user_id: user_2.id, 
     title: "How to make Instant Dreadlocks in 2020", 
     description: "How-to...",
@@ -46,9 +46,9 @@ dreads_tutorial_1 = Content.new(
     style: "Dreadlocks",
     video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
 )
-dreads_tutorial_1.save
+dreads_video_1.save
 
-bantu_tutorial_1 = Content.new(
+bantu_video_1 = Content.new(
     user_id: user_3.id, 
     title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair", 
     description: "How-to...",
@@ -57,9 +57,9 @@ bantu_tutorial_1 = Content.new(
     style: "Bantu knots",
     video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
 )
-bantu_tutorial_1.save
+bantu_video_1.save
 
-scurl_tutorial_1 = Content.new(
+scurl_video_1 = Content.new(
     user_id: user_4.id, 
     title: "How To Texturize Hair With S Curl 2019", 
     description: "In this video, I show you how to texturize your hair with Luster's S curl regular strength texturizer.
@@ -76,9 +76,9 @@ scurl_tutorial_1 = Content.new(
     style: "S-curl",
     video_url: "https://www.youtube.com/watch?v=2p5EIUtLCxE"
 )
-scurl_tutorial_1.save
+scurl_video_1.save
 
-jerrycurl_tutorial_1 = Content.new(
+jerrycurl_video_1 = Content.new(
     user_id: user_1.id, 
     title: "My Updated Curly Hair Routine | How I Activates My Jerry Curl On 4c Natural Hair |", 
     description: "Thank you guys so so much for watching and checking out the description box 
@@ -91,9 +91,9 @@ jerrycurl_tutorial_1 = Content.new(
     style: "Jerry-curl",
     video_url: "https://www.youtube.com/watch?v=NlmWom02M80"
 )
-jerrycurl_tutorial_1.save
+jerrycurl_video_1.save
 
-relaxed_tutorial_1 = Content.new(
+relaxed_video_1 = Content.new(
     user_id: user_3.id, 
     title: "How I relax my hair at home", 
     description: "Hi loves! ♡
@@ -113,7 +113,7 @@ relaxed_tutorial_1 = Content.new(
     style: "Relaxed",
     video_url: "https://www.youtube.com/watch?v=-vFmWIcVgss"
 )
-relaxed_tutorial_1.save
+relaxed_video_1.save
 
 braids_blog = Content.new(
     user_id: user_1.id,
@@ -122,9 +122,10 @@ braids_blog = Content.new(
     content_type: "Blog post",
     category: "Natural",
     style: "Braids",
-    image_url: File.open(Rails.root.join('app', 'images', 'braids_blog.jpg')),
     text: "Box braids give us the freedom to go up to a month or two without the worry of styling, but that doesn’t mean all care goes out of the window! Although you are wearing box braids, you still need to cleanse your hair – especially if you will be wearing them for the long term. This ensures that your scalp won’t become overloaded with buildup, gets itchy or becomes irritated. It also gives your hair much needed contact with good old H20. Here is how you can wash your hair with box braids if you are unsure of how this works:"
 )
+file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'braids_blog.jpg'))
+braids_blog.blog_image.attach(io: file, filename: 'braids_blog.jpg', content_type: "image/jpg")
 braids_blog.save
 
 growth_blog = Content.new(
@@ -133,13 +134,14 @@ growth_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: File.open(Rails.root.join('app', 'images', 'growth_blog.jpg')),
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
 
     Below you will find 10 Steps for Building a Low Manipulation Hair Routine."
 )
+file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'growth_blog.jpg'))
+growth_blog.blog_image.attach(io: file, filename: 'growth_blog.jpg', content_type: "image/jpg")
 growth_blog.save
 
 half_up_blog = Content.new(
@@ -148,7 +150,6 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: File.open(Rails.root.join('app', 'images', 'half_up_blog.jpg')),
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
@@ -159,6 +160,8 @@ half_up_blog = Content.new(
 
     You can rock them in a low chignon or bun for a few days. Then when you’re ready to take them down it’s like you have a totally different hairstyle."
 )
+file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'half_up_blog.jpg'))
+half_up_blog.blog_image.attach(io: file, filename: 'half_up_blog.jpg', content_type: "image/jpg")
 half_up_blog.save
 
 puts "Deleting all comments..."
