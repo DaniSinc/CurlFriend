@@ -1,0 +1,11 @@
+<h2>Content index</h2>
+
+<ul>
+  <% @contents.each do |content| %>
+    <li>
+      <strong><%= content.title %></strong> - <%= content.description %>
+      <br>
+      #<%= content.content_type %>
+    </li>
+  <% end %>
+</ul>
