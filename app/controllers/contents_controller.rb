@@ -16,5 +16,10 @@ class ContentsController < ApplicationController
       else
         render :new
       end
-  end 
+  end
+
+  Private
+  def contents_params
+    params.require(:content).permit(:title, :category, :description, :photo)
+  end
 end
