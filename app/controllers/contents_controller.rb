@@ -2,6 +2,9 @@ class ContentsController < ApplicationController
   def index
     @contents = Content.all
   end
+  def 
+    show @content = Content@find(params[:id]) 
+  end
 
   def new
     @content = Content.new
@@ -32,6 +35,11 @@ class ContentsController < ApplicationController
     end
   end
 
+  def destroy 
+    @content = Content.find(params[:id]) 
+    @content.destroy redirect_to contents_path(@user)
+  end
+  
  private
  
   def contents_params
