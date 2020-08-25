@@ -1,0 +1,5 @@
+<div class="show container">
+  <h1> <%= @content.title %></h1>
+    <%= link_to 'Delete content', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
+</div>
+
