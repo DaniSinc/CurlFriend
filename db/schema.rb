@@ -10,16 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_052638) do
+ActiveRecord::Schema.define(version: 2020_08_23_192852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "comments", force: :cascade do |t|
     t.bigint "content_id", null: false
@@ -31,15 +25,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_052638) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "content_categories", force: :cascade do |t|
-    t.bigint "content_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_content_categories_on_category_id"
-    t.index ["content_id"], name: "index_content_categories_on_content_id"
-  end
-
   create_table "contents", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -48,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_08_23_052638) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "video_url"
+    t.string "category"
+    t.string "style"
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
 
@@ -66,7 +53,5 @@ ActiveRecord::Schema.define(version: 2020_08_23_052638) do
 
   add_foreign_key "comments", "contents"
   add_foreign_key "comments", "users"
-  add_foreign_key "content_categories", "categories"
-  add_foreign_key "content_categories", "contents"
   add_foreign_key "contents", "users"
 end
