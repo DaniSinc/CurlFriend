@@ -1,13 +1,35 @@
 <h2>Content index</h2>
 
-<ul>
-  <% @contents.each do |content| %>
-    <li>
-      <strong><%= content.title %></strong> - <%= content.description %>
-      <!-- <br>
-      #<%= content.content_type %> -->
-    </li>
-  <% end %>
-</ul>
+<div class="index_container">
+  <div class="search-form">
+    <%= form_tag contents_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Please enter a style"
+      %>
+      <br>
+      <%= submit_tag "Search", class: "btn btn-primary-index" %>
+    <% end %>
+  </div>
 
+  <div class="all_cards">
+    <% @contents.each do |content| %>
+      <div class="card">
+        <%= link_to content_path(content) do %>
+          <img height="400" width="400" src="https://unsplash.com/photos/t1jlLrsMpjc">
+        <% end %>
+        <div class="content_info">
+          <h2><%= content.title.capitalize %></h2>
+          <p><em><%= content.description %></em></p>
+          <p><%= content.content_type %></p>
+          <p><%= content.content_categories %></p>
+        </div>
+        <div class="card_avatar">
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <p><%= link_to 'Dashboard', dashboard_path %></p>
