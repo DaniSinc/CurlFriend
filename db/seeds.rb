@@ -9,7 +9,7 @@ puts "Destroy categories"
 Category.destroy_all
 puts "Create categories"
 
-afro = Category.create(name: "Afro")
+Category.create(name: "Afro")
 Category.create(name: "Bantu Knots")
 Category.create(name: "Dreadlocks")
 Category.create(name: "Plaits")
@@ -21,6 +21,7 @@ Category.create(name: "Relaxed")
 Category.create(name: "S-Curl")
 Category.create(name: "Jerri-Curl")
 Category.create(name: "Headscarves & Headwraps")
+
 Category.create(name: "Natural")
 Category.create(name: "Artificial")
 Category.create(name: "Chemical Treatment")
@@ -28,7 +29,6 @@ Category.create(name: "Protection")
 
 puts "Destroy users"
 User.destroy_all
-puts "Create users"
 
 puts "Create users"
 user_1 = User.new(email: "littlemissafro@gmail.com", password: "123456")
@@ -54,8 +54,6 @@ afro_tutorial_1 = Content.new(
     content_type: "Video",
     video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
 )
-afro_tutorial_1.category = afro
-
 afro_tutorial_1.save
 
 dreads_tutorial_1 = Content.new(
@@ -66,7 +64,6 @@ dreads_tutorial_1 = Content.new(
     video_url: "https://www.youtube.com/embed/8rlE1pWv290"
 )
 dreads_tutorial_1.save
-
 
 bantu_tutorial_1 = Content.new(
     user: user_1, 
