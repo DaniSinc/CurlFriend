@@ -2,7 +2,7 @@ class Content < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :content_categories
-  has_many :categories, through: :contents_categories
+  has_many :categories, through: :content_categories
 
   has_many_attached :images
 
