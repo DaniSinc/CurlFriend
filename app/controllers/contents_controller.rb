@@ -3,6 +3,12 @@ class ContentsController < ApplicationController
     @contents = Content.all
   end
 
+
+  def show
+    @content = Content.find(params[:id])
+  end
+
+
   def new
     @content = Content.new
     @categories = ["plaits", "bantu knots", "dreadlocks", "afro", "weaves", "extensions", "faux locks", "perms", "relaxed", "s-curl", "jerri-curl", "headscarves and headwraps"]
@@ -17,7 +23,7 @@ class ContentsController < ApplicationController
         render :new
       end
   end
- 
+
   def edit
     @content = Content.find(params[:id])
   end
@@ -32,8 +38,14 @@ class ContentsController < ApplicationController
     end
   end
 
- private
- 
+  def destroy
+    @content = Content.find(params[:id])
+    @content.destroy
+    redirect_to contents_path(@user)
+  end
+
+  private
+
   def contents_params
     params.require(:content).permit(:title, :category, :description, :photo)
   end
