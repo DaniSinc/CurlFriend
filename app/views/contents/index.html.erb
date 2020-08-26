@@ -18,6 +18,9 @@
         <%= link_to content_path(content) do %>
           <img height="400" width="400" src=<%= content.thumbnail_url%> >
         <% end %>
+        <% if content.content_type == "blog post"%>
+          <%= cl_image_tag content.blog_image.key, width: 300 %>
+        <% end %>
         <div class="content_info">
           <h2><%= content.title.capitalize %></h2>
           <p><em><%= content.description %></em></p>
