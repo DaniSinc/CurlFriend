@@ -34,7 +34,6 @@ afro_tutorial_1 = Content.new(
     category: "Natural",
     style: "Afro",
     video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
-    #video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
 )
 afro_tutorial_1.save
 
@@ -46,7 +45,6 @@ dreads_tutorial_1 = Content.new(
     category: "Natural",
     style: "Dreadlocks",
     video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
-    #video_url: "https://www.youtube.com/embed/8rlE1pWv290"
 )
 dreads_tutorial_1.save
 
@@ -58,11 +56,8 @@ bantu_tutorial_1 = Content.new(
     category: "Natural",
     style: "Bantu knots",
     video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
-    #video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
 )
 bantu_tutorial_1.save
-
-# ContentCategory.new
 
 braids_blog = Content.new(
     user_id: user_1.id,
@@ -106,3 +101,17 @@ half_up_blog = Content.new(
     You can rock them in a low chignon or bun for a few days. Then when you’re ready to take them down it’s like you have a totally different hairstyle."
 )
 half_up_blog.save
+
+puts "Deleting all comments..."
+Comments.destroy_all
+puts "Creating new comments..."
+
+Comment.create(content_id: 1, user_id: 2, text: "So cool!")
+Comment.create(content_id: 1, user_id: 1, text: "Thanks!!!")
+
+Comment.create(content_id: 2, user_id: 3, text: "Amazing")
+Comment.create(content_id: 2, user_id: 1, text: "Thanks for sharing <3")
+Comment.create(content_id: 2, user_id: 2, text: ":)))")
+
+Comment.create(content_id: 3, user_id: 1, text: "So cute")
+Comment.create(content_id: 3, user_id: 2, text: "I love this")

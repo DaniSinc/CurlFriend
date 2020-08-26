@@ -16,9 +16,13 @@
   <div class="comments">
     <ul>
       <% @content.comments.each do |comment| %>
-        <li><strong><%= comment.user.username %></strong><%= comment.text %></li>
+        <li>
+          <strong><%= comment.user.username %></strong>
+          <br>
+          <%= comment.text %>
+        </li>
       <% end %>
     </ul>
-
   </div>
+
 </div>
