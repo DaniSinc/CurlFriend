@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Thank you for commenting"
       redirect_to comments_path(@comment)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def commentparams
-    params.require(:comment).permit(:comment)
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
