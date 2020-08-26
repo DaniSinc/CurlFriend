@@ -27,7 +27,7 @@ Content.destroy_all
 puts "Create contents"
 
 afro_tutorial_1 = Content.new(
-    user: user_1, 
+    user_id: rand(1..4), 
     title: "The Ultimate AFRO Tutorial", 
     description: "How-to...",
     content_type: "Video",
@@ -39,7 +39,7 @@ afro_tutorial_1 = Content.new(
 afro_tutorial_1.save
 
 dreads_tutorial_1 = Content.new(
-    user: user_1, 
+    user_id: rand(1..4), 
     title: "How to make Instant Dreadlocks in 2020", 
     description: "How-to...",
     content_type: "Video",
@@ -51,7 +51,7 @@ dreads_tutorial_1 = Content.new(
 dreads_tutorial_1.save
 
 bantu_tutorial_1 = Content.new(
-    user: user_1, 
+    user_id: rand(1..4), 
     title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair", 
     description: "How-to...",
     content_type: "Video",
@@ -61,3 +61,5 @@ bantu_tutorial_1 = Content.new(
     video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
 )
 bantu_tutorial_1.save
+
+# ContentCategory.new
