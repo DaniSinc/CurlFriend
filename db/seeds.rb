@@ -77,10 +77,10 @@ braids_blog.save
 
 growth_blog = Content.new(
     user_id: user_2.id,
-    title: "10 Ways To Grow Long Hair Without Protective Styles"
-    description: "Lorem ipsum"
-    content_type: "Blog post"
-    category: "Natural"
+    title: "10 Ways To Grow Long Hair Without Protective Styles",
+    description: "Lorem ipsum",
+    content_type: "Blog post",
+    category: "Natural",
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
@@ -91,10 +91,10 @@ growth_blog.save
 
 half_up_blog = Content.new(
     user_id: user_3.id,
-    title: "4 Half Up Half Down Hairstyles for Natural Hair"
-    description: "Lorem ipsum"
-    content_type: "Blog post"
-    category: "Natural"
+    title: "4 Half Up Half Down Hairstyles for Natural Hair",
+    description: "Lorem ipsum",
+    content_type: "Blog post",
+    category: "Natural",
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
