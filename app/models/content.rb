@@ -9,5 +9,4 @@ class Content < ApplicationRecord
   validates :category, presence: true, inclusion: {in: ["Natural", "Artificial", "Chemical Treatment", "Protection"] }
   validates :content_type, presence: true, inclusion: { in: [ "Video", "Blog post", "Step-by-Step" ] }
   validates :video_url, format: { with: url }
-  
 end
