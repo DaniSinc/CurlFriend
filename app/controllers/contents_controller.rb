@@ -7,6 +7,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new
@@ -18,7 +19,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.user = current_user
     authorize @content
-    if @content.save!
+    if @content.save
       redirect_to contents_path(current_user)
     else
       render :new
