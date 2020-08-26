@@ -106,7 +106,7 @@ half_up_blog = Content.new(
 half_up_blog.save
 
 puts "Deleting all comments..."
-Comments.destroy_all
+Comment.destroy_all
 puts "Creating new comments..."
 
 Comment.create(content_id: 1, user_id: 2, text: "So cool!")
