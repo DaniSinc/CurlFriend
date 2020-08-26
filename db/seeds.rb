@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroy content"
+Content.destroy_all
 puts "Destroy users"
 User.destroy_all
 
@@ -22,8 +24,6 @@ user_3.save!
 user_4 = User.new(email: "littlemissnatural@gmail.com", password: "123456")
 user_4.save!
 
-puts "Destroy content"
-Content.destroy_all
 puts "Create contents"
 
 afro_tutorial_1 = Content.new(
@@ -33,8 +33,8 @@ afro_tutorial_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Afro",
-    #video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
-    video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
+    video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
+    #video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
 )
 afro_tutorial_1.save
 
@@ -45,8 +45,8 @@ dreads_tutorial_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Dreadlocks",
-    #video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
-    video_url: "https://www.youtube.com/embed/8rlE1pWv290"
+    video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
+    #video_url: "https://www.youtube.com/embed/8rlE1pWv290"
 )
 dreads_tutorial_1.save
 
@@ -57,8 +57,8 @@ bantu_tutorial_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Bantu knots",
-    #video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
-    video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
+    video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
+    #video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
 )
 bantu_tutorial_1.save
 

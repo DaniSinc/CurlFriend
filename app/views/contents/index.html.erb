@@ -16,7 +16,7 @@
     <% @contents.each do |content| %>
       <div class="card">
         <%= link_to content_path(content) do %>
-          <img height="400" width="400" src="https://unsplash.com/photos/t1jlLrsMpjc">
+          <img height="400" width="400" src=<%= content.thumbnail_url%> >
         <% end %>
         <div class="content_info">
           <h2><%= content.title.capitalize %></h2>
