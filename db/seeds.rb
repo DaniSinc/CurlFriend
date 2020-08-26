@@ -65,7 +65,7 @@ bantu_tutorial_1.save
 # ContentCategory.new
 
 braids_blog = Content.new(
-    user_id: rand(1..4),
+    user_id: user_1.id,
     title: "How to Wash Box Braids",
     description: "Lorem ipsum",
     content_type: "Blog post",
@@ -76,7 +76,7 @@ braids_blog = Content.new(
 braids_blog.save
 
 growth_blog = Content.new(
-    user_id: rand(1..4),
+    user_id: user_2.id,
     title: "10 Ways To Grow Long Hair Without Protective Styles"
     description: "Lorem ipsum"
     content_type: "Blog post"
@@ -90,7 +90,7 @@ growth_blog = Content.new(
 growth_blog.save
 
 half_up_blog = Content.new(
-    user_id: rand(1..4),
+    user_id: user_3.id,
     title: "4 Half Up Half Down Hairstyles for Natural Hair"
     description: "Lorem ipsum"
     content_type: "Blog post"
