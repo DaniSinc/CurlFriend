@@ -12,16 +12,16 @@ puts "Destroy users"
 User.destroy_all
 
 puts "Create users"
-user_1 = User.new(email: "littlemissafro@gmail.com", password: "123456")
+user_1 = User.new(email: "littlemissafro@gmail.com", password: "123456", username: "littlemissafro")
 user_1.save!
 
-user_2 = User.new(email: "littlemissdreadlocks@gmail.com", password: "123456")
+user_2 = User.new(email: "littlemissdreadlocks@gmail.com", password: "123456", username: "littlemissdreadlocks")
 user_2.save!
 
-user_3 = User.new(email: "littlemissweave@gmail.com", password: "123456")
+user_3 = User.new(email: "littlemissweave@gmail.com", password: "123456", username: "littlemissweave")
 user_3.save!
 
-user_4 = User.new(email: "littlemissnatural@gmail.com", password: "123456")
+user_4 = User.new(email: "littlemissnatural@gmail.com", password: "123456", username: "littlemissnatural")
 user_4.save!
 
 puts "Create contents"
@@ -122,6 +122,7 @@ braids_blog = Content.new(
     content_type: "Blog post",
     category: "Natural",
     style: "Braids",
+    image_url: "https://i2.wp.com/www.naturalhairrules.com/wp-content/uploads/2019/09/Box-Braids-4.jpeg?resize=531%2C480&ssl=1",
     text: "Box braids give us the freedom to go up to a month or two without the worry of styling, but that doesn’t mean all care goes out of the window! Although you are wearing box braids, you still need to cleanse your hair – especially if you will be wearing them for the long term. This ensures that your scalp won’t become overloaded with buildup, gets itchy or becomes irritated. It also gives your hair much needed contact with good old H20. Here is how you can wash your hair with box braids if you are unsure of how this works:"
 )
 braids_blog.save
@@ -132,6 +133,7 @@ growth_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
+    image_url: "https://www.byrdie.com/thmb/N6ysMv9Pq544YMUeG6nmcIIry3s=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-965995486-c3859a3314bb42f2ad46c5c8a759deaa.jpeg",
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
@@ -146,6 +148,7 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
+    image_url: "https://i.pinimg.com/originals/2b/8e/e4/2b8ee4f7dfe30f2f91dd1ebb41f761c6.jpg",
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
@@ -157,3 +160,17 @@ half_up_blog = Content.new(
     You can rock them in a low chignon or bun for a few days. Then when you’re ready to take them down it’s like you have a totally different hairstyle."
 )
 half_up_blog.save
+
+puts "Deleting all comments..."
+Comment.destroy_all
+puts "Creating new comments..."
+
+Comment.create(content_id: 1, user_id: 2, text: "So cool!")
+Comment.create(content_id: 1, user_id: 1, text: "Thanks!!!")
+
+Comment.create(content_id: 2, user_id: 3, text: "Amazing")
+Comment.create(content_id: 2, user_id: 1, text: "Thanks for sharing <3")
+Comment.create(content_id: 2, user_id: 2, text: ":)))")
+
+Comment.create(content_id: 3, user_id: 1, text: "So cute")
+Comment.create(content_id: 3, user_id: 2, text: "I love this")

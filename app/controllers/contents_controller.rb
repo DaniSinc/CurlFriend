@@ -18,6 +18,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.user = current_user
     authorize @content
+
     if @content.save
       redirect_to contents_path(current_user)
     else

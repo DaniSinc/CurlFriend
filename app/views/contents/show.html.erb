@@ -1,11 +1,27 @@
+<div class="container">
   <% if @content.video_url? %>
       <%= render 'shared/video_show'%>
   <% end %>
 
-  <% if policy(@content).update? %>
-    <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
-  <% end %>
+  <div class="links">
+    <% if policy(@content).update? %>
+      <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
+    <% end %>
 
-  <% if policy(@content).destroy? %>
-    <%= link_to 'Delete', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
-  <% end %>
+    <% if policy(@content).destroy? %>
+      <%= link_to 'Delete', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
+    <% end %>
+  </div>
+
+  <div class="comments">
+    <ul>
+      <% @content.comments.each do |comment| %>
+        <li>
+          <strong><%= comment.user.username %></strong>
+          <br>
+          <%= comment.text %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
