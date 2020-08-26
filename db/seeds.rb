@@ -59,6 +59,62 @@ bantu_tutorial_1 = Content.new(
 )
 bantu_tutorial_1.save
 
+scurl_tutorial_1 = Content.new(
+    user_id: user_4.id, 
+    title: "How To Texturize Hair With S Curl 2019", 
+    description: "In this video, I show you how to texturize your hair with Luster's S curl regular strength texturizer.
+
+    PURCHASE S CURL TEXTURIZER:
+    REGULAR STRENGTH (affiliate link): https://amzn.to/38Dcsi6
+
+    EXTRA STRENGTH (affiliate link):https://amzn.to/31XmDgf
+
+
+    *** thewinstonee.com ***",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "S-curl",
+    video_url: "https://www.youtube.com/watch?v=2p5EIUtLCxE"
+)
+scurl_tutorial_1.save
+
+jerrycurl_tutorial_1 = Content.new(
+    user_id: user_1.id, 
+    title: "My Updated Curly Hair Routine | How I Activates My Jerry Curl On 4c Natural Hair |", 
+    description: "Thank you guys so so much for watching and checking out the description box 
+
+    This is just my recent jerry curl routine, I hope you find it interesting and helpful to you
+
+    If you like this video please drop me a like, comment, share and subscribe, it motivates me to create more content ",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "Jerry-curl",
+    video_url: "https://www.youtube.com/watch?v=NlmWom02M80"
+)
+jerrycurl_tutorial_1.save
+
+relaxed_tutorial_1 = Content.new(
+    user_id: user_3.id, 
+    title: "How I relax my hair at home", 
+    description: "Hi loves! ♡
+
+    In this video I share with you how I relax my hair at home.
+
+    ☆ What to watch next:
+
+    - get unready with me + get to know me q&a: https://bit.ly/2SA6FE0
+    - HAIR VLOG: dyeing my hair + how i install/style sew-ins: https://bit.ly/354SzgB
+    - sleek high ponytail tutorial. (for short hair): https://bit.ly/2Q5LNTp
+
+    Subscribe for new videos every week: https://goo.gl/dvFRa9
+    Check out my last video: https://goo.gl/LCK2Uc",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "Relaxed",
+    video_url: "https://www.youtube.com/watch?v=-vFmWIcVgss"
+)
+relaxed_tutorial_1.save
+
 braids_blog = Content.new(
     user_id: user_1.id,
     title: "How to Wash Box Braids",

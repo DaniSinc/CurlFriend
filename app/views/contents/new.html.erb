@@ -6,30 +6,30 @@
         <%= f.input :description %>
         <fieldset class="form-group radio_buttons required content_content_type">
           <legend class="col-form-label pt-0">Content type <abbr title="required">*</abbr></legend>
-          <input type="hidden" name="content[content_type]" value="">
+          <input type="hidden" name="content[content_type]">
           <div class="form-check" id="blog-post">
-            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type" value="Blog post">
             <label class="form-check-label collection_radio_buttons" for="content_content_type_">Blog post</label>
           </div>
           <div class="form-check" id="step-by-step">
-            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type" value="Step-by-Step">
             <label class="form-check-label collection_radio_buttons" for="content_content_type_">Step-by-Step</label>
           </div>
           <div class="form-check" id="video">
-            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type">
+            <input class="form-check-input radio_buttons required" type="radio" checked="checked" name="content[content_type]" id="content_content_type" value="Video">
             <label class="form-check-label collection_radio_buttons" for="content_content_type_">Video</label>
           </div>
         </fieldset>
 
         <div class="photo_input hidden">
-          <%= f.input :photo, as: :file, id: "photo" %>
-        </div>
+          <%= f.input :blog_image, as: :file, id: "photo" %>
+         </div>
         <div class="video_input hidden">
           <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
         </div>
           <br>
-          <%= f.input :category, as: :select, collection: ["Artificial", "Chemical Treatment", "Natural", "Protection" ] %>
-          <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerri-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
+          <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
+          <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
         </div>
         <%= f.submit class: "btn-primary" %>
       <% end %>
