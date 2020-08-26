@@ -1,8 +1,13 @@
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  position: absolute;
+  bottom: 0;
   background: white;
   margin-top: 40px;
   color: black;
-  text-align: center;
 }
 
 .footer a {
