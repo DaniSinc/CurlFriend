@@ -1,15 +1,45 @@
 <div class="dashboard_container">
   <h1>Dashboard</h1>
+
   <div class="uploads_and_favourites">
+
     <div class="my_uploads">
       <h2>My Uploads</h2>
-      <--! Uploads iterator --!>
+      <!-- Uploads iterator -->
+      <% if current_user.contents %>
+        <% current_user.contents.each do |content| %>
+          <div class="card">
+            <h3><%= content.title %></h3>
+
+            <div class="links">
+              <p>
+                <% if policy(content).show? %>
+                  <%= link_to 'Show', content %>
+                <% end %>
+              </p>
+              <p>
+                <% if policy(content).update? %>
+                  <%= link_to 'Edit', edit_content_path(content) %>
+                <% end %>
+              </p>
+              <p>
+                <% if policy(content).destroy? %>
+                  <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+
     <div class="my_favourites">
       <h2>My Favourites</h2>
-      <--! Favourites iterator --!>
+      <!-- Favourites iterator -->
     </div>
-    </div>
+
+  </div>
+
   <div class="links">
     <p><%= link_to 'Homepage', root_path %></p>
     <p><%= link_to 'Upload content', new_content_path %></p>
