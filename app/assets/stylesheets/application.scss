@@ -1,3 +1,11 @@
+html{
+  position:relative; 
+  min-height: 100%;
+}
+.nav-body{
+  margin-bottom: 72px;
+}
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
