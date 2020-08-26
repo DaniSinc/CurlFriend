@@ -7,8 +7,10 @@ class Content < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :category, presence: true, inclusion: {in: ["Natural", "Artificial", "Chemical Treatment", "Protection"] }
-  validates :style, presence: true, inclusion: {in: ["Plaits", "Bantu knots", "Dreadlocks", "Afro", "Weaves", "Extensions", "Faux locks", "Perms", "Relaxed", "S-curl", "Jerri-curl", "Headscarves and Headwraps"] }
   validates :content_type, presence: true, inclusion: { in: [ "Video", "Blog post", "Step-by-Step" ] }
   validates :video_url, format: { with: url }
-  
+  def thumbnail_url
+    key = video_url.split("/").last.split("=").last
+    "https://i.ytimg.com/vi/#{key}/hqdefault.jpg"
+  end
 end

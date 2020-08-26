@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @contents = policy_scope(Content)
@@ -10,7 +11,6 @@ class ContentsController < ApplicationController
 
   def new
     @content = Content.new
-    @category = ["plaits", "bantu knots", "dreadlocks", "afro", "weaves", "extensions", "faux locks", "perms", "relaxed", "s-curl", "jerri-curl", "headscarves and headwraps"]
     authorize @content
   end
 
@@ -18,6 +18,7 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.user = current_user
     authorize @content
+
     if @content.save
       redirect_to contents_path(current_user)
     else

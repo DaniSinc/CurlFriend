@@ -1,6 +1,7 @@
 .index_container {
     margin: auto;
     max-width: 800px;
+    min-height: 100%;
 }
 
 .search-form {
@@ -11,7 +12,7 @@
 }
 
 .form-control {
-  text-align: center;
+  text-align: left;
 }
 
 .all_cards {
