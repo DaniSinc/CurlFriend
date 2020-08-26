@@ -37,3 +37,28 @@
   color:  #fff;
   background:  rgba(255, 255, 255, 0.2);
 }
+
+
+.carousel-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+
+.carousel-group {
+  height: 100vh;
+  width: 100vw;
+}
+
+.carousel-slide {
+  width: 33.33%;
+}
+
+.slide-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
