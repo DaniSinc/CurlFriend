@@ -1,9 +1,11 @@
-<div class="show container">
-  <h1> <%= @content.title %></h1>
-
   <% if @content.video_url? %>
-    <iframe width="560" height="315" src="<%= @content.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <%= render 'shared/video_show'%>
   <% end %>
 
-  <%= link_to 'Delete content', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
-</div>
+  <% if policy(@content).update? %>
+    <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
+  <% end %>
+
+  <% if policy(@content).destroy? %>
+    <%= link_to 'Delete', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
+  <% end %>

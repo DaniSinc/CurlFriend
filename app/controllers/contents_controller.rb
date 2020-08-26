@@ -1,36 +1,34 @@
 class ContentsController < ApplicationController
-  def index
-    @contents = Content.all
-  end
+  before_action :set_content, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
+  def index
+    @contents = policy_scope(Content)
+  end
 
   def show
-    @content = Content.find(params[:id])
   end
-
 
   def new
     @content = Content.new
-    @category = ["plaits", "bantu knots", "dreadlocks", "afro", "weaves", "extensions", "faux locks", "perms", "relaxed", "s-curl", "jerri-curl", "headscarves and headwraps"]
+    authorize @content
   end
 
   def create
-    @content = Content.new(contents_params)
+    @content = Content.new(content_params)
     @content.user = current_user
-      if @content.save
-        redirect_to contents_path(@user)
-      else
-        render :new
-      end
+    authorize @content
+    if @content.save
+      redirect_to contents_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit
-    @content = Content.find(params[:id])
   end
 
   def update
-    @content = Content.find(params[:id])
-
     if @content.update(content_params)
       redirect_to dashboard_path
     else
@@ -39,14 +37,18 @@ class ContentsController < ApplicationController
   end
 
   def destroy
-    @content = Content.find(params[:id])
     @content.destroy
-    redirect_to contents_path(@user)
+    redirect_to contents_path(current_user)
   end
 
   private
 
-  def contents_params
+  def content_params
     params.require(:content).permit(:title, :category, :description, :photo)
+  end
+
+  def set_content
+    @content = Content.find(params[:id])
+    authorize @content
   end
 end
