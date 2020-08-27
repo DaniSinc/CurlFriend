@@ -13,15 +13,16 @@
       <% end %>
     </div>
 
-    <div class="all-cards">
-        <% @contents.each do |content| %>
-          <%= link_to content_path(content), class: "card" do %>
 
-            <% if content.content_type == "Video" %>
-              <img src="<%= content.thumbnail_url %>" class="thumb">
-            <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
-              <%= cl_image_tag content.blog_image.key, class: "thumb" %>
-            <% end %>
+  <div class="all-cards">
+      <% @contents.each do |content| %>
+        <%= link_to content_path(content), class: "card" do %>
+
+          <% if content.content_type == "Video" %>
+            <img src="<%= content.thumbnail_url %>" class="thumb">
+          <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
+            <%= cl_image_tag content.blog_image.key, class: "thumb" %>
+          <% end %>
 
           <article>
             <h2><%= content.title.capitalize %></h2>
