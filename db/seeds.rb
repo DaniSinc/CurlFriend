@@ -122,7 +122,7 @@ braids_blog = Content.new(
     content_type: "Blog post",
     category: "Natural",
     style: "Braids",
-    image_url: File.open(Rails.root.join('app', 'images', 'braids_blog.jpg')),
+    image_url: File.open(Rails.root.join('app', 'images', 'blog_images', 'braids_blog.jpg')),
     text: "Box braids give us the freedom to go up to a month or two without the worry of styling, but that doesn’t mean all care goes out of the window! Although you are wearing box braids, you still need to cleanse your hair – especially if you will be wearing them for the long term. This ensures that your scalp won’t become overloaded with buildup, gets itchy or becomes irritated. It also gives your hair much needed contact with good old H20. Here is how you can wash your hair with box braids if you are unsure of how this works:"
 )
 braids_blog.save
@@ -133,7 +133,7 @@ growth_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: File.open(Rails.root.join('app', 'images', 'growth_blog.jpg')),
+    image_url: File.open(Rails.root.join('app', 'images', 'blog_images', 'growth_blog.jpg')),
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
@@ -148,7 +148,7 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: File.open(Rails.root.join('app', 'images', 'half_up_blog.jpg')),
+    image_url: File.open(Rails.root.join('app', 'images', 'blog_images', 'half_up_blog.jpg')),
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
