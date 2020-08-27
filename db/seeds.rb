@@ -33,7 +33,7 @@ afro_video_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Afro",
-    video_url: "https://www.youtube.com/watch?v=ov9xP0lymQc"
+    video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
 )
 afro_video_1.save
 

@@ -25,8 +25,12 @@ class ContentsController < ApplicationController
     @content = Content.new(content_params)
     @content.user = current_user
     authorize @content
+    if @content.video_url.present?
+      key = @content.video_url.split("/").last
+      @content.video_url = "https://www.youtube.com/embed/#{key}"
+    end
     if @content.save
-      redirect_to content_path(current_user)
+      redirect_to content_path(@content)
     else
       render :new
     end
@@ -50,18 +54,18 @@ class ContentsController < ApplicationController
 
   def favorite
     current_user.favorite(@content)
-    redirect_to contents_path
+    redirect_to contents_path(anchor: "content-#{@content.id}")
   end
 
   def unfavorite
     current_user.unfavorite(@content)
-    redirect_to contents_path
+    redirect_to contents_path(anchor: "content-#{@content.id}")
   end
 
   private
 
   def content_params
-    params.require(:content).permit(:title, :category, :description, :photo, :content_type, :blog_image, :video_url, :style)
+    params.require(:content).permit(:title, :category, :description, :photo, :content_type, :blog_image, :video_url, :style, :text)
   end
 
   def set_content

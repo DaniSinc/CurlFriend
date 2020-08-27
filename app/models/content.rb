@@ -4,11 +4,11 @@ class Content < ApplicationRecord
   has_many :comments
   has_one_attached :blog_image
   has_many_attached :images
+
   acts_as_favoritable
-  
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :category, presence: true, inclusion: {in: ["Natural", "Artificial", "Chemical Treatment", "Protection"] }
+  validates :category, presence: true, inclusion: {in: ["Natural", "Artificial", "Chemical treatment", "Protection"] }
  # validates :content_type, presence: true, inclusion: { in: [ "Video", "Blog post", "Step-by-Step" ] }
  # validates :video_url, format: { with: url }
   def thumbnail_url
@@ -17,4 +17,5 @@ class Content < ApplicationRecord
       "https://i.ytimg.com/vi/#{key}/hqdefault.jpg"
     end
   end
+
 end
