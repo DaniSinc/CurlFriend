@@ -25,3 +25,18 @@
   width: 35px;
   height: 35px;
 }
+
+.navbar-brand {
+    display: block;
+    height: 55px;
+    width: 55px;
+    line-height: 42px;
+
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
