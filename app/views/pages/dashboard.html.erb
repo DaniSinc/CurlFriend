@@ -44,7 +44,38 @@
     <div class="my_favourites">
       <h2>My Favourites</h2>
       <!-- Favourites iterator -->
+      <% if current_user.favorites.empty?%>
         <p>No favourites yet</p>
+      <% else %>
+        <% current_user.favorites.each do |favorite| %>
+        <%= favorite.favoritable.title %>
+          <div class="favourite_card">
+            <% if favorite.favoritable.content_type == "Video"%>
+              <img src=<%= favorite.favoritable.thumbnail_url%> >
+            <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
+              <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
+            <% end %>
+            <h3><%= favorite.favoritable.title %></h3>
+            <div class="links">
+              <p>
+                <% if policy(favorite.favoritable).show? %>
+                  <%= link_to 'Show', favorite.favoritable %>
+                <% end %>
+              </p>
+              <p>
+                <% if policy(favorite.favoritable).update? %>
+                  <%= link_to 'Edit', edit_content_path(favorite.favoritable) %>
+                <% end %>
+              </p>
+              <p>
+                <% if policy(favorite.favoritable).destroy? %>
+                  <%= link_to 'Destroy', favorite.favoritable, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
 
   </div>

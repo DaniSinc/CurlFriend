@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_content, only: [:show, :edit, :update, :destroy, :favorite, :unfavorite]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
@@ -45,6 +45,16 @@ class ContentsController < ApplicationController
 
   def destroy
     @content.destroy
+    redirect_to contents_path
+  end
+
+  def favorite
+    current_user.favorite(@content)
+    redirect_to contents_path
+  end
+
+  def unfavorite
+    current_user.unfavorite(@content)
     redirect_to contents_path
   end
 
