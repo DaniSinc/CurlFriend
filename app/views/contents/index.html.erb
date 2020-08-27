@@ -1,5 +1,5 @@
-<div class="index_container">
-<h2>Content index</h2>
+<div class="container">
+
   <div class="search-form">
     <%= form_tag contents_path, method: :get do %>
       <%= text_field_tag :query,
@@ -8,32 +8,41 @@
         placeholder: "Please enter a style"
       %>
       <br>
-      <%= submit_tag "Search", class: "btn btn-primary-index" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
-  <div class="all_cards">
+  <div class="all-cards">
       <% @contents.each do |content| %>
-        <div class="content_card">
-          <%= link_to content_path(content) do %>
-            <% if content.content_type == "Video"%>
-              <img src=<%= content.thumbnail_url%> >
-            <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
-              <%= cl_image_tag content.blog_image.key, width: 300 %>
-            <% end %>
+        <%= link_to content_path(content), class: "card" do %>
+
+          <% if content.content_type == "Video" %>
+            <img src="<%= content.thumbnail_ur l%>" class="thumb">
+          <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
+            <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
-          <div class="content_info">
-            <h2><%= content.title.capitalize %></h2>
-            <p><em><%= content.description %></em></p>
-            <p><%= content.category %></p>
-            <p><%= content.style %></p>
+
+        <article>
+          <h2><%= content.title.capitalize %></h2>
+          <p><%= content.description %></p>
+          <span><%= content.user.username %></span>
+          <!--
+          <div class="tags">
+            <strong><%= content.category %></strong> || 
+            <%= content.style %>
           </div>
-          <div class="card_avatar">
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-          </div>
-        </div>
+          -->
+        </article>
+
+        <% end %>
       <% end %>
     </div>
 
+  <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
 </div>
-<p><%= link_to 'Dashboard', dashboard_path %></p>
+
+<!-- 
+          <div class="card_avatar">
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+-->
