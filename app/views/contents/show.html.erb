@@ -1,6 +1,8 @@
 <div class="container">
   <% if @content.video_url? %>
       <%= render 'shared/video_show'%>
+  <% elsif @content.blog_image %>
+    <%= render 'shared/blog_show' %>
   <% end %>
 
   <div class="links">
