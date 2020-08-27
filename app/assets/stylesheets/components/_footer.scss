@@ -1,10 +1,9 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+
+  justify: space-between;
+
   width: 100%;
   background: transparent;
   color: #ECABB6;
@@ -26,4 +25,10 @@
 
 .footer p {
   font-size: 24px;
+}
+
+.page-ref {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
