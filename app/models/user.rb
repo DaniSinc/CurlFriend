@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :contents
   has_many :comments
   acts_as_favoritor
+  has_one_attached :profile_pic
+
 end
