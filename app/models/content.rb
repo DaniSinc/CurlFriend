@@ -5,6 +5,7 @@ class Content < ApplicationRecord
   has_one_attached :blog_image
   has_many_attached :images
 
+  acts_as_favoritable
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :category, presence: true, inclusion: {in: ["Natural", "Artificial", "Chemical treatment", "Protection"] }

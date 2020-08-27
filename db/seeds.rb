@@ -27,8 +27,8 @@ user_4.save!
 puts "Create contents"
 
 afro_video_1 = Content.new(
-    user_id: user_1.id, 
-    title: "The Ultimate AFRO Tutorial", 
+    user_id: user_1.id,
+    title: "The Ultimate AFRO Tutorial",
     description: "How-to...",
     content_type: "Video",
     category: "Natural",
@@ -38,8 +38,8 @@ afro_video_1 = Content.new(
 afro_video_1.save
 
 dreads_video_1 = Content.new(
-    user_id: user_2.id, 
-    title: "How to make Instant Dreadlocks in 2020", 
+    user_id: user_2.id,
+    title: "How to make Instant Dreadlocks in 2020",
     description: "How-to...",
     content_type: "Video",
     category: "Natural",
@@ -49,8 +49,8 @@ dreads_video_1 = Content.new(
 dreads_video_1.save
 
 bantu_video_1 = Content.new(
-    user_id: user_3.id, 
-    title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair", 
+    user_id: user_3.id,
+    title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair",
     description: "How-to...",
     content_type: "Video",
     category: "Natural",
@@ -60,8 +60,8 @@ bantu_video_1 = Content.new(
 bantu_video_1.save
 
 scurl_video_1 = Content.new(
-    user_id: user_4.id, 
-    title: "How To Texturize Hair With S Curl 2019", 
+    user_id: user_4.id,
+    title: "How To Texturize Hair With S Curl 2019",
     description: "In this video, I show you how to texturize your hair with Luster's S curl regular strength texturizer.
 
     PURCHASE S CURL TEXTURIZER:
@@ -79,9 +79,9 @@ scurl_video_1 = Content.new(
 scurl_video_1.save
 
 jerrycurl_video_1 = Content.new(
-    user_id: user_1.id, 
-    title: "My Updated Curly Hair Routine | How I Activates My Jerry Curl On 4c Natural Hair |", 
-    description: "Thank you guys so so much for watching and checking out the description box 
+    user_id: user_1.id,
+    title: "My Updated Curly Hair Routine | How I Activates My Jerry Curl On 4c Natural Hair |",
+    description: "Thank you guys so so much for watching and checking out the description box
 
     This is just my recent jerry curl routine, I hope you find it interesting and helpful to you
 
@@ -94,8 +94,8 @@ jerrycurl_video_1 = Content.new(
 jerrycurl_video_1.save
 
 relaxed_video_1 = Content.new(
-    user_id: user_3.id, 
-    title: "How I relax my hair at home", 
+    user_id: user_3.id,
+    title: "How I relax my hair at home",
     description: "Hi loves! ♡
 
     In this video I share with you how I relax my hair at home.
