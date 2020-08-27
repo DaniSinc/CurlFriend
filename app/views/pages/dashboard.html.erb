@@ -5,34 +5,37 @@
 
   <div class="uploads_and_favourites">
 
-    <div class="my_uploads">
+    <div class="my-uploads col-6">
       <h2>My Uploads</h2>
       <!-- Uploads iterator -->
       <% if current_user.contents %>
         <% current_user.contents.each do |content| %>
-          <div class="upload_card">
+          <div class="upload-card">
             <% if content.content_type == "Video"%>
               <img src=<%= content.thumbnail_url%> >
             <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
               <%= cl_image_tag content.blog_image.key, width: 300 %>
             <% end %>
-            <h3><%= content.title %></h3>
-            <div class="links">
-              <p>
-                <% if policy(content).show? %>
-                  <%= link_to 'Show', content %>
-                <% end %>
-              </p>
-              <p>
-                <% if policy(content).update? %>
-                  <%= link_to 'Edit', edit_content_path(content) %>
-                <% end %>
-              </p>
-              <p>
-                <% if policy(content).destroy? %>
-                  <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </p>
+            <div class="card-text">
+              <h4><%= content.title %></h4>
+              <p><em>Uploaded by <strong> you </strong></em></p>
+                <div class="links">
+                  <p>
+                    <% if policy(content).show? %>
+                      <%= link_to 'Show', content %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <% if policy(content).update? %>
+                      <%= link_to 'Edit', edit_content_path(content) %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <% if policy(content).destroy? %>
+                      <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                  </p>
+              </div>
             </div>
           </div>
         <% end %>
@@ -41,7 +44,7 @@
       <% end %>
     </div>
 
-    <div class="my_favourites">
+    <div class="my-favourites col-6">
       <h2>My Favourites</h2>
       <!-- Favourites iterator -->
       <% if current_user.favorites.empty?%>
@@ -49,7 +52,7 @@
       <% else %>
         <% current_user.favorites.each do |favorite| %>
         <%= favorite.favoritable.title %>
-          <div class="favourite_card">
+          <div class="favourite-card">
             <% if favorite.favoritable.content_type == "Video"%>
               <img src=<%= favorite.favoritable.thumbnail_url%> >
             <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>

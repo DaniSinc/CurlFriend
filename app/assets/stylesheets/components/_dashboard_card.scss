@@ -1,4 +1,4 @@
-.upload_card {
+.upload-card {
   overflow: hidden;
   height: 120px;
   background: white;
@@ -16,19 +16,19 @@
   }
 }
 
-.upload_card img {
+.upload-card img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.upload_card h2 {
+.upload-card h4 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.upload_card p {
+.upload-card p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -36,11 +36,11 @@
   margin-top: 8px;
 }
 
-.upload_card .upload_card-infos {
-  padding: 16px;
+.upload-card .upload_card-infos {
+  padding: 0;
 }
 
-.favourite_card {
+.favourite-card {
   overflow: hidden;
   height: 120px;
   background: white;
@@ -58,19 +58,19 @@
   }
 }
 
-.favourite_card img {
+.favourite-card img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.favourite_card h2 {
+.favourite-card h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.favourite_card p {
+.favourite-card p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -78,6 +78,10 @@
   margin-top: 8px;
 }
 
-.favourite_card .favourite_card-infos {
+.favourite-card .favourite-card-infos {
   padding: 16px;
+}
+
+.links {
+  display: flex;
 }
