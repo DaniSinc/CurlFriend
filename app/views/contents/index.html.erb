@@ -16,9 +16,9 @@
       <% @contents.each do |content| %>
         <%= link_to content_path(content), class: "card" do %>
 
-          <% if content.content_type == "Video"%>
-            <img src="<%= content.thumbnail_url%>" class="thumb">
-          <% elsif content.content_type == "blog post"%>
+          <% if content.content_type == "Video" %>
+            <img src="<%= content.thumbnail_ur l%>" class="thumb">
+          <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
