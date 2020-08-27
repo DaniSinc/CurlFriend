@@ -1,6 +1,6 @@
 <div class="pages-container">
-  <div class="container">
 
+  <div class="container">
     <div class="search-form">
       <%= form_tag contents_path, method: :get do %>
         <%= text_field_tag :query,
@@ -12,12 +12,12 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
-  </div>
+
 
   <div class="all-cards">
     <% @contents.each do |content| %>
-      <article class="card" id="content-<%= content.id %>">
-        <%= link_to "", content_path(content), class: "card-link" %>
+      <div class="card" id="content-<%= content.id %>">
+        <%= link_to content_path(content), class: "card-link" do %>
 
           <% if content.content_type == "Video" %>
             <img src="<%= content.thumbnail_url %>" class="thumb">
@@ -25,12 +25,10 @@
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
-          <!--
           <% if current_user&.favorited?(content) %>
-            <%= link_to unfavorite_content_path(content), class: "fav" do %>
-              <i class="fas fa-heart"></i>
+            <%= link_to unfavorite_content_path(content) do%>
+            <i class="fas fa-heart"></i>
             <% end %>
-
           <% elsif current_user %>
             <%= link_to favorite_content_path(content) do %>
             <i class="far fa-heart"></i>
@@ -46,14 +44,13 @@
             <%= content.style %>
           </div>
           -->
-
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
 
     <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
   </div>
-
+</div>
 
 <!--
           <div class="card_avatar">
