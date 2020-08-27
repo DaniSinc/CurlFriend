@@ -10,36 +10,53 @@
       <% if policy(@content).update? %>
         <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
       <% end %>
-
-      <div class="comments">
-        <% if @content.comments.blank? %>
-          <p>Be the first to leave a comment :)</p>
-        <% else %>
-          <ul>
-            <% @content.comments.each do |comment| %>
-              <li>
-                <strong><%= comment.user.username %></strong>
-                <br>
-                <%= comment.text %>
-                <br>
-                <% if policy(comment).destroy? %>
-                  <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </li>
+  <div class="comments">
+    <% if @content.comments.blank? %>
+      <p>Be the first to leave a comment :)</p>
+    <% else %>
+      <ul>
+        <% @content.comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.username %></strong>
+            <br>
+            <%= comment.text %>
+            <br>
+            <% if policy(comment).destroy? %>
+              <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
-          </ul>
+          </li>
         <% end %>
+      </ul>
+    <% end %>
 
-        <%= simple_form_for [@content, @comment] do |f| %>
-          <div class="form-inputs">
-            <%= f.input :text %>
-          </div>
+    <div class="comments">
+      <% if @content.comments.blank? %>
+        <p>Be the first to leave a comment :)</p>
+      <% else %>
+        <ul>
+          <% @content.comments.each do |comment| %>
+            <li>
+              <strong><%= comment.user.username %></strong>
+              <br>
+              <%= comment.text %>
+              <br>
+              <% if policy(comment).destroy? %>
+                <%= link_to 'Delete comment', content_comment_path(@content), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
 
-          <div class="form-actions btn">
-            <%= f.button :submit, class: "btn btn-secondary" %>
-          </div>
-        <% end %>
-      </div>
+      <%= simple_form_for [@content, @comment] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :text %>
+        </div>
+
+        <div class="form-actions btn">
+          <%= f.button :submit, class: "btn btn-secondary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
