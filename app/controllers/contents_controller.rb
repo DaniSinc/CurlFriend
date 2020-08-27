@@ -49,7 +49,7 @@ class ContentsController < ApplicationController
 
   def destroy
     @content.destroy
-    redirect_to contents_path
+    redirect_to dashboard_path
   end
 
   def favorite
