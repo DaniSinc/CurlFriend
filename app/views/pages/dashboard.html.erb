@@ -1,15 +1,15 @@
-<div class="dashboard_container">
+<div class="container">
   <h1>Dashboard</h1>
 
   <div class="uploads_and_favourites">
 
-    <div class="my_uploads col-6">
+    <div class="my_uploads">
       <h2>My Uploads</h2>
       <!-- Uploads iterator -->
       <% if current_user.contents %>
         <% current_user.contents.each do |content| %>
-          <div class="content_card">
-            <h3><%= content.title %></h3>
+          <div class="card">
+            <h5><%= content.title %></h5>
 
             <div class="links">
               <p>
@@ -30,12 +30,15 @@
             </div>
           </div>
         <% end %>
+      <% else %>
+        <p>No uploads yet</p>
       <% end %>
     </div>
 
-    <div class="my_favourites col-6">
+    <div class="my_favourites">
       <h2>My Favourites</h2>
       <!-- Favourites iterator -->
+        <p>No favourites yet</p>
     </div>
 
   </div>
