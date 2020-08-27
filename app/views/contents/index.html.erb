@@ -25,7 +25,7 @@
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
-          <!-- 
+          <!--
           <% if current_user&.favorited?(content) %>
             <%= link_to unfavorite_content_path(content), class: "fav" do %>
               <i class="fas fa-heart"></i>
@@ -36,13 +36,13 @@
             <i class="far fa-heart"></i>
             <% end %>
           <% end %>
-          
+
           <h2><%= content.title.capitalize %></h2>
           <p><%= content.description %></p>
           <span><%= content.user.username %></span>
           <!--
           <div class="tags">
-            <strong><%= content.category %></strong> || 
+            <strong><%= content.category %></strong> ||
             <%= content.style %>
           </div>
           -->
@@ -55,7 +55,7 @@
   </div>
 
 
-<!-- 
+<!--
           <div class="card_avatar">
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
