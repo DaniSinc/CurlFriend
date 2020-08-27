@@ -8,7 +8,7 @@
     <div class="my-uploads col-6">
       <h2>My Uploads</h2>
       <!-- Uploads iterator -->
-      <% if current_user.contents %>
+      <% if current_user.contents.empty? %>
         <% current_user.contents.each do |content| %>
           <div class="upload-card">
             <% if content.content_type == "Video"%>
