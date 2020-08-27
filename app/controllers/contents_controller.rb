@@ -26,7 +26,7 @@ class ContentsController < ApplicationController
     @content.user = current_user
     authorize @content
     if @content.save
-      redirect_to contents_path(current_user)
+      redirect_to content_path(current_user)
     else
       render :new
     end
