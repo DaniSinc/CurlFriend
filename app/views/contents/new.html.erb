@@ -5,16 +5,17 @@
         <%= simple_form_for(@content) do |f| %>
           <%= f.input :title %>
           <%= f.input :description %>
-          <fieldset class="form-group radio_buttons required content_content_type">
-            <legend class="col-form-label pt-0">Content type <abbr title="required">*</abbr></legend>
-            <input type="hidden" name="content[content_type]">
-            <div class="form-check" id="blog-post">
-              <input class="form-check-input radio_buttons required" type="radio" name="content[content_type]" id="content_content_type" value="Blog post">
-              <label class="form-check-label collection_radio_buttons" for="content_content_type_">Blog post</label>
-            </div>
-            <div class="form-check" id="video">
-              <input class="form-check-input radio_buttons required" type="radio" name="content[content_type]" id="content_content_type" value="Video">
-              <label class="form-check-label collection_radio_buttons" for="content_content_type_">Video</label>
+          <fieldset class="radio_buttons required content_content_type">
+            <legend class="col-form-label">Content type <abbr title="required">*</abbr></legend>
+            <div class="content-type-choices">
+              <div class="form-check" id="blog-post">
+                <input class="hidden" type="radio" name="content[content_type]" id="content_content_type" value="Blog post">
+                <label class="collection_radio_buttons" for="content_content_type_">Blog post</label>
+              </div>
+              <div class="form-check" id="video">
+                <input class="hidden" type="radio" name="content[content_type]" id="content_content_type" value="Video">
+                <label class="collection_radio_buttons" for="content_content_type_">Video</label>
+              </div>
             </div>
           </fieldset>
 
