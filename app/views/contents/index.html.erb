@@ -16,7 +16,8 @@
 
   <div class="all-cards">
       <% @contents.each do |content| %>
-        <%= link_to content_path(content), class: "card" do %>
+      <article class="card" id="content-<%= content.id %>">
+        <%= link_to "", content_path(content), class: "card-link" %>
 
           <% if content.content_type == "Video" %>
             <img src="<%= content.thumbnail_url %>" class="thumb">
@@ -28,12 +29,12 @@
             <%= link_to unfavorite_content_path(content) do%>
             <i class="fas fa-heart"></i>
             <% end %>
-          <% elsif current_user%>
+          <% elsif current_user %>
             <%= link_to favorite_content_path(content) do %>
             <i class="far fa-heart"></i>
             <% end %>
           <% end %>
-          <article>
+          
             <h2><%= content.title.capitalize %></h2>
             <p><%= content.description %></p>
             <span><%= content.user.username %></span>
@@ -44,8 +45,6 @@
             </div>
             -->
           </article>
-
-          <% end %>
         <% end %>
       </div>
 
