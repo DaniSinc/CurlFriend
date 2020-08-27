@@ -1,12 +1,14 @@
-<div class="form">
-  <h2> Edit your upload </h2>
-  <%= simple_form_for(@content) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :content_type, as: :select, collection: @content_type, prompt: 'Select category', label: false %>
-    <%= f.input :category, as: :select, collection: @category, prompt: 'Select category', label: false %>
-    <%= f.submit class: "btn-primary" %>
-  <% end %>
+<div class="pages-container">
+  <div class="form">
+    <h2> Edit your upload </h2>
+    <%= simple_form_for(@content) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :content_type, as: :select, collection: @content_type, prompt: 'Select category', label: false %>
+      <%= f.input :category, as: :select, collection: @category, prompt: 'Select category', label: false %>
+      <%= f.submit class: "btn-primary" %>
+    <% end %>
+  </div>
 </div>
 <p><%= link_to ('<i class="fas fa-home" style="color: #E6B831"></i>').html_safe, root_path %><p>

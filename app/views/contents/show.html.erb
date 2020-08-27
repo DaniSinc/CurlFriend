@@ -1,20 +1,15 @@
 <div class="container">
-  <% if @content.video_url? %>
-      <%= render 'shared/video_show'%>
-  <% elsif @content.blog_image %>
-    <%= render 'shared/blog_show' %>
-  <% end %>
-
-  <div class="links">
-    <% if policy(@content).update? %>
-      <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
+  <div class="pages-container">
+    <% if @content.video_url? %>
+        <%= render 'shared/video_show'%>
+    <% elsif @content.blog_image %>
+      <%= render 'shared/blog_show' %>
     <% end %>
 
-    <% if policy(@content).destroy? %>
-      <%= link_to 'Delete', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
-    <% end %>
-  </div>
-
+    <div class="links">
+      <% if policy(@content).update? %>
+        <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
+      <% end %>
   <div class="comments">
     <% if @content.comments.blank? %>
       <p>Be the first to leave a comment :)</p>
@@ -34,14 +29,34 @@
       </ul>
     <% end %>
 
-    <%= simple_form_for [@content, @comment] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :text %>
-      </div>
+    <div class="comments">
+      <% if @content.comments.blank? %>
+        <p>Be the first to leave a comment :)</p>
+      <% else %>
+        <ul>
+          <% @content.comments.each do |comment| %>
+            <li>
+              <strong><%= comment.user.username %></strong>
+              <br>
+              <%= comment.text %>
+              <br>
+              <% if policy(comment).destroy? %>
+                <%= link_to 'Delete comment', content_comment_path(@content), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
 
-      <div class="form-actions btn">
-        <%= f.button :submit, class: "btn btn-secondary" %>
-      </div>
-    <% end %>
+      <%= simple_form_for [@content, @comment] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :text %>
+        </div>
+
+        <div class="form-actions btn">
+          <%= f.button :submit, class: "btn btn-secondary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

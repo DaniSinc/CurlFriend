@@ -1,16 +1,17 @@
-<div class="container">
+<div class="pages-container">
+  <div class="container">
 
-  <div class="search-form">
-    <%= form_tag contents_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Please enter a style"
-      %>
-      <br>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+    <div class="search-form">
+      <%= form_tag contents_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Please enter a style"
+        %>
+        <br>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
 
   <div class="all-cards">
@@ -23,23 +24,24 @@
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
-        <article>
-          <h2><%= content.title.capitalize %></h2>
-          <p><%= content.description %></p>
-          <span><%= content.user.username %></span>
-          <!--
-          <div class="tags">
-            <strong><%= content.category %></strong> || 
-            <%= content.style %>
-          </div>
-          -->
-        </article>
+          <article>
+            <h2><%= content.title.capitalize %></h2>
+            <p><%= content.description %></p>
+            <span><%= content.user.username %></span>
+            <!--
+            <div class="tags">
+              <strong><%= content.category %></strong> || 
+              <%= content.style %>
+            </div>
+            -->
+          </article>
 
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-  <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
+    <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
+  </div>
 </div>
 
 <!-- 

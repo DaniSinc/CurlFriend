@@ -1,4 +1,6 @@
-<div class="container">
+
+<div class="dashboard_container">
+  <div class="pages-container">
   <h1>Dashboard</h1>
 
   <div class="uploads_and_favourites">
@@ -8,9 +10,13 @@
       <!-- Uploads iterator -->
       <% if current_user.contents %>
         <% current_user.contents.each do |content| %>
-          <div class="card">
-            <h5><%= content.title %></h5>
-
+          <div class="upload_card">
+            <% if content.content_type == "Video"%>
+              <img src=<%= content.thumbnail_url%> >
+            <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
+              <%= cl_image_tag content.blog_image.key, width: 300 %>
+            <% end %>
+            <h3><%= content.title %></h3>
             <div class="links">
               <p>
                 <% if policy(content).show? %>
@@ -47,6 +53,6 @@
     <p><%= link_to 'Homepage', root_path %></p>
     <p><%= link_to 'Upload content', new_content_path %></p>
   </div>
-
+  </div>
 </div>
 
