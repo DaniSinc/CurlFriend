@@ -1,8 +1,8 @@
 <div class="blog_show_container">
-  <div class="blog-banner">
-    <img src="<% @content.image %>">
+  <div class="blog_banner">
+    <%= cl_image_tag @content.blog_image.key %>
   </div>
-    <div class="blog-text">
+    <div class="blog_text">
       <h1><%= @content.title %></h1>
       <p><%= @content.description%></p>
       <p><%= @content.user%></p>

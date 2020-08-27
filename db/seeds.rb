@@ -59,6 +59,62 @@ bantu_tutorial_1 = Content.new(
 )
 bantu_tutorial_1.save
 
+scurl_tutorial_1 = Content.new(
+    user_id: user_4.id, 
+    title: "How To Texturize Hair With S Curl 2019", 
+    description: "In this video, I show you how to texturize your hair with Luster's S curl regular strength texturizer.
+
+    PURCHASE S CURL TEXTURIZER:
+    REGULAR STRENGTH (affiliate link): https://amzn.to/38Dcsi6
+
+    EXTRA STRENGTH (affiliate link):https://amzn.to/31XmDgf
+
+
+    *** thewinstonee.com ***",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "S-curl",
+    video_url: "https://www.youtube.com/watch?v=2p5EIUtLCxE"
+)
+scurl_tutorial_1.save
+
+jerrycurl_tutorial_1 = Content.new(
+    user_id: user_1.id, 
+    title: "My Updated Curly Hair Routine | How I Activates My Jerry Curl On 4c Natural Hair |", 
+    description: "Thank you guys so so much for watching and checking out the description box 
+
+    This is just my recent jerry curl routine, I hope you find it interesting and helpful to you
+
+    If you like this video please drop me a like, comment, share and subscribe, it motivates me to create more content ",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "Jerry-curl",
+    video_url: "https://www.youtube.com/watch?v=NlmWom02M80"
+)
+jerrycurl_tutorial_1.save
+
+relaxed_tutorial_1 = Content.new(
+    user_id: user_3.id, 
+    title: "How I relax my hair at home", 
+    description: "Hi loves! ♡
+
+    In this video I share with you how I relax my hair at home.
+
+    ☆ What to watch next:
+
+    - get unready with me + get to know me q&a: https://bit.ly/2SA6FE0
+    - HAIR VLOG: dyeing my hair + how i install/style sew-ins: https://bit.ly/354SzgB
+    - sleek high ponytail tutorial. (for short hair): https://bit.ly/2Q5LNTp
+
+    Subscribe for new videos every week: https://goo.gl/dvFRa9
+    Check out my last video: https://goo.gl/LCK2Uc",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "Relaxed",
+    video_url: "https://www.youtube.com/watch?v=-vFmWIcVgss"
+)
+relaxed_tutorial_1.save
+
 braids_blog = Content.new(
     user_id: user_1.id,
     title: "How to Wash Box Braids",
@@ -66,7 +122,7 @@ braids_blog = Content.new(
     content_type: "Blog post",
     category: "Natural",
     style: "Braids",
-    image_url: "https://i2.wp.com/www.naturalhairrules.com/wp-content/uploads/2019/09/Box-Braids-4.jpeg?resize=531%2C480&ssl=1",
+    image_url: File.open(Rails.root.join('app', 'images', 'braids_blog.jpg')),
     text: "Box braids give us the freedom to go up to a month or two without the worry of styling, but that doesn’t mean all care goes out of the window! Although you are wearing box braids, you still need to cleanse your hair – especially if you will be wearing them for the long term. This ensures that your scalp won’t become overloaded with buildup, gets itchy or becomes irritated. It also gives your hair much needed contact with good old H20. Here is how you can wash your hair with box braids if you are unsure of how this works:"
 )
 braids_blog.save
@@ -77,7 +133,7 @@ growth_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: "https://www.byrdie.com/thmb/N6ysMv9Pq544YMUeG6nmcIIry3s=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-965995486-c3859a3314bb42f2ad46c5c8a759deaa.jpeg",
+    image_url: File.open(Rails.root.join('app', 'images', 'growth_blog.jpg')),
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
@@ -92,7 +148,7 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: "https://i.pinimg.com/originals/2b/8e/e4/2b8ee4f7dfe30f2f91dd1ebb41f761c6.jpg",
+    image_url: File.open(Rails.root.join('app', 'images', 'half_up_blog.jpg')),
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.

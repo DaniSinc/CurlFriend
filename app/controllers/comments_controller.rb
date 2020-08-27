@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_content, only: [:show, :destroy]
+  before_action :set_comment, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
@@ -25,15 +25,15 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "Thank you for commenting"
-      redirect_to comments_path(@comment)
+      redirect_to content_path(@comment.content)
     else
-      render :new
+      render 'contents/show'
     end
   end
 
   def destroy
     @comment.destroy
-    redirect_to comments_path
+    redirect_to content_path(@comment.content)
   end
 
   private

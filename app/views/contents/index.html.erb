@@ -13,22 +13,27 @@
   </div>
 
   <div class="all_cards">
-    <% @contents.each do |content| %>
-      <div class="card">
-        <%= link_to content_path(content) do %>
-          <img height="400" width="400" src=<%= content.thumbnail_url%> >
-        <% end %>
-        <div class="content_info">
-          <h2><%= content.title.capitalize %></h2>
-          <p><em><%= content.description %></em></p>
-          <p><%= content.category %></p>
-          <p><%= content.style %></p>
+      <% @contents.each do |content| %>
+        <div class="content_card">
+          <%= link_to content_path(content) do %>
+            <% if content.content_type == "Video"%>
+              <img src=<%= content.thumbnail_url%> >
+            <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
+              <%= cl_image_tag content.blog_image.key, width: 300 %>
+            <% end %>
+          <% end %>
+          <div class="content_info">
+            <h2><%= content.title.capitalize %></h2>
+            <p><em><%= content.description %></em></p>
+            <p><%= content.category %></p>
+            <p><%= content.style %></p>
+          </div>
+          <div class="card_avatar">
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
         </div>
-        <div class="card_avatar">
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+
 </div>
 <p><%= link_to 'Dashboard', dashboard_path %></p>
