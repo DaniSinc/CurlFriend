@@ -10,11 +10,24 @@
       <% if policy(@content).update? %>
         <%= link_to 'Edit', edit_content_path(@content), class: "btn btn-secondary" %>
       <% end %>
-
-      <% if policy(@content).destroy? %>
-        <%= link_to 'Delete', @content, method: :delete, data: { confirm: "Are you sure that you want to delete '#{@content.title}' and all its contents?" }, class: 'btn btn-danger'%>
-      <% end %>
-    </div>
+  <div class="comments">
+    <% if @content.comments.blank? %>
+      <p>Be the first to leave a comment :)</p>
+    <% else %>
+      <ul>
+        <% @content.comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.username %></strong>
+            <br>
+            <%= comment.text %>
+            <br>
+            <% if policy(comment).destroy? %>
+              <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
 
     <div class="comments">
       <% if @content.comments.blank? %>

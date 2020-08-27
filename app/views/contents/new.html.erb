@@ -28,13 +28,21 @@
           <div class="video_input hidden">
             <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
           </div>
-            <br>
-            <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
-            <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
-          </div>
-          <%= f.submit class: "btn-primary" %>
-        <% end %>
-      <p><%= link_to ('<i class="fas fa-home"></i>').html_safe, contents_path, class: "btn-outline-success" %></p>
-    </div>
+        </fieldset>
+
+        <div class="photo_input hidden">
+          <%= f.input :blog_image, as: :file, id: "photo" %>
+          <%= f.input :text %>
+         </div>
+        <div class="video_input hidden">
+          <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
+        </div>
+          <br>
+          <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
+          <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
+        </div>
+        <%= f.submit class: "btn-primary" %>
+      <% end %>
+    <p><%= link_to ('<i class="fas fa-home"></i>').html_safe, contents_path, class: "btn-outline-success" %></p>
   </div>
 </div>
