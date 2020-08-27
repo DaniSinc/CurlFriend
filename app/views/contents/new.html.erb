@@ -12,10 +12,6 @@
               <input class="form-check-input radio_buttons required" type="radio" name="content[content_type]" id="content_content_type" value="Blog post">
               <label class="form-check-label collection_radio_buttons" for="content_content_type_">Blog post</label>
             </div>
-            <%# <div class="form-check" id="step-by-step">
-              <input class="form-check-input radio_buttons required" type="radio" name="content[content_type]" id="content_content_type" value="Step-by-Step">
-              <label class="form-check-label collection_radio_buttons" for="content_content_type_">Step-by-Step</label>
-            </div> %>
             <div class="form-check" id="video">
               <input class="form-check-input radio_buttons required" type="radio" name="content[content_type]" id="content_content_type" value="Video">
               <label class="form-check-label collection_radio_buttons" for="content_content_type_">Video</label>
@@ -43,6 +39,5 @@
         </div>
         <%= f.submit class: "btn-primary" %>
       <% end %>
-    <p><%= link_to ('<i class="fas fa-home"></i>').html_safe, contents_path, class: "btn-outline-success" %></p>
   </div>
 </div>
