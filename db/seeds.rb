@@ -12,16 +12,36 @@ puts "Destroy users"
 User.destroy_all
 
 puts "Create users"
-user_1 = User.new(email: "littlemissafro@gmail.com", password: "123456", username: "littlemissafro")
+user_1 = User.new(
+    email: "littlemissafro@gmail.com", 
+    password: "123456", 
+    username: "littlemissafro")
+file = File.open(Rails.root.join('app', 'assets', 'images', 'profile_pics', 'user_1.jpg'))
+user_1.profile_pic.attach(io: file, filename: 'user_1.jpg', content_type: "image/jpg")
 user_1.save!
 
-user_2 = User.new(email: "littlemissdreadlocks@gmail.com", password: "123456", username: "littlemissdreadlocks")
+user_2 = User.new(
+    email: "littlemissdreadlocks@gmail.com", 
+    password: "123456", 
+    username: "littlemissdreadlocks")
+file = File.open(Rails.root.join('app', 'assets', 'images', 'profile_pics', 'user_2.jpg'))
+user_2.profile_pic.attach(io: file, filename: 'user_2.jpg', content_type: "image/jpg")
 user_2.save!
 
-user_3 = User.new(email: "littlemissweave@gmail.com", password: "123456", username: "littlemissweave")
+user_3 = User.new(
+    email: "littlemissweave@gmail.com", 
+    password: "123456", 
+    username: "littlemissweave")
+file = File.open(Rails.root.join('app', 'assets', 'images', 'profile_pics', 'user_3.jpg'))
+user_3.profile_pic.attach(io: file, filename: 'user_3.jpg', content_type: "image/jpg")
 user_3.save!
 
-user_4 = User.new(email: "littlemissnatural@gmail.com", password: "123456", username: "littlemissnatural")
+user_4 = User.new(
+    email: "littlemissnatural@gmail.com", 
+    password: "123456", 
+    username: "littlemissnatural")
+file = File.open(Rails.root.join('app', 'assets', 'images', 'profile_pics', 'user_4.jpg'))
+user_4.profile_pic.attach(io: file, filename: 'user_4.jpg', content_type: "image/jpg")
 user_4.save!
 
 puts "Create contents"
