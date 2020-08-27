@@ -16,10 +16,11 @@
       <% @contents.each do |content| %>
         <div class="content_card">
           <%= link_to content_path(content) do %>
-            <img src=<%= content.thumbnail_url%> >
-          <% end %>
-          <% if content.content_type == "blog post"%>
-            <%= cl_image_tag content.blog_image.key, width: 300 %>
+            <% if content.content_type == "Video"%>
+              <img src=<%= content.thumbnail_url%> >
+            <% elsif content.content_type == "blog post"%>
+              <%= cl_image_tag content.blog_image.key, width: 300 %>
+            <% end %>
           <% end %>
           <div class="content_info">
             <h2><%= content.title.capitalize %></h2>
