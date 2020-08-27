@@ -7,10 +7,12 @@ export const displayVideo = () => {
         video.addEventListener('click', (event) => {
             console.log(document.getElementById("content_content_type").value)
             videoInput.classList.remove('hidden');
+            videoInput.classList.add('active');
             blogInput.classList.add('hidden');
         });
         blogPost.addEventListener('click', (event) => {
             blogInput.classList.remove('hidden');
+            blogInput.classList.add('active');
             videoInput.classList.add('hidden');
         });
     }
