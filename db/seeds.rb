@@ -148,7 +148,7 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
-    image_url: File.open(Rails.root.join('app', 'images', 'half_up_blog.jpg')),,
+    image_url: File.open(Rails.root.join('app', 'images', 'half_up_blog.jpg')),
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
