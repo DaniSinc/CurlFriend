@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
 
 .home-h1{
   position: absolute;
@@ -8,15 +11,14 @@
   width:100%;
   height: auto;
   z-index: 1;
-  font-family: 'Gruppo', cursive;
-  font-size: 80px;
+  font-family: "Alegreya";
+  font-size: 100px;
   font-weight: 550;
   line-height: 93px;
   align-items: center;
   text-align: center;
   color: #ECABB6;
-  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.25);
-  drop-shadow: 2px, 2px, 2px, 2px
+  text-shadow: 6px 0px 6px  black;
 }
 
 .homepage {
@@ -80,7 +82,7 @@
 }
 
 .slide-image {
-  -webkit-filter: grayscale(60%);
+  -webkit-filter: grayscale(65%);
   height: 100%;
   width: 100%;
   object-fit: cover;
