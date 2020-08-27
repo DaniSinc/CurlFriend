@@ -39,7 +39,7 @@ class ContentsController < ApplicationController
 
   def destroy
     @content.destroy
-    redirect_to contents_path(current_user)
+    redirect_to contents_path
   end
 
   private
