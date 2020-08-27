@@ -22,7 +22,6 @@ class ContentsController < ApplicationController
   end
 
   def create
-    raise
     @content = Content.new(content_params)
     @content.user = current_user
     authorize @content
