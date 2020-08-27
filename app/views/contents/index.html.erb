@@ -24,6 +24,15 @@
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
+          <% if current_user&.favorited?(content) %>
+            <%= link_to unfavorite_content_path(content) do%>
+            <i class="fas fa-heart"></i>
+            <% end %>
+          <% elsif current_user%>
+            <%= link_to favorite_content_path(content) do %>
+            <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
           <article>
             <h2><%= content.title.capitalize %></h2>
             <p><%= content.description %></p>

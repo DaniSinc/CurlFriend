@@ -21,4 +21,12 @@ class ContentPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def favorite?
+    true
+  end
+
+  def unfavorite?
+    true
+  end
 end
