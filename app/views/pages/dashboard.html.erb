@@ -1,10 +1,11 @@
+
 <div class="dashboard_container">
   <div class="pages-container">
   <h1>Dashboard</h1>
 
   <div class="uploads_and_favourites">
 
-    <div class="my_uploads col-6">
+    <div class="my_uploads">
       <h2>My Uploads</h2>
       <!-- Uploads iterator -->
       <% if current_user.contents %>
@@ -16,7 +17,6 @@
               <%= cl_image_tag content.blog_image.key, width: 300 %>
             <% end %>
             <h3><%= content.title %></h3>
-
             <div class="links">
               <p>
                 <% if policy(content).show? %>
@@ -36,12 +36,15 @@
             </div>
           </div>
         <% end %>
+      <% else %>
+        <p>No uploads yet</p>
       <% end %>
     </div>
 
-    <div class="my_favourites col-6">
+    <div class="my_favourites">
       <h2>My Favourites</h2>
       <!-- Favourites iterator -->
+        <p>No favourites yet</p>
     </div>
 
   </div>
