@@ -1,4 +1,23 @@
-.content_card {
+.all-cards {
+  width: 80%;
+  margin: 0 auto;
+  
+  display: grid;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
   background: white;
   text-decoration: none;
   color: #444;
@@ -15,5 +34,11 @@
   &:hover {
     top: -2px;
     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: black;
+  }
+
+  img {
+    max-height: 220px;
   }
 }
