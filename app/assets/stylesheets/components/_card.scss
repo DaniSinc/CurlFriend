@@ -1,5 +1,5 @@
 .all-cards {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   
   display: grid;
@@ -38,10 +38,12 @@
     color: black;
   }
 
+  img {
+    max-height: 220px;
+  }
   img{
-    overflow: hidden;
-    max-height: 210px;
-    width: auto;
+    max-height:200px;
+    size:cover;
   }
   .card-link{
     width:100%;

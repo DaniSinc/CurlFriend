@@ -12,7 +12,7 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
-  </div>
+
 
   <div class="all-cards">
     <% @contents.each do |content| %>
@@ -26,15 +26,15 @@
           <% end %>
 
           <% if current_user&.favorited?(content) %>
-            <%= link_to unfavorite_content_path(content), class: "fav" do %>
-              <i class="fas fa-heart"></i>
+            <%= link_to unfavorite_content_path(content) do%>
+            <i class="fas fa-heart"></i>
             <% end %>
           <% elsif current_user %>
             <%= link_to favorite_content_path(content) do %>
             <i class="far fa-heart"></i>
             <% end %>
           <% end %>
-          
+
           <h2><%= content.title.capitalize %></h2>
           <p><%= content.description %></p>
           <span><%= content.user.username %></span>
