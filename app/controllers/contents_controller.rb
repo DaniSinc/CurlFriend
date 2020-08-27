@@ -4,6 +4,11 @@ class ContentsController < ApplicationController
 
   def index
     @contents = policy_scope(Content)
+    if params[:query].present?
+      @contents = Content.where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @contents = Content.all
+    end
   end
 
   def show
