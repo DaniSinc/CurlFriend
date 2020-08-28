@@ -50,7 +50,7 @@ puts "Create contents"
 afro_video_1 = Content.new(
     user_id: user_1.id,
     title: "The Ultimate AFRO Tutorial",
-    description: "How-to...",
+    description: "Learn how to style your ULTIMATE afro with me!",
     content_type: "Video",
     category: "Natural",
     style: "Afro",
@@ -61,7 +61,7 @@ afro_video_1.save
 dreads_video_1 = Content.new(
     user_id: user_2.id,
     title: "How to make Instant Dreadlocks in 2020",
-    description: "How-to...",
+    description: "I'll show you how I create these instant dreads in 5 short minutes",
     content_type: "Video",
     category: "Natural",
     style: "Dreadlocks",
@@ -72,7 +72,7 @@ dreads_video_1.save
 bantu_video_1 = Content.new(
     user_id: user_3.id,
     title: "How To | Perfect Bantu Knots on Natural Hair & Transitioning Hair",
-    description: "How-to...",
+    description: "This is how I style my bantu knots, leave a comment to let me know how you got on!",
     content_type: "Video",
     category: "Natural",
     style: "Bantu knots",
