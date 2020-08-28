@@ -24,21 +24,23 @@
           <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
+          <div class="card-text">
+            <h2><%= content.title.capitalize %></h2>
+              <% if current_user&.favorited?(content) %>
+                  <%= link_to unfavorite_content_path(content) do%>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% elsif current_user %>
+                  <%= link_to favorite_content_path(content) do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <div class="bottom-row">
+              <span><%= content.user.username %></span>
 
-          <% if current_user&.favorited?(content) %>
-              <%= link_to unfavorite_content_path(content) do%>
-              <i class="fas fa-heart"></i>
-            <% end %>
-          <% elsif current_user %>
-              <%= link_to favorite_content_path(content) do %>
-              <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
-
-          <h2><%= content.title.capitalize %></h2>
-          <p><%= content.description %></p>
-          <span><%= content.user.username %></span>
-          <!--
+            </div>
+          </div>
+          <!-- 
           <div class="tags">
             <strong><%= content.category %></strong> ||
             <%= content.style %>
