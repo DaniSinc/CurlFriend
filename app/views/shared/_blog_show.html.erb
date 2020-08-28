@@ -7,16 +7,15 @@
       <h1><%= @content.title %></h1>
       <p><%= @content.description %></p>
       <p><%= @content.user.username %></p>
-            <% if current_user&.favorited?(@content) %>
-        <%= link_to unfavorite_content_path(@content) do%>
-        <i class="fas fa-heart"></i>
+        <% if current_user&.favorited?(@content) %>
+          <%= link_to unfavorite_content_path(@content) do%>
+          <i class="fas fa-heart"></i>
       <% end %>
       <% elsif current_user %>
           <%= link_to favorite_content_path(@content) do %>
           <i class="far fa-heart"></i>
         <% end %>
     <% end %>
-    </div>
     <div class="comments mt-5">
       <h3>Comments</h3>
       <% if @content.comments.blank? %>
@@ -45,6 +44,7 @@
           <%= f.button :submit, class: "btn btn-secondary" %>
         </div>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
