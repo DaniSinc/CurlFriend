@@ -6,21 +6,27 @@
           <%= f.input :title %>
           <%= f.input :description %>
           <fieldset class="radio_buttons required content_content_type">
-            <legend class="col-form-label">Content type <abbr title="required">*</abbr></legend>
-            <div class="content-type-choices">
-              <div class="form-check" id="blog-post">
-                <input class="hidden" type="radio" name="content[content_type]" id="content_content_type" value="Blog post">
-                <label class="collection_radio_buttons" for="content_content_type_">Blog post</label>
+            <%# <legend class="col-form-label">Content type <abbr title="required">*</abbr></legend> %>
+            <%# <div class="content-type-choices">
+            <div class="row"> %>
+            <div id="choices">
+              <%= f.input :content_type, collection: ["Blog post", "Video"], label: false,  as: :radio_buttons, wrapper: :vertical_collection_inline %>
+            </div>
+              <%# <div class="form-check" id="blog-post">
+                <input class="hidden" type="radio" id="content_content_type" >
+                
+                <label class="collection_radio_buttons" for="content_content_type_" value="Blog post" name="content[content_type]">Blog post</label>
               </div>
               <div class="form-check" id="video">
-                <input class="hidden" type="radio" name="content[content_type]" id="content_content_type" value="Video">
-                <label class="collection_radio_buttons" for="content_content_type_">Video</label>
-              </div>
+                <input class="hidden" type="radio" id="content_content_type" >
+                <label class="collection_radio_buttons" for="content_content_type_" value="Video" name="content[content_type]">Video</label>
+              </div> %>
             </div>
           </fieldset>
 
           <div class="photo_input hidden">
             <%= f.input :blog_image, as: :file, id: "photo" %>
+            <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
           </div>
           <div class="video_input hidden">
             <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
