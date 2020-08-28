@@ -3,6 +3,17 @@
     <h1><%= @content.title %></h1>
     <p><%= @content.user.username %></p>
     <iframe width="560" height="315" src="<%= @content.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <p><%= @content.description%></p>
+    <div class="text-and-favourite">
+      <p><%= @content.description%></p>
+      <% if current_user&.favorited?(@content) %>
+        <%= link_to unfavorite_content_path(@content) do%>
+        <i class="fas fa-heart"></i>
+      <% end %>
+      <% elsif current_user %>
+          <%= link_to favorite_content_path(@content) do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
