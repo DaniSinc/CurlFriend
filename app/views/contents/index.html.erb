@@ -1,5 +1,6 @@
 <div class="pages-container">
 
+  <div class="container">
     <div class="search-form-control form-group">
       <%= form_tag contents_path, method: :get do %>
         <%= text_field_tag :query,
@@ -23,6 +24,7 @@
           <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
+          
           <div class="card-text">
             <h2><%= content.title.capitalize %></h2>
             <% if current_user&.favorited?(content) %>
