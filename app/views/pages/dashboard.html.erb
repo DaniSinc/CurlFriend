@@ -11,13 +11,13 @@
       <p>No uploads yet</p>
       <% else %>
         <% current_user.contents.each do |content| %>
-          <div class="upload-card">
+          <div class="card-product my-3">
             <% if content.content_type == "Video"%>
               <img src=<%= content.thumbnail_url%> >
             <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
               <%= cl_image_tag content.blog_image.key, width: 300 %>
             <% end %>
-            <div class="card-text">
+            <div class="card-product-infos">
               <h4><%= content.title %></h4>
               <p><em>Uploaded by <strong> you </strong></em></p>
                 <div class="links">
@@ -50,30 +50,32 @@
         <p>No favourites yet</p>
       <% else %>
         <% current_user.favorites.each do |favorite| %>
-        <%= favorite.favoritable.title %>
-          <div class="favourite-card">
+          <div class="card-product my-3">
             <% if favorite.favoritable.content_type == "Video"%>
               <img src=<%= favorite.favoritable.thumbnail_url%> >
             <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
               <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
             <% end %>
-            <h3><%= favorite.favoritable.title %></h3>
-            <div class="links">
-              <p>
-                <% if policy(favorite.favoritable).show? %>
-                  <%= link_to 'Show', favorite.favoritable %>
-                <% end %>
-              </p>
-              <p>
-                <% if policy(favorite.favoritable).update? %>
-                  <%= link_to 'Edit', edit_content_path(favorite.favoritable) %>
-                <% end %>
-              </p>
-              <p>
-                <% if policy(favorite.favoritable).destroy? %>
-                  <%= link_to 'Destroy', favorite.favoritable, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </p>
+
+             <div class="card-product-infos">
+              <h4><%= favorite.favoritable.title %></h3>
+              <div class="links">
+                <p>
+                  <% if policy(favorite.favoritable).show? %>
+                    <%= link_to 'Show', favorite.favoritable %>
+                  <% end %>
+                </p>
+                <p>
+                  <% if policy(favorite.favoritable).update? %>
+                    <%= link_to 'Edit', edit_content_path(favorite.favoritable) %>
+                  <% end %>
+                </p>
+                <p>
+                  <% if policy(favorite.favoritable).destroy? %>
+                    <%= link_to 'Destroy', favorite.favoritable, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                </p>
+              </div>
             </div>
           </div>
         <% end %>
@@ -83,8 +85,7 @@
   </div>
 
   <div class="links">
-    <p><%= link_to 'Homepage', root_path %></p>
-    <p><%= link_to 'Upload content', new_content_path %></p>
+    <p><%= link_to 'Upload content', new_content_path, class: "btn btn-secondary" %></p>
   </div>
   </div>
 </div>

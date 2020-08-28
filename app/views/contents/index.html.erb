@@ -1,15 +1,16 @@
 <div class="pages-container">
 
   <div class="container">
-    <div class="search-form">
+    <div class="search-form-control form-group">
       <%= form_tag contents_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Please enter a style"
         %>
-        <br>
+ 
         <%= submit_tag "Search", class: "btn btn-primary" %>
+    
       <% end %>
     </div>
 
@@ -24,26 +25,23 @@
           <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
+          <div class="card-text">
+            <h2><%= content.title.capitalize %></h2>
+              <% if current_user&.favorited?(content) %>
+                  <%= link_to unfavorite_content_path(content) do%>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% elsif current_user %>
+                  <%= link_to favorite_content_path(content) do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <div class="bottom-row">
+              <span><%= content.user.username %></span>
 
-
-
-  
-
-
-          <% if current_user&.favorited?(content) %>
-            <%= link_to unfavorite_content_path(content) do%>
-            <i class="fas fa-heart"></i>
-            <% end %>
-          <% elsif current_user %>
-            <%= link_to favorite_content_path(content) do %>
-            <i class="far fa-heart"></i>
-            <% end %>
-          <% end %>
-
-          <h2><%= content.title.capitalize %></h2>
-          <p><%= content.description %></p>
-          <span><%= content.user.username %></span>
-          <!--
+            </div>
+          </div>
+          <!-- 
           <div class="tags">
             <strong><%= content.category %></strong> ||
             <%= content.style %>
@@ -52,6 +50,7 @@
         <% end %>
       </div>
     <% end %>
+      </div>
 
     <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
   </div>

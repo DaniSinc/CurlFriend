@@ -1,5 +1,4 @@
 .all-cards {
-  width: 80%;
   margin: 0 auto;
   
   display: grid;
@@ -18,13 +17,14 @@
 }
 
 .card {
+  width:min-content;
   background: white;
   text-decoration: none;
   color: #444;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 400px;
   
   // sets up hover state
   position: relative;
@@ -37,23 +37,39 @@
     text-decoration: none;
     color: black;
   }
-
+ 
   img {
-    max-height: 220px;
+   height: 220px;
+   width: 280px;
   }
-  img{
-    max-height:200px;
-    size:cover;
+
+  .card-text {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
   }
-  .card-link{
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
+
+  .bottom-row {
+    position: absolute;
+    margin-top: 10px;
+    bottom: 5px;
   }
-  a{
-    z-index:2;
+
+  .fa-heart {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+  }
+  
+}
+
+a {
+  z-index:2;
+  color: pink;
+  font-weight: bold;
+  right: 0;
+   &:hover {
+     color: pink;
   }
 }

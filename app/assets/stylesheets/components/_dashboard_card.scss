@@ -1,34 +1,33 @@
-.upload-card {
+.card-product {
   overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
   align-items: center;
+  transition: all .1s ease-in;
+  margin-top: 16px;
   position: relative;
   top: 0;
-  transition: all .1s ease-in;
   &:hover {
     top: -2px;
     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
   }
 }
 
-.upload-card img {
+.card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.upload-card h4 {
+.card-product h4 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.upload-card p {
+.card-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -36,8 +35,8 @@
   margin-top: 8px;
 }
 
-.upload-card .upload_card-infos {
-  padding: 0;
+.card-product .card-product-infos {
+  padding: 16px;
 }
 
 .favourite-card {

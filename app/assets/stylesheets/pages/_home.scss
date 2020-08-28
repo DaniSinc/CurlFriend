@@ -4,21 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
+
 
 .home-h1{
   position: absolute;
-  top:35%;
+  top: 40%;
   width:100%;
   height: auto;
   z-index: 1;
-  font-family: "Alegreya";
-  font-size: 100px;
-  font-weight: 550;
-  line-height: 93px;
+  font-family: "Josefin Sans";
+  font-size: 80px;
   align-items: center;
   text-align: center;
   color: #ECABB6;
-  text-shadow: 6px 0px 6px  black;
+  text-shadow: 2px 2px 6px  black;
 }
 
 .homepage {
@@ -30,13 +30,13 @@
 
 .home-button  {
   position: absolute;
-  top:55%;
+  top: 60%;
   right: 42.5%;
   height: auto;
   z-index: 2;
   flex: 1 1 auto;
   margin: 10px;
-  padding: 20px;
+  padding: 16px;
   text-align: center;
   text-transform: uppercase;
   transition: all .6s ease-in-out;
@@ -87,6 +87,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+
 }
 
 .carousel-indicators li { visibility: hidden; }
