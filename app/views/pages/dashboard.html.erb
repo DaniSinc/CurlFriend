@@ -3,12 +3,13 @@
   <div class="pages-container">
   <h1>Dashboard</h1>
 
-  <div class="uploads_and_favourites">
-
+  <div class="uploads_and_favourites row">
     <div class="my-uploads col-6">
       <h2>My Uploads</h2>
       <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
+      <p>No uploads yet</p>
+      <% else %>
         <% current_user.contents.each do |content| %>
           <div class="upload-card">
             <% if content.content_type == "Video"%>
@@ -39,8 +40,6 @@
             </div>
           </div>
         <% end %>
-      <% else %>
-        <p>No uploads yet</p>
       <% end %>
     </div>
 
