@@ -29,6 +29,10 @@
             <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
           </div>
           <div class="video_input hidden">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#embedModal">
+              *
+            </button>
+            <%= render 'shared/modal'%>
             <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
           </div>
         </fieldset>
