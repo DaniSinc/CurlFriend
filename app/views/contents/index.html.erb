@@ -25,18 +25,13 @@
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
 
-
-
-  
-
-
           <% if current_user&.favorited?(content) %>
-            <%= link_to unfavorite_content_path(content) do%>
-            <i class="fas fa-heart"></i>
+              <%= link_to unfavorite_content_path(content) do%>
+              <i class="fas fa-heart"></i>
             <% end %>
           <% elsif current_user %>
-            <%= link_to favorite_content_path(content) do %>
-            <i class="far fa-heart"></i>
+              <%= link_to favorite_content_path(content) do %>
+              <i class="far fa-heart"></i>
             <% end %>
           <% end %>
 
@@ -52,6 +47,7 @@
         <% end %>
       </div>
     <% end %>
+      </div>
 
     <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
   </div>

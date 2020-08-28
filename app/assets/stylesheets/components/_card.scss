@@ -1,5 +1,4 @@
 .all-cards {
-  width: 80%;
   margin: 0 auto;
   
   display: grid;
@@ -18,6 +17,7 @@
 }
 
 .card {
+  width:min-content;
   background: white;
   text-decoration: none;
   color: #444;
@@ -37,21 +37,10 @@
     text-decoration: none;
     color: black;
   }
-
+ 
   img {
-    max-height: 220px;
-  }
-  img{
-    max-height:200px;
-    size:cover;
-  }
-  .card-link{
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
+   height: 220px;
+   width: 280px;
   }
   a{
     z-index:2;
