@@ -65,7 +65,7 @@ dreads_video_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Dreadlocks",
-    video_url: "https://www.youtube.com/watch?v=8rlE1pWv290"
+    video_url: "https://www.youtube.com/embed/8rlE1pWv290"
 )
 dreads_video_1.save
 
@@ -76,7 +76,7 @@ bantu_video_1 = Content.new(
     content_type: "Video",
     category: "Natural",
     style: "Bantu knots",
-    video_url: "https://www.youtube.com/watch?v=fFtt3Y9-cBY"
+    video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
 )
 bantu_video_1.save
 
@@ -95,7 +95,7 @@ scurl_video_1 = Content.new(
     content_type: "Video",
     category: "Chemical treatment",
     style: "S-curl",
-    video_url: "https://www.youtube.com/watch?v=2p5EIUtLCxE"
+    video_url: "https://www.youtube.com/embed/2p5EIUtLCxE"
 )
 scurl_video_1.save
 
@@ -110,7 +110,7 @@ jerrycurl_video_1 = Content.new(
     content_type: "Video",
     category: "Chemical treatment",
     style: "Jerry-curl",
-    video_url: "https://www.youtube.com/watch?v=NlmWom02M80"
+    video_url: "https://www.youtube.com/embed/NlmWom02M80"
 )
 jerrycurl_video_1.save
 
@@ -132,7 +132,7 @@ relaxed_video_1 = Content.new(
     content_type: "Video",
     category: "Chemical treatment",
     style: "Relaxed",
-    video_url: "https://www.youtube.com/watch?v=-vFmWIcVgss"
+    video_url: "https://www.youtube.com/embed/-vFmWIcVgss"
 )
 relaxed_video_1.save
 

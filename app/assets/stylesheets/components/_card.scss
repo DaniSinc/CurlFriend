@@ -24,7 +24,7 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 400px;
   
   // sets up hover state
   position: relative;
@@ -42,7 +42,32 @@
    height: 220px;
    width: 280px;
   }
-  a{
-    z-index:2;
+
+  .card-text {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
   }
+
+  .bottom-row {
+    position: absolute;
+    margin-top: 10px;
+    bottom: 5px;
+  }
+
+  .fa-heart {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+  }
+  
+}
+
+a {
+  z-index:2;
+  color: pink;
+  font-weight: bold;
+  right: 0;
+  
 }
