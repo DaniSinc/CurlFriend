@@ -11,13 +11,13 @@
       <p>No uploads yet</p>
       <% else %>
         <% current_user.contents.each do |content| %>
-          <div class="upload-card">
+          <div class="card-product my-3">
             <% if content.content_type == "Video"%>
               <img src=<%= content.thumbnail_url%> >
             <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
               <%= cl_image_tag content.blog_image.key, width: 300 %>
             <% end %>
-            <div class="card-text">
+            <div class="card-product-infos">
               <h4><%= content.title %></h4>
               <p><em>Uploaded by <strong> you </strong></em></p>
                 <div class="links">
@@ -51,7 +51,7 @@
       <% else %>
         <% current_user.favorites.each do |favorite| %>
         <%= favorite.favoritable.title %>
-          <div class="favourite-card">
+          <div class="favourite-card my-3">
             <% if favorite.favoritable.content_type == "Video"%>
               <img src=<%= favorite.favoritable.thumbnail_url%> >
             <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
@@ -83,8 +83,7 @@
   </div>
 
   <div class="links">
-    <p><%= link_to 'Homepage', root_path %></p>
-    <p><%= link_to 'Upload content', new_content_path %></p>
+    <p><%= link_to 'Upload content', new_content_path, class: "btn btn-secondary" %></p>
   </div>
   </div>
 </div>
