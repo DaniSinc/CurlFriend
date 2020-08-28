@@ -2,29 +2,28 @@
 .footer {
   display: flex;
 
-  justify: space-between;
-
+  justify-content: flex-end;
+  align-items: center;
   width: 100%;
   background: transparent;
+  margin-top: 24px;
   color: #ECABB6;
-  text-shadow: black -1px 1px 0;
 }
 
 .footer a {
   text-decoration: none;
   color: #ECABB6;
-  text-shadow: black -1px 1px 0;
   font-size: 24px;
   padding: 6px;
   transition: 350ms ease-in-out;
 }
 
 .footer a:hover {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .footer p {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .page-ref {
