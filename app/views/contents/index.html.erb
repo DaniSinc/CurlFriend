@@ -8,7 +8,7 @@
           class: "form-control",
           placeholder: "Please enter a style"
         %>
- 
+
         <%= submit_tag "Search", class: "btn btn-secondary" %>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
           <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
-          
+
           <div class="card-text">
             <h2><%= content.title.capitalize %></h2>
             <% if current_user&.favorited?(content) %>
@@ -40,7 +40,7 @@
               <span><%= content.user.username %></span>
             </div>
           </div>
-          <!-- 
+          <!--
           <div class="tags">
             <strong><%= content.category %></strong> ||
             <%= content.style %>
