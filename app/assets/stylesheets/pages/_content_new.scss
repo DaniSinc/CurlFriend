@@ -2,11 +2,15 @@
   display: none;
 }
 
-.content-type-choices {
+.choices {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 20px 0;
+}
+
+#content_content_type_video, #content_content_type_blog_post {
+  display: none;
 }
 
 .form-check {

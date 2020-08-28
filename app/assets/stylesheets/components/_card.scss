@@ -69,4 +69,8 @@ a {
   color: pink;
   font-weight: bold;
   right: 0;
+   &:hover {
+     color: pink;
+     text-decoration: none;
+  }
 }

@@ -8,15 +8,14 @@
           placeholder: "Please enter a style"
         %>
  
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-    
+        <%= submit_tag "Search", class: "btn btn-secondary" %>
       <% end %>
     </div>
+  </div>
 
-
-  <div class="all-cards">
+  <div class="all-cards my-5">
     <% @contents.each do |content| %>
-      <div class="card" id="content-<%= content.id %>">
+      <div class="card" id="content<%= content.id %>">
         <%= link_to content_path(content), class: "card-link" do %>
 
           <% if content.content_type == "Video" %>
@@ -26,18 +25,17 @@
           <% end %>
           <div class="card-text">
             <h2><%= content.title.capitalize %></h2>
-              <% if current_user&.favorited?(content) %>
-                  <%= link_to unfavorite_content_path(content) do%>
-                  <i class="fas fa-heart"></i>
-                <% end %>
-              <% elsif current_user %>
-                  <%= link_to favorite_content_path(content) do %>
-                  <i class="far fa-heart"></i>
-                <% end %>
+            <% if current_user&.favorited?(content) %>
+              <%= link_to unfavorite_content_path(content) do%>
+                <i class="fas fa-heart"></i>
               <% end %>
-              <div class="bottom-row">
+            <% elsif current_user %>
+                <%= link_to favorite_content_path(content) do %>
+                <i class="far fa-heart"></i>
+              <% end %>
+            <% end %>
+            <div class="bottom-row">
               <span><%= content.user.username %></span>
-
             </div>
           </div>
           <!-- 
@@ -49,12 +47,11 @@
         <% end %>
       </div>
     <% end %>
-      </div>
-
-    <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
+  </div>
 </div>
 
 <!--
+    <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
           <div class="card_avatar">
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
