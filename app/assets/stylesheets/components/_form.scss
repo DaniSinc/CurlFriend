@@ -40,3 +40,31 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+.loginrow {
+
+  }
+
+  .loginrow h2 {
+    text-align: center;
+  }
+
+.form-actions1 {
+  text-align: center;
+}
+
+.imagecontainer {
+  img {
+    width: 100%;
+    height: calc(100vh - 119px);
+    object-fit: cover;
+    object-position: top;
+
+
+  }
+}
+
+.formcontainer {
+  padding-top: 70px;
+  max-height: calc(100vh - 119px);
+  display: flex;
+}
