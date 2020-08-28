@@ -3,42 +3,45 @@
   <div class="pages-container">
   <h1>Dashboard</h1>
 
-  <div class="uploads_and_favourites row">
+  <div class="uploads_and_favourites row mt-3">
     <div class="my-uploads col-6">
       <h2>My Uploads</h2>
-      <!-- Uploads iterator -->
+        <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
-      <p>No uploads yet</p>
+        <p>No uploads yet</p>
       <% else %>
+
         <% current_user.contents.each do |content| %>
+
           <div class="card-product my-3">
-            <% if content.content_type == "Video"%>
-              <img src=<%= content.thumbnail_url%> >
-            <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
-              <%= cl_image_tag content.blog_image.key, width: 300 %>
-            <% end %>
-            <div class="card-product-infos">
-              <h4><%= content.title %></h4>
-              <p><em>Uploaded by <strong> you </strong></em></p>
-                <div class="links">
-                  <p>
-                    <% if policy(content).show? %>
-                      <%= link_to 'Show', content %>
-                    <% end %>
-                  </p>
-                  <p>
-                    <% if policy(content).update? %>
-                      <%= link_to 'Edit', edit_content_path(content) %>
-                    <% end %>
-                  </p>
-                  <p>
-                    <% if policy(content).destroy? %>
-                      <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    <% end %>
-                  </p>
+            <%= link_to content_path(content) do %>
+
+              <% if content.content_type == "Video"%>
+                <img src=<%= content.thumbnail_url%> >
+              <% elsif content.content_type == "Blog post" && content.blog_image.attached?%>
+                <%= cl_image_tag content.blog_image.key, width: 300 %>
+              <% end %>
+
+              <div class="card-product-infos">
+                <h4><%= content.title %></h4>
+                <p><em>Uploaded by <strong> you </strong></em></p>
+                  <div class="links">
+                    <p>
+                      <% if policy(content).update? %>
+                        <%= link_to 'Edit', edit_content_path(content) %>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if policy(content).destroy? %>
+                        <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+                    </p>
+                </div>
               </div>
-            </div>
+
+            <% end %>
           </div>
+
         <% end %>
       <% end %>
     </div>
@@ -49,8 +52,13 @@
       <% if current_user.favorites.empty?%>
         <p>No favourites yet</p>
       <% else %>
+
         <% current_user.favorites.each do |favorite| %>
+
           <div class="card-product my-3">
+            <%= link_to content_path(favorite) do %>
+
+
             <% if favorite.favoritable.content_type == "Video"%>
               <img src=<%= favorite.favoritable.thumbnail_url%> >
             <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
@@ -58,35 +66,30 @@
             <% end %>
 
              <div class="card-product-infos">
-              <h4><%= favorite.favoritable.title %></h3>
+              <h4><%= favorite.favoritable.title %></h4>
+              <p><em>Uploaded by <strong> <%= favorite.favoritable.user.username %> </strong></em></p>
+
               <div class="links">
                 <p>
-                  <% if policy(favorite.favoritable).show? %>
-                    <%= link_to 'Show', favorite.favoritable %>
-                  <% end %>
-                </p>
-                <p>
-                  <% if policy(favorite.favoritable).update? %>
-                    <%= link_to 'Edit', edit_content_path(favorite.favoritable) %>
-                  <% end %>
-                </p>
-                <p>
-                  <% if policy(favorite.favoritable).destroy? %>
-                    <%= link_to 'Destroy', favorite.favoritable, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to unfavorite_content_path(favorite), id: "small-heart" do %>
+                    <i class="fas fa-heart"></i>
                   <% end %>
                 </p>
               </div>
             </div>
+
+            <% end %>
           </div>
+
         <% end %>
+
       <% end %>
     </div>
 
   </div>
 
-  <div class="links">
+  <div class="links mt-3">
     <p><%= link_to 'Upload content', new_content_path, class: "btn btn-secondary" %></p>
-  </div>
   </div>
 </div>
 
