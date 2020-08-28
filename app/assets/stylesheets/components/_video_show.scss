@@ -1,4 +1,20 @@
 .video_show_container {
     margin: auto;
-    max-width: 800px;
+    max-width: 560px;
+    margin: auto;
+}
+
+.text-and-favourite {
+    display: flex;
+    max-width: 560px;
+    margin-top: 10px;
+}
+
+.comments {
+    max-width: 560px;
+}
+
+.fa-heart {
+font-size: 30px;
+margin-left: 20px;
 }
