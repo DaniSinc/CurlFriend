@@ -1,0 +1,23 @@
+<h4>Filter by category</h4>
+<%= form_tag contents_path, method: :get do %>
+  <% Content::CATEGORIES.each do |category| %>
+    <div class="checkbox">
+      <%= check_box_tag "category[]", category %>
+      <%= category %>
+    </div>
+  <% end %>
+  <%= submit_tag "Filter", class: "btn btn-secondary" %>
+<% end %>
+
+<h4>Filter by style</h4>
+<%= form_tag contents_path, method: :get do %>
+  <% Content::STYLES.each do |style| %>
+    <div class="checkbox">
+      <%= check_box_tag "style[]", style %>
+      <%= style %>
+    </div>
+  <% end %>
+  <%= submit_tag "Filter", class: "btn btn-secondary" %>
+<% end %>
+
+<%= link_to 'All results', contents_path %>
