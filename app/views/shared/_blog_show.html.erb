@@ -1,50 +1,30 @@
 <div class="blog_show_container mb-4">
   <div class="pages-container">
-    <div class="blog_banner">
-      <%= cl_image_tag @content.blog_image.key %>
-    </div>
     <div class="blog_text">
       <h1><%= @content.title %></h1>
       <p><%= @content.description %></p>
-      <p><%= @content.user.username %></p>
+
+      <div class="username-info">
+        <h5><%= @content.user.username %></h5>
+        <!-- favourite heart -->
         <% if current_user&.favorited?(@content) %>
           <%= link_to unfavorite_content_path(@content) do%>
-          <i class="fas fa-heart"></i>
-      <% end %>
-      <% elsif current_user %>
-          <%= link_to favorite_content_path(@content) do %>
-          <i class="far fa-heart"></i>
-        <% end %>
-    <% end %>
-    <div class="comments mt-5">
-      <h3>Comments</h3>
-      <% if @content.comments.blank? %>
-        <p>Be the first to leave a comment :)</p>
-      <% else %>
-        <ul>
-          <% @content.comments.each do |comment| %>
-            <li>
-              <strong><%= comment.user.username %></strong>
-              <br>
-              <%= comment.text %>
-              <br>
-              <% if policy(comment).destroy? %>
-                <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-            </li>
+            <i class="fas fa-heart"></i>
           <% end %>
-        </ul>
-      <% end %>
-      <%= simple_form_for [@content, @comment] do |f| %>
-        <div class="form-inputs">
-          <%= f.input :text %>
-        </div>
-
-        <div class="form-actions btn">
-          <%= f.button :submit, class: "btn btn-secondary" %>
-        </div>
-      <% end %>
+        <% elsif current_user %>
+          <%= link_to favorite_content_path(@content) do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
+
+    <div class="blog_banner d-flex justify-content-center">
+      <%= cl_image_tag @content.blog_image.key %>
+    </div>
+  
+    <div class="blog-content mt-4">
+      <p><%= @content.text %></p>
     </div>
   </div>
 </div>

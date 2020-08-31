@@ -24,20 +24,23 @@
             </div>
           </fieldset>
 
-          <div class="photo_input hidden">
-            <%= f.input :blog_image, as: :file, id: "photo" %>
-            <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
-          </div>
-          <div class="video_input hidden">
-            <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
-          </div>
-        </fieldset>
 
-        <br>
+          <fieldset>
+            <div class="photo_input hidden">
+              <%= f.input :blog_image, as: :file, id: "photo" %>
+              <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
+            </div>
+
+            <div class="video_input hidden">
+              <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
+            </div>
+          </fieldset>
+
+          <br>
           <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
           <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
+          <%= f.submit class: "btn btn-secondary" %>
         </div>
-        <%= f.submit class: "btn-primary" %>
       <% end %>
   </div>
 </div>
