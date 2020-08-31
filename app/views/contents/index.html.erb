@@ -8,7 +8,7 @@
           class: "form-control",
           placeholder: "Please enter a style"
         %>
- 
+
         <%= submit_tag "Search", class: "btn btn-secondary" %>
       <% end %>
     </div>
@@ -17,6 +17,11 @@
   <div class="all-cards my-5">
     <% @contents.each do |content| %>
       <div class="card" id="content<%= content.id %>">
+        <% if content.user.profile_pic.attached? %>
+            <%= cl_image_tag content.user.profile_pic.key, class: "indexcards" %>
+        <% else %>
+            <%= image_tag "placeholder.jpg" %>
+        <% end %>
         <%= link_to content_path(content), class: "card-link" do %>
 
           <% if content.content_type == "Video" %>
@@ -24,7 +29,7 @@
           <% elsif content.content_type == "Blog post" && content.blog_image.attached? %>
             <%= cl_image_tag content.blog_image.key, class: "thumb" %>
           <% end %>
-          
+
           <div class="card-text">
             <h2><%= content.title.capitalize %></h2>
             <% if current_user&.favorited?(content) %>
@@ -38,9 +43,10 @@
             <% end %>
             <div class="bottom-row">
               <span><%= content.user.username %></span>
+
             </div>
           </div>
-          <!-- 
+          <!--
           <div class="tags">
             <strong><%= content.category %></strong> ||
             <%= content.style %>
