@@ -5,7 +5,10 @@ class ContentsController < ApplicationController
   def index
     @contents = policy_scope(Content)
     if params[:query].present?
-      sql_query = "title ILIKE :query OR category ILIKE :query OR style ILIKE :query OR description ILIKE :query"
+      sql_query = "title ILIKE :query
+                  OR category ILIKE :query
+                  OR style ILIKE :query
+                  OR description ILIKE :query"
       @contents = Content.where(sql_query, query:"%#{params[:query]}%")
     else
       @contents = Content.all

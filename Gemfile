@@ -65,3 +65,4 @@ gem 'acts_as_favoritor'
 
 gem 'turbolinks_render'
 gem 'pundit'
+gem 'pg_search', '~> 2.3.0'
