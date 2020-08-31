@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
-  def default_url_options
-  { host: ENV["www.thehealthyhairhub.com"] || "localhost:3000" }
-  end
-
   private
 
   def skip_pundit?
