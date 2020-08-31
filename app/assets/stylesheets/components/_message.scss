@@ -5,11 +5,13 @@
   }
 
   small {
-    color: $gray-500;
+    color: lightpink;
   }
 
   .avatar {
+    img {
     width: 40px;
     border-radius: 50%;
+    }
   }
 }
