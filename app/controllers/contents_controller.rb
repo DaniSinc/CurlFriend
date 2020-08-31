@@ -9,9 +9,15 @@ class ContentsController < ApplicationController
                   OR category ILIKE :query
                   OR style ILIKE :query
                   OR description ILIKE :query"
-      @contents = Content.where(sql_query, query:"%#{params[:query]}%")
-    else
-      @contents = Content.all
+      @contents = @contents.where(sql_query, query:"%#{params[:query]}%")
+    end
+    if params[:category].present?
+      @contents = @contents.where(category: params[:category])
+      @filter = params[:category]
+    end
+    if params[:style].present?
+      @contents = @contents.where(style: params[:style])
+      @filter = params[:style]
     end
   end
 
@@ -57,14 +63,21 @@ class ContentsController < ApplicationController
 
   def favorite
     current_user.favorite(@content)
-    redirect_to contents_path(anchor: "content-#{@content.id}")
+#     redirect_to contents_path(anchor: "content-#{@content.id}")
+    respond_to do |format|
+       format.html { redirect_to contents_path } 
+      format.js
+    end
   end
 
   def unfavorite
     current_user.unfavorite(@content)
-    redirect_to contents_path(anchor: "content-#{@content.id}")
+#     redirect_to contents_path(anchor: "content-#{@content.id}")
+    respond_to do |format|
+      format.html { redirect_to contents_path } 
+      format.js
   end
-
+end
   private
 
   def content_params

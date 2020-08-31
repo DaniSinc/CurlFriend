@@ -14,7 +14,11 @@
     </div>
   </div>
 
-  <div class="all-cards my-5"> 
+  <div class="filter-form">
+    <%= render 'shared/filter' %>
+  </div>
+
+  <div class="all-cards my-5">
     <% @contents.each do |content| %>
       <div class="card" id="content<%= content.id %>">
         <% if content.user.profile_pic.attached? %>
@@ -33,11 +37,11 @@
           <div class="card-text">
             <h2><%= content.user.username %> | <%= content.content_type %></h2>
               <% if current_user&.favorited?(content) %>
-                <%= link_to unfavorite_content_path(content), remote: true do%>
+                <%= link_to unfavorite_content_path(content), id:"unlike-button", remote: true do%>
                   <i class="fas fa-heart"></i>
                 <% end %>
               <% elsif current_user %>
-                  <%= link_to favorite_content_path(content), remote: true do %>
+                  <%= link_to favorite_content_path(content), id:"like-button", remote: true do %>
                     <i class="far fa-heart"></i>
                 <% end %>
               <% else %>
@@ -59,12 +63,8 @@
         <% end %>
       </div>
     <% end %>
+
+    <%= link_to "Back to Top", contents_path%>
   </div>
 </div>
 
-<!--
-    <p><%= link_to 'Dashboard', dashboard_path, class: "btn btn-dark" %></p>
-          <div class="card_avatar">
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-          </div>
--->
