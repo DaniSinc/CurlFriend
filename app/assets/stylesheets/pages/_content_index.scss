@@ -31,9 +31,9 @@ article {
 }
 
 h2 {
-  font-size: 20px;
-  margin: 0;
-  color: #333;
+  position: absolute;
+  margin-top: 10px;
+  bottom: 5px;
 }
 
 p {
@@ -55,13 +55,6 @@ span {
   background-position: center;
 }
 
-
-// .item-1 {
-//   @media (min-width: 60em) {
-//     grid-column: 1 / span 2;
-    
-//     h1 {
-//       font-size: 24px;
-//     }
-//   }
-// }
+#content1 {
+  flex-grow: 2;
+}
