@@ -1,10 +1,9 @@
 <div class="pages-container">
   <div class="video_show_container">
     <h1><%= @content.title %></h1>
-    <p><%= @content.user.username %></p>
-    <iframe width="560" height="315" src="<%= @content.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="text-and-favourite">
-      <p><%= @content.description%></p>
+
+    <div class="user">
+      <p><%= @content.user.username %></p>
       <% if current_user&.favorited?(@content) %>
         <%= link_to unfavorite_content_path(@content) do%>
         <i class="fas fa-heart"></i>
@@ -13,37 +12,16 @@
           <%= link_to favorite_content_path(@content) do %>
           <i class="far fa-heart"></i>
         <% end %>
-    <% end %>
-    </div>
-    <div class="comments mt-5">
-      <h3>Comments</h3>
-      <% if @content.comments.blank? %>
-        <p>Be the first to leave a comment :)</p>
-      <% else %>
-        <ul>
-          <% @content.comments.each do |comment| %>
-            <li>
-              <strong><%= comment.user.username %></strong>
-              <br>
-              <%= comment.text %>
-              <br>
-              <% if policy(comment).destroy? %>
-                <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <%= simple_form_for [@content, @comment] do |f| %>
-        <div class="form-inputs">
-          <%= f.input :text %>
-        </div>
-
-        <div class="form-actions btn">
-          <%= f.button :submit, class: "btn btn-secondary" %>
-        </div>
       <% end %>
     </div>
+  
+    <div class="video d-flex justify-content-center">
+      <iframe width="560" height="315" src="<%= @content.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="text mt-4">
+      <p><%= @content.description%></p>
+    </div>
+   
   </div>
 </div>
