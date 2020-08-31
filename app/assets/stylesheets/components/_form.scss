@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.choices {
+#styles {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -48,15 +48,17 @@
 }
 
 .style-options {
-  background: lightpink;
+  background-position: center;
+  background-size: cover;
   border: pink 1px solid;
   padding: 20px;
   border-radius: 5px;
   opacity: .4;
-  max-width: 80px;
+  width: 80px;
   // flex: 0 0 30%;
   text-align: center;
-  height: 60px;
+  height: 80px;
+  margin: 20px;
   &:hover {
     opacity: 1;
   }
@@ -65,7 +67,9 @@
     color: white;
     opacity: 1;
   }
+
 }
+
 
 
 #content_content_type_video, #content_content_type_blog_post {
