@@ -18,15 +18,15 @@ user_1 = User.new(
     password: "123456",
     username: "littlemissafro"
 )
-file = URI.open('https://images.unsplash.com/photo-1527628217451-b2414a1ee733?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+file = URI.open('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')
 user_1.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_1.save!
 
 user_2 = User.new(
-    email: "littlemissdreadlocks@gmail.com",
+    email: "littlemissdreads@gmail.com",
     password: "123456",
-    username: "littlemissdreadlocks")
-file = URI.open('https://images.unsplash.com/flagged/photo-1573740144655-bbb6e88fb18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
+    username: "littlemissdreads")
+file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 user_2.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_2.save!
 
@@ -34,7 +34,7 @@ user_3 = User.new(
     email: "littlemissweave@gmail.com",
     password: "123456",
     username: "littlemissweave")
-file = URI.open('https://images.unsplash.com/flagged/photo-1573740144655-bbb6e88fb18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
+file = URI.open('https://images.unsplash.com/photo-1561786527-999d27422f3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 user_3.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 
@@ -42,7 +42,7 @@ user_4 = User.new(
     email: "littlemissnatural@gmail.com",
     password: "123456",
     username: "littlemissnatural")
-file = URI.open('https://images.unsplash.com/flagged/photo-1573740144655-bbb6e88fb18a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
+file = URI.open('https://images.unsplash.com/photo-1523983254932-c7e6571c9d60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=519&q=80')
 user_4.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_4.save!
 
