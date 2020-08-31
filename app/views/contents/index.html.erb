@@ -27,13 +27,17 @@
           
           <div class="card-text">
             <h2><%= content.title.capitalize %></h2>
-            <% if current_user&.favorited?(content) %>
-              <%= link_to unfavorite_content_path(content) do%>
-                <i class="fas fa-heart"></i>
-              <% end %>
-            <% elsif current_user %>
-                <%= link_to favorite_content_path(content) do %>
-                <i class="far fa-heart"></i>
+              <% if current_user&.favorited?(content) %>
+                <%= link_to unfavorite_content_path(content), remote: true do%>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% elsif current_user %>
+                  <%= link_to favorite_content_path(content), remote: true do %>
+                    <i class="far fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path do %>
+                  <i class="far fa-heart"></i>
               <% end %>
             <% end %>
             <div class="bottom-row">

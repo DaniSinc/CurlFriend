@@ -1,10 +1,10 @@
 <div class="blog_show_container mb-4">
   <div class="pages-container">
     <div class="blog_banner">
+      <h1><%= @content.title %></h1>
       <%= cl_image_tag @content.blog_image.key %>
     </div>
     <div class="blog_text">
-      <h1><%= @content.title %></h1>
       <p><%= @content.description %></p>
       <p><%= @content.user.username %></p>
         <% if current_user&.favorited?(@content) %>
