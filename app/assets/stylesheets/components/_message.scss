@@ -1,0 +1,15 @@
+.author {
+  span {
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  small {
+    color: $gray-500;
+  }
+
+  .avatar {
+    width: 40px;
+    border-radius: 50%;
+  }
+}
