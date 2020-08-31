@@ -1,0 +1,6 @@
+1. Use display: flex on the container with all cards
+2. flex-wrap: wrap 
+3. align-items: center
+4. add logic to html if content_type = video
+5. add a class (JS)
+6. change to flex-grow: 2 (double the width)

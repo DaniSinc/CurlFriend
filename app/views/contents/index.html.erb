@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="all-cards my-5">
+  <div class="all-cards my-5"> 
     <% @contents.each do |content| %>
       <div class="card" id="content<%= content.id %>">
         <% if content.user.profile_pic.attached? %>
@@ -31,7 +31,7 @@
           <% end %>
 
           <div class="card-text">
-            <h2><%= content.title.capitalize %></h2>
+            <h2><%= content.user.username %> | <%= content.content_type %></h2>
               <% if current_user&.favorited?(content) %>
                 <%= link_to unfavorite_content_path(content), remote: true do%>
                   <i class="fas fa-heart"></i>
@@ -46,7 +46,7 @@
               <% end %>
             <% end %>
             <div class="bottom-row">
-              <span><%= content.user.username %></span>
+              <p><%= content.title.capitalize %></p>
 
             </div>
           </div>
