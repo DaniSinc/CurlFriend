@@ -1,67 +1,73 @@
-.form-login {
-  background: white;
-  padding: 10px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  .btn {
-    width: 100%;
-    margin-bottom: 20px
-  }
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.upload-form {
+  margin-top: 100px;
 }
 
-.search-form-control {
-  position: relative;
+.hidden {
+  display: none;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.form-check {
+  background: lightpink;
+  border: pink 1px solid;
+  padding: 20px;
   border-radius: 5px;
-}
-
-.search-form-control .btn {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
-}
-
-.search-form-control .form-control {
-  height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-}
-
-.search-form-control .form-control:focus {
-  border: 1px solid #ECABB6;
-  outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.loginrow {
-
-  }
-
-  .loginrow h2 {
-    text-align: center;
-  }
-
-.form-actions1 {
+  opacity: .4;
   text-align: center;
-}
-
-.imagecontainer {
-  img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: top;
+  height: 60px;
+  &:hover {
+    opacity: 1;
+  }
+  &.active {
+    background: pink;
+    color: white;
+    opacity: 1;
   }
 }
 
-.formcontainer {
-  padding-top: 70px;
-  height: auto;
+.content-type-label {
+  cursor: pointer;
+}
+
+.question-mark {
+  cursor: pointer;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.style-options {
+  background: lightpink;
+  border: pink 1px solid;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  max-width: 80px;
+  // flex: 0 0 30%;
+  text-align: center;
+  height: 60px;
+  &:hover {
+    opacity: 1;
+  }
+  &.active {
+    background: pink;
+    color: white;
+    opacity: 1;
+  }
+}
+
+
+#content_content_type_video, #content_content_type_blog_post {
+  display: none;
 }
