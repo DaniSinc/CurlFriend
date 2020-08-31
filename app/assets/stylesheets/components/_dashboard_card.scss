@@ -44,3 +44,34 @@
 .links {
   display: flex;
 }
+
+.pages-container {
+  position: absolute;
+  left: 40%;
+}
+
+.dashboard_container h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.dashboardcards {
+  margin-top: 5%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15%;
+  min-height: 5vh;
+  width: 95vw;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.card-category p {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+
