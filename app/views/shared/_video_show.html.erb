@@ -9,7 +9,7 @@
         <i class="fas fa-heart"></i>
       <% end %>
       <% elsif current_user %>
-          <%= link_to favorite_content_path(@content) do %>
+          <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
           <i class="far fa-heart"></i>
         <% end %>
       <% end %>

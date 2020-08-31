@@ -63,14 +63,21 @@ class ContentsController < ApplicationController
 
   def favorite
     current_user.favorite(@content)
-    redirect_to contents_path(anchor: "content-#{@content.id}")
+#     redirect_to contents_path(anchor: "content-#{@content.id}")
+    respond_to do |format|
+       format.html { redirect_to contents_path } 
+      format.js
+    end
   end
 
   def unfavorite
     current_user.unfavorite(@content)
-    redirect_to contents_path(anchor: "content-#{@content.id}")
+#     redirect_to contents_path(anchor: "content-#{@content.id}")
+    respond_to do |format|
+      format.html { redirect_to contents_path } 
+      format.js
   end
-
+end
   private
 
   def content_params

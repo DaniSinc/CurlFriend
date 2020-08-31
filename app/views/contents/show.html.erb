@@ -18,14 +18,14 @@
               <%= comment.text %>
               <br>
               <% if policy(comment).destroy? %>
-                <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
               <% end %>
             </li>
           <% end %>
         </ul>
       <% end %>
 
-      <%= simple_form_for [@content, @comment] do |f| %>
+      <%= simple_form_for [@content, @comment], remote: true do |f| %>
         <div class="form-inputs">
           <%= f.input :text %>
         </div>
