@@ -29,11 +29,14 @@
             <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
           </div>
           <div class="video_input hidden">
-            <%= f.input :video_url, placeholder: "Insert URL here", id: "video" %>
+            <p class="d-flex align-items-center mb-2 mt-2"> Video URL
+              <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal">
+                ?
+              </span>
+            </p>
+            <%= render 'shared/modal'%>
+            <%= f.input :video_url, placeholder: "Insert URL here", id: "video", label: false %>
           </div>
-        </fieldset>
-
-        <br>
           <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
           <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
         </div>

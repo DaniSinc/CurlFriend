@@ -23,11 +23,18 @@
   text-align: center;
   &:hover {
     opacity: 1;
-    cursor: pointer;
   }
   &.active {
   background: grey;
   color: white;
   opacity: 1;
   }
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+.question-mark {
+  cursor: pointer;
 }
