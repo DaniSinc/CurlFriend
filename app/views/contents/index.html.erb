@@ -22,7 +22,7 @@
     <%= render 'shared/filter' %>
   </div>
 
-  <div class="all-cards">
+  <div class="all-cards" >
     <% @contents.each do |content| %>
       <div class="card" id="content<%= content.id %>">
         <% if content.user.profile_pic.attached? %>
@@ -69,7 +69,7 @@
     <% end %>
 
   </div>
-  
+
 </div>
 
 <div class="bottom-link">
