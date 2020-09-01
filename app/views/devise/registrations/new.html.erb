@@ -1,15 +1,14 @@
 
-<div class="pages-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
+<div class="signup_container">
+    <div class="signup-photo-background">
+      <div class="signup-form">
 
         <h2>Sign up</h2>
 
 
-         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-                     
-        <div class="form-inputs">
+        <div class="signup-inputs">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>                 
           <%= f.input :email,
                       required: true,
                       autofocus: true,
@@ -22,15 +21,9 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :profile_pic, as: :file %>
+          <%= f.button :submit, "Sign up" %>
+          <% end %>
+          <%= render "devise/shared/links" %>
         </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
-          </div>
-        <% end %>
-
-        <%= render "devise/shared/links" %>
-
-      </div>
     </div>
 </div>
