@@ -1,25 +1,31 @@
 
 <div class="dashboard_container">
  <!--  <h1><%= current_user.username.capitalize %>'s Dashboard</h1> -->
-  <div class="dashboardcards">
+  <div class="profilecard">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       <p>Profile</p>
     </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      <p>Uploads</p>
+       <div class= "profilecardsticky">
+        <br>
+        <% if current_user.profile_pic.attached? %>
+                <%= cl_image_tag current_user.profile_pic.key, class: "profilecardimage"%>
+            <% else %>
+                <%= image_tag "placeholder.jpg" %>
+            <% end %>
+        <h1><%= current_user.username.upcase %></h1>
+      </div>
     </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      <p>Favourites</p>
-    </div>
-  </div>
 
   <div class="dashboard-pages-container">
 
   <div class="uploads_and_favourites row mt-3">
     <div class="my-uploads col-6">
-      <h2>My Uploads</h2>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      <p>Uploads</p>
+      </div>
+      <div class="dashboardlinks mt-3">
+        <p><%= link_to 'Upload new content', new_content_path, class: "btn btn-secondary" %></p>
+      </div>
         <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
         <p>No uploads yet</p>
@@ -61,7 +67,12 @@
     </div>
 
     <div class="my-favourites col-6">
-      <h2>My Favourites</h2>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+      <p>Favourites</p>
+      </div>
+      <br>
+      <br>
+      <br>
       <!-- Favourites iterator -->
       <% if current_user.favorites.empty?%>
         <p>No favourites yet</p>
@@ -102,8 +113,5 @@
 
   </div>
 
-  <div class="links mt-3">
-    <p><%= link_to 'Upload content', new_content_path, class: "btn btn-secondary" %></p>
-  </div>
 </div>
 
