@@ -33,12 +33,14 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     @content.user = current_user
+
+    @content.style = params[:content][:style].join(" ").lstrip
     authorize @content
     if @content.video_url.present?
       key = @content.video_url.split("/").last
       @content.video_url = "https://www.youtube.com/embed/#{key}"
     end
-    if @content.save
+    if @content.save!
       redirect_to content_path(@content)
     else
       render :new
@@ -81,7 +83,7 @@ end
   private
 
   def content_params
-    params.require(:content).permit(:title, :category, :description, :photo, :content_type, :blog_image, :video_url, :style, :text)
+    params.require(:content).permit(:title, :category, :description, :photo, :content_type, :blog_image, :video_url, :text)
   end
 
   def set_content

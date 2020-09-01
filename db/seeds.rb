@@ -18,7 +18,7 @@ user_1 = User.new(
     password: "123456",
     username: "littlemissafro"
 )
-file = URI.open('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')
+file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 user_1.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_1.save!
 
@@ -132,23 +132,28 @@ relaxed_video_1 = Content.new(
     Check out my last video: https://goo.gl/LCK2Uc",
     content_type: "Video",
     category: "Chemical treatment",
-    style: "Relaxed",
+    style: "Shaved",
     video_url: "https://www.youtube.com/embed/-vFmWIcVgss"
 )
 relaxed_video_1.save
 
-braids_blog = Content.new(
+wrap_blog = Content.new(
     user_id: user_1.id,
-    title: "How to Wash Box Braids",
-    description: "Lorem ipsum",
+    title: "11 Places to Find Your Next Head Wraps for Natural Hair!",
+    description: "We’ve pulled together some of the best places to find just the right head wrap for you!",
     content_type: "Blog post",
-    category: "Natural",
-    style: "Braids",
-    text: "Box braids give us the freedom to go up to a month or two without the worry of styling, but that doesn’t mean all care goes out of the window! Although you are wearing box braids, you still need to cleanse your hair – especially if you will be wearing them for the long term. This ensures that your scalp won’t become overloaded with buildup, gets itchy or becomes irritated. It also gives your hair much needed contact with good old H20. Here is how you can wash your hair with box braids if you are unsure of how this works:"
+    category: "Protective",
+    style: "Headscarves and Headwraps",
+    text: "1. The Wrap Life
+    Born in Brooklyn, The Wrap Life has grown from just a thought to a thriving brand since going live in 2014. In an effort to simply fill her own need for head wraps, creator Nnenna Stella started a business that now ships hand-printed designs to women across the globe! And thanks to the simple wrap tutorials right there on the site, you’ll always have a fun, new way to style your head wrap.
+    2. Fanmdjanm
+    I discovered this brand last year at an event in Harlem and fell in love.
+
+    Fanm djanm means “strong woman” in Haitian Kreyòl. Lifestyle blogger Paola Mathe (pictured) created the brand of vibrant head wraps as a way to celebrate strong women all over the world. The movement itself is meant to encourage women to be bold, be beautiful and know that each one of us is a fanm djanm in our own way."
 )
 file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'braids_blog.jpg'))
-braids_blog.blog_image.attach(io: file, filename: 'braids_blog.jpg', content_type: "image/jpg")
-braids_blog.save
+wrap_blog.blog_image.attach(io: file, filename: 'braids_blog.jpg', content_type: "image/jpg")
+wrap_blog.save
 
 growth_blog = Content.new(
     user_id: user_2.id,
@@ -199,3 +204,20 @@ Comment.create(content_id: 2, user_id: 2, text: ":)))")
 
 Comment.create(content_id: 3, user_id: 1, text: "So cute")
 Comment.create(content_id: 3, user_id: 2, text: "I love this")
+
+puts "Deleting all discussions..."
+Chatroom.destroy_all
+puts "Creating new discussions..."
+
+Chatroom.create(name:"Afro")
+Chatroom.create(name:"BantuKnots")
+Chatroom.create(name:"Dreadlocks")
+Chatroom.create(name:"Extensions")
+Chatroom.create(name:"FauxLocks")
+Chatroom.create(name:"HeadscarvesAndHeadwraps")
+Chatroom.create(name:"Jerry-curl")
+Chatroom.create(name:"Relaxed")
+Chatroom.create(name:"S-curl")
+Chatroom.create(name:"Plaits")
+Chatroom.create(name:"Perms")
+Chatroom.create(name:"Weaves")

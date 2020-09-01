@@ -13,7 +13,7 @@ class Content < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-  validates :style, presence: true, inclusion: { in: STYLES }
+  validates :style, presence: true
   validates :content_type, presence: :true, inclusion: { in: CONTENT_TYPES }
 
   def thumbnail_url
