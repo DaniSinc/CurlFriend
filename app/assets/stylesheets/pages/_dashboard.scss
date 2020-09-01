@@ -9,6 +9,8 @@
 
 .profilecardimage {
   width: 80%;
+  height: auto;
+  object-fit: cover;
   margin: auto;
   display: block;
   border-radius: 50%;
@@ -21,7 +23,9 @@
 
 #username {
   padding-top: 24px;
+  padding-bottom: 8px;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
+  border-bottom: black 1px solid;
 }

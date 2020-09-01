@@ -15,15 +15,16 @@
             <%= image_tag "placeholder.jpg" %>
         <% end %>
         <h3 id="username"><%= current_user.username.upcase %></h3>
+
+        <div class="dashboard-links mt-3">
+          <p><%= link_to 'Upload new content', new_content_path, class: "btn btn-secondary", id: "btn-upload" %></p>
+        </div>
       </div>
     </div>
 
     <div class="dash-col" id="my-uploads">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
         <p>Uploads</p>
-      </div>
-      <div class="dashboard-links">
-        <p><%= link_to 'Upload new content', new_content_path, class: "btn btn-secondary", id: "btn-upload" %></p>
       </div>
         <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
@@ -75,28 +76,27 @@
 
         <% current_user.favorites.each do |favorite| %>
 
-          <div class="card-product my-3">
+          <div class="card-product">
             <%= link_to content_path(favorite) do %>
 
+              <% if favorite.favoritable.content_type == "Video"%>
+                <img src=<%= favorite.favoritable.thumbnail_url%> >
+              <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
+                <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
+              <% end %>
 
-            <% if favorite.favoritable.content_type == "Video"%>
-              <img src=<%= favorite.favoritable.thumbnail_url%> >
-            <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
-              <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
-            <% end %>
+              <div class="card-product-infos">
+                <h4><%= favorite.favoritable.title %></h4>
+                <p><em>Uploaded by <strong> <%= favorite.favoritable.user.username %> </strong></em></p>
 
-            <div class="card-product-infos">
-              <h4><%= favorite.favoritable.title %></h4>
-              <p><em>Uploaded by <strong> <%= favorite.favoritable.user.username %> </strong></em></p>
-
-              <div class="links">
-                <p>
-                  <%= link_to unfavorite_content_path(favorite) do %>
-                    <i class="fas fa-heart" id="small-heart"></i>
-                  <% end %>
-                </p>
+                <div class="links">
+                  <p>
+                    <%= link_to unfavorite_content_path(favorite) do %>
+                      <i class="fas fa-heart" id="small-heart"></i>
+                    <% end %>
+                  </p>
+                </div>
               </div>
-            </div>
 
             <% end %>
           </div>
