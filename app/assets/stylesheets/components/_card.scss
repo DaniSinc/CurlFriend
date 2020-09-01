@@ -1,6 +1,8 @@
+// index page cards
 .all-cards {
-  margin: 0 auto;
-
+  right: 0;
+  max-width: 800px;
+  margin-left: 36px;
   display: grid;
 
   grid-template-columns: 1fr;
@@ -39,9 +41,9 @@
   }
 
   img {
-  object-fit: cover;
-  height: 140px;
-  width: 250px;
+    object-fit: cover;
+    height: 140px;
+    width: 250px;
   }
 
   .card-text {
