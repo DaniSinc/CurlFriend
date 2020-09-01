@@ -75,3 +75,25 @@
 #content_content_type_video, #content_content_type_blog_post {
   display: none;
 }
+
+ .form-inputs {
+  position: relative;
+  border-radius: 5px;
+}
+
+.form-inputs .btn {
+  position: absolute;
+  top: 45px;
+  right: 8px;
+}
+
+.form-inputs{
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.form-inputs {
+  position: relative;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
