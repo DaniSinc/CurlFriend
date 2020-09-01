@@ -1,6 +1,8 @@
 .blog_show_container {
   margin: auto;
   max-width: 1000px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .blog_banner{
@@ -11,10 +13,19 @@
   }
 }
 
+.blog-img{
+/*   position: relative; */
+}
+
 .fav-heart{
-  margin-left:470px;
+  margin-left: -60px;
+  margin-top: 10px;
 }
 
 .blog-description{
   margin-top:30px;
+}
+
+#blog-header{
+text-align:center;
 }

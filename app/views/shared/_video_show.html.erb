@@ -1,27 +1,36 @@
-<div class="pages-container">
-  <div class="video_show_container">
+<div class="video-show-container">
+
+  <div class="vid-header">
     <h1><%= @content.title %></h1>
+  </div>
 
-    <div class="user">
-      <p><%= @content.user.username %></p>
-      <% if current_user&.favorited?(@content) %>
-        <%= link_to unfavorite_content_path(@content) do%>
-        <i class="fas fa-heart"></i>
-      <% end %>
-      <% elsif current_user %>
-          <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
-    </div>
-  
-    <div class="video d-flex justify-content-center">
+  <div class="vid-content-container">
+    <div class="video">
       <iframe width="560" height="315" src="<%= @content.video_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="vid-user">
+        <div class="v-user-av">
+          <% if @content.user.profile_pic.attached? %>
+              <%= cl_image_tag @content.user.profile_pic.key, class: "avatar" %>
+          <% else %>
+              <%= image_tag "placeholder.jpg" %>
+          <% end %>
+          <p><%= @content.user.username %></p>
+        </div>
+        <% if current_user&.favorited?(@content) %>
+          <%= link_to unfavorite_content_path(@content) do%>
+          <i class="fas fa-heart"></i>
+        <% end %>
+        <% elsif current_user %>
+            <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
 
-    <div class="text mt-4">
+    <div class="vid-text">
       <p><%= @content.description%></p>
     </div>
-   
   </div>
+  
 </div>
