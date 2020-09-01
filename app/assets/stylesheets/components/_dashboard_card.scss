@@ -56,6 +56,9 @@
 #btn-upload {
   padding: 12px;
   border-radius: 5px;
+  background-color: #2A9D8F;
+  color: white;
+  margin-top: 5px;
 }
 
 .links {
@@ -64,15 +67,4 @@
 
 #small-heart {
   font-size: 24px;
-}
-
-.card-category {
-  border-radius: 10px 0px 10px 0px;
-}
-
-.card-category p {
-  font-size: 40px;
-  color: white;
-  font-weight: bold;
-  text-align: center;
 }
