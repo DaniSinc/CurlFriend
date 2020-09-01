@@ -33,10 +33,13 @@ import { displayVideo } from '../components/video_url';
 
 import { activeCheckboxes } from '../components/category_choice';
 
+import { styleCheckboxes } from '../components/style_choice';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   displayVideo();
   initChatroomCable();
   activeCheckboxes();
+  styleCheckboxes();
 });
