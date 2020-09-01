@@ -45,26 +45,28 @@
   display: flex;
 }
 
+.dashboard_container {
+  display: flex;
+}
+
 .dashboard-pages-container {
-  position: absolute;
-  left: 40%;
+  flex: 1;
+  margin-top: 5%;
 }
 
 .dashboard_container h1 {
   text-align: center;
   margin-top: 5%;
+  min-height: 5vh;
 }
 
-.dashboardcards {
-  margin-top: 5%;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15%;
-  min-height: 5vh;
-  width: 95vw;
-  margin-left: 30px;
-  margin-right: 30px;
+.profilecard {
+  margin-top: 6.15%;
+  margin-right: 20px;
+}
+
+.card-category {
+  border-radius: 10px 10px 10px 10px;
 }
 
 .card-category p {
@@ -72,6 +74,25 @@
   color: white;
   font-weight: bold;
   text-align: center;
+}
+
+.profilecardimage {
+  height: 350px;
+  width: 350px;
+  display: block;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+.profilecardsticky {
+  margin-top: 5%;
+  position: sticky;
+  top: 0px;
 }
 
 
