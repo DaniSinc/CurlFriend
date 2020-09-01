@@ -18,10 +18,17 @@
 }
 
 .nav-link {
+  font-weight: 500;
   color: #ECABB6 !important;
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .avatar {
   width: 35px;
   height: 35px;
+  &:hover {
+    cursor: pointer;
+  }
 }

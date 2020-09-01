@@ -2,7 +2,8 @@ class Content < ApplicationRecord
   url = /[-a-zA-Z0-9@:%_\+.~#?&\/\/=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)?/
   CATEGORIES = ["Natural", "Artificial", "Chemical treatment", "Protection"]
   STYLES = [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ]
-  
+  CONTENT_TYPE = [ "Video", "Blog post" ]
+
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :blog_image
