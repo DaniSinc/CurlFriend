@@ -23,13 +23,13 @@
 <!--
 <h4>Filter by content type</h4>
 <%= form_tag contents_path, method: :get do %>
-  <% Content::CONTENT_TYPE.each do |content_type| %>
+  <% Content::CONTENT_TYPES.each do |content_type| %>
     <div class="checkbox">
       <%= check_box_tag "content_type[]", content_type %>
       <%= content_type %>
     </div>
   <% end %>
-  <%= submit_tag "Filter", class: "btn btn-secondary" %>
+  <%= submit_tag "Filter", class: "btn btn-secondary filter-btn" %>
 <% end %>
 -->
 
