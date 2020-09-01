@@ -93,7 +93,10 @@
   position: relative;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+  padding-bottom: 10px;
 }
+
 
 .form-post {
   background: white;
@@ -141,4 +144,27 @@
   &.active {
     opacity: 1;
   }
+}
+
+
+
+.small-category-choice {
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.category-choices-index {
+  flex-wrap: wrap;
+}
+.vertical-choice {
+  display: flex;
+  flex: 0 0 33.333333%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-form-control {
+  margin-left: 20%;
 }
