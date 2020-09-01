@@ -5,36 +5,36 @@
     <%= render 'shared/blog_show' %>
   <% end %>
 
- <div class="comments mt-5">
-      <h3>Comments</h3>
+ <div class="comments mt-5 comment-card">
+      <h3 id="comments">Comments</h3>
       <% if @content.comments.blank? %>
         <p>Be the first to leave a comment :)</p>
       <% else %>
-        <ul>
           <% @content.comments.each do |comment| %>
-            <li>
-              <strong><%= comment.user.username %></strong>
-              <br>
-              <%= comment.text %>
-              <br>
-              <% if policy(comment).destroy? %>
-                <%= link_to 'Delete comment', content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+              <div class= "d-flex comment-box align-items-center mb-2">
+                <%= cl_image_tag @content.user.profile_pic.key, class: "comment-img" %>
+                <div class="d-block">
+                    <strong><%= comment.user.username %></strong>
+                  <% if policy(comment).destroy? %>
+                    <%= link_to content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+                  <% end %>
+                    <p class="m-0"><%= comment.text %></p>
+                </div>
+              </div>
+            <% end %>
       <% end %>
-
-      <%= simple_form_for [@content, @comment], remote: true do |f| %>
-        <div class="form-inputs">
-          <%= f.input :text %>
-        </div>
-        <div class="form-actions btn">
+       <div class="form-inputs">
+        <%= simple_form_for [@content, @comment], remote: true do |f| %>
+          <%= f.input :text, label: "Leave a comment" %>
+        <%# <div class="form-actions btn"> %>
           <%= f.button :submit, class: "btn btn-secondary" %>
-        </div>
-      <% end %>
+        <%#  </div> %>
+        <% end %>
+       </div> %>
 
-    </div>
+  </div>
   <!--
   <div class="links">
     <% if policy(@content).update? %>

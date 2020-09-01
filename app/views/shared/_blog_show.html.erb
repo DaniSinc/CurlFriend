@@ -3,29 +3,33 @@
 
     <div class="blog_text">
       <h1><%= @content.title %></h1>
-      <p><%= @content.description %></p>
-
-      <div class="username-info">
+      <div class="d-flex username-info align-items-center mb-2">
+       <%= cl_image_tag @content.user.profile_pic.key, class: "comment-img" %>
         <h5><%= @content.user.username %></h5>
+          <div class="fav-heart">
         <!-- favourite heart -->
-        <% if current_user&.favorited?(@content) %>
-          <%= link_to unfavorite_content_path(@content) do %>
-            <i class="fas fa-heart"></i>
+          <% if current_user&.favorited?(@content) %>
+            <%= link_to unfavorite_content_path(@content) do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% elsif current_user %>
+            <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
+              <i id="blog-like" class="far fa-heart"></i>
+            <% end %>
           <% end %>
-        <% elsif current_user %>
-          <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
+          </div>
       </div>
-    </div>
-
     <div class="blog_banner d-flex justify-content-center">
       <%= cl_image_tag @content.blog_image.key %>
     </div>
-  
+    <div class="blog-description">
+      <h3><%= @content.description %></h3>
+    </div>
+
+    </div>
+
     <div class="blog-content mt-4">
-      <p><%= @content.text %></p>
+      <p> <%= @content.text %> </p>
     </div>
   </div>
 </div>

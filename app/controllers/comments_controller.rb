@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "Thank you for commenting"
-      redirect_to content_path(@comment.content)
+      redirect_to content_path(@comment.content, anchor: "comments")
     else
       render 'contents/show'
     end
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to content_path(@comment.content)
+    redirect_to content_path(@comment.content, anchor: "comments")
   end
 
   private
