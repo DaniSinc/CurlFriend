@@ -1,6 +1,5 @@
 // Container for filter and cards
 .index-card-container {
-  min-height: 100%;
   margin: auto;
   display: flex;
 }
@@ -32,9 +31,6 @@
 // search bar styling
 .search-form {
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  width: 400px;
   margin: 40px auto;
 }
 
@@ -48,24 +44,10 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-article {
-  padding: 20px;
-  flex: 1;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 h5 {
   font-size: 14px;
-  margin-top: 10px;
   bottom: 5px;
-}
-
-p {
-  flex: 1;
-  line-height: 1.4;
+  position: absolute;
 }
 
 span {
@@ -73,7 +55,6 @@ span {
   font-weight: bold;
   color: #999;
   text-transform: uppercase;
-  margin: 2em 0 0 0;
 }
 
 .thumb {
@@ -81,6 +62,9 @@ span {
   background-position: center;
 }
 
-#content1 {
-  flex-grow: 2;
+// back to top link
+.bottom-link {
+  text-align: center;
+  margin: 24px;
+  border-top: pink 1px solid;
 }
