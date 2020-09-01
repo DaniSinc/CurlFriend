@@ -2,7 +2,8 @@
 .all-cards {
   right: 0;
   max-width: 800px;
-  margin-left: 36px;
+  max-height: 100px;
+  margin-left: 5%;
   display: grid;
 
   grid-template-columns: 1fr;
@@ -110,7 +111,7 @@ a {
   padding:1px;
   border:1px solid #021a40;
   margin: 10px;
-  
+
 }
 
 .comment-box{
