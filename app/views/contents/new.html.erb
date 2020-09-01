@@ -2,7 +2,7 @@
   <div class="upload-form">
     <h2> Teach A Style </h2>
     <form class="simple_form new_content" id="new_content" novalidate="novalidate" enctype="multipart/form-data" action="/contents" accept-charset="UTF-8" method="post">
-      <input type="hidden" name="authenticity_token" value="5lQCHyAMcl2n/i/u/S8sYTfQCNplAv7+fti3W5Z+wO+eDayDwScOxmu/pc23rwKOqtSY+K52lii34mNX/cDs5Q==">
+      <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>">
       <div class="form-group string required content_title">
         <input class="form-control string required" type="text" name="content[title]" id="content_title" placeholder = "Title">
       </div>
@@ -87,122 +87,23 @@
           <option value="Protection">Protection</option>
         </select>
       </div>
-      <div class="form-group select required content_style">
-        <select class="form-control select required" name="content[style]" id="content_style">
-          <option value="">Style</option>
-          <option value="Afro">Afro</option>
-          <option value="Bantu knots">Bantu knots</option>
-          <option value="Dreadlocks">Dreadlocks</option>
-          <option value="Extensions">Extensions</option>
-          <option value="Faux locks">Faux locks</option>
-          <option value="Headscarves and Headwraps">Headscarves and Headwraps</option>
-          <option value="Jerry-curl">Jerry-curl</option>
-          <option value="Relaxed">Relaxed</option>
-          <option value="S-curl">S-curl</option>
-          <option value="Plaits">Plaits</option>
-          <option value="Perms">Perms</option>
-          <option value="Weaves">Weaves</option>
-        </select>
+
+
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Categories</label>
+        <input type="hidden" name="content[style][]" value="">
+        <div class="category-choices">
+          <% Content::STYLES.each do |style| %>
+            <input type="checkbox" class="hidden" value="<%= style %>" name="content[style][]" id="post_category_ids_<%= style %>">
+            <label for="post_category_ids_<%= style %>" class="category-choice" style='background-image: url(<%=image_path "icons/#{style.downcase.gsub(' ', '_')}.jpg"%>)'>
+              <%= style %>
+            </label>
+          <% end %>
+        </div>
       </div>
-      <fieldset class="radio_buttons">
-        <fieldset class="form-group radio_buttons">
-          <div id="styles">
-            <input type="hidden" name="style" value="">
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/afro.png'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Afro
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/bantu.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Bantu Knots
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/dreadlocks.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Dreadlocks
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/extensions.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Extensions
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/fauxlocks.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Faux locks
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/headwrap.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Headwraps
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/jerrycurl.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Jerry curl
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/perm.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Perm
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/plaits.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Plaits
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/scurl.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              S-curl
-              </label>
-            </div>
-            <div class="style-options" style="background-image: url(<%=image_path 'icons/weave.jpg'%>)">
-              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
-              <label class="content-type-label" for="afro-label">
-              Weave
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </fieldset>
+
+      
       <input type="submit" name="commit" value="Upload" id="upload" data-disable-with="Create Content">
     </form>  
   </div>
 </div>
-<%# <%= simple_form_for(@content) do |f| %>
-  <%# <%= f.input :title %>
-  <%# <%= f.input :description %>
-  <%# <fieldset class="radio_buttons required content_content_type"> %>
-    <%# <div id="choices"> %>
-      <%# <%= f.input :content_type, collection: ["Blog post", "Video"], label: false,  as: :radio_buttons, wrapper: :vertical_collection_inline %>
-    <%# </div> %>
-  <%# </fieldset> %>
-  <%# <div class="photo_input hidden"> %>
-    <%# <%= f.input :blog_image, as: :file, id: "photo" %>
-    <%# <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
-  <%# </div> %>
-  <%# <div class="video_input hidden"> %>
-    <%# <p class="d-flex align-items-center mb-2 mt-2"> Video URL %>
-      <%# <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal"> %>
-        <%# ? %>
-      <%# </span> %>
-    <%# </p> %>
-    <%# <%= render 'shared/modal'%>
-    <%# <%= f.input :video_url, placeholder: "Insert URL here", id: "video", label: false %>
-  <%# </div> %>
-  <%# <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
-  <%# <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
-  <%# <%= f.submit class: "btn btn-secondary" %>
-<%# <% end %>

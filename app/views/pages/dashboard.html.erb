@@ -1,33 +1,38 @@
 
-<div class="dashboard_container">
- <!--  <h1><%= current_user.username.capitalize %>'s Dashboard</h1> -->
-  <div class="dashboardcards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <p>Profile</p>
+<div class="dashboard-container">
+
+  <div class="all-dash-col">
+
+    <div class="dash-col" id="profilecard">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <p>Profile</p>
+      </div>
+      <div class="profilecardsticky">
+        <br>
+        <% if current_user.profile_pic.attached? %>
+            <%= cl_image_tag current_user.profile_pic.key, class: "profilecardimage"%>
+        <% else %>
+            <%= image_tag "placeholder.jpg" %>
+        <% end %>
+        <h3 id="username"><%= current_user.username.upcase %></h3>
+
+        <div class="dashboard-links mt-3">
+          <p><%= link_to 'Upload new content', new_content_path, class: "btn btn-secondary", id: "btn-upload" %></p>
+        </div>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      <p>Uploads</p>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      <p>Favourites</p>
-    </div>
-  </div>
-
-  <div class="dashboard-pages-container">
-
-  <div class="uploads_and_favourites row mt-3">
-    <div class="my-uploads col-6">
-      <h2>My Uploads</h2>
+    <div class="dash-col" id="my-uploads">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+        <p>Uploads</p>
+      </div>
         <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
         <p>No uploads yet</p>
       <% else %>
-
         <% current_user.contents.each do |content| %>
 
-          <div class="card-product my-3">
+          <div class="card-product">
             <%= link_to content_path(content) do %>
 
               <% if content.content_type == "Video"%>
@@ -39,17 +44,17 @@
               <div class="card-product-infos">
                 <h4><%= content.title %></h4>
                 <p><em>Uploaded by <strong> you </strong></em></p>
-                  <div class="links">
-                    <p>
-                      <% if policy(content).update? %>
-                        <%= link_to 'Edit', edit_content_path(content) %>
-                      <% end %>
-                    </p>
-                    <p>
-                      <% if policy(content).destroy? %>
-                        <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
-                      <% end %>
-                    </p>
+                <div class="links">
+                  <p>
+                    <% if policy(content).update? %>
+                      <%= link_to 'Edit', edit_content_path(content) %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <% if policy(content).destroy? %>
+                      <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                  </p>
                 </div>
               </div>
 
@@ -60,8 +65,10 @@
       <% end %>
     </div>
 
-    <div class="my-favourites col-6">
-      <h2>My Favourites</h2>
+    <div class="dash-col" id="my-favourites">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+        <p>Favourites</p>
+      </div>
       <!-- Favourites iterator -->
       <% if current_user.favorites.empty?%>
         <p>No favourites yet</p>
@@ -69,28 +76,27 @@
 
         <% current_user.favorites.each do |favorite| %>
 
-          <div class="card-product my-3">
+          <div class="card-product">
             <%= link_to content_path(favorite) do %>
 
+              <% if favorite.favoritable.content_type == "Video"%>
+                <img src=<%= favorite.favoritable.thumbnail_url%> >
+              <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
+                <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
+              <% end %>
 
-            <% if favorite.favoritable.content_type == "Video"%>
-              <img src=<%= favorite.favoritable.thumbnail_url%> >
-            <% elsif favorite.favoritable.content_type == "Blog post" && favorite.favoritable.blog_image.attached?%>
-              <%= cl_image_tag favorite.favoritable.blog_image.key, width: 300 %>
-            <% end %>
+              <div class="card-product-infos">
+                <h4><%= favorite.favoritable.title %></h4>
+                <p><em>Uploaded by <strong> <%= favorite.favoritable.user.username %> </strong></em></p>
 
-             <div class="card-product-infos">
-              <h4><%= favorite.favoritable.title %></h4>
-              <p><em>Uploaded by <strong> <%= favorite.favoritable.user.username %> </strong></em></p>
-
-              <div class="links">
-                <p>
-                  <%= link_to unfavorite_content_path(favorite), id: "small-heart" do %>
-                    <i class="fas fa-heart"></i>
-                  <% end %>
-                </p>
+                <div class="links">
+                  <p>
+                    <%= link_to unfavorite_content_path(favorite) do %>
+                      <i class="fas fa-heart" id="small-heart"></i>
+                    <% end %>
+                  </p>
+                </div>
               </div>
-            </div>
 
             <% end %>
           </div>
@@ -102,8 +108,5 @@
 
   </div>
 
-  <div class="links mt-3">
-    <p><%= link_to 'Upload content', new_content_path, class: "btn btn-secondary" %></p>
-  </div>
 </div>
 

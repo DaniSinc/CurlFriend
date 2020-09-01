@@ -1,12 +1,24 @@
+.all-dash-col {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.dash-col {
+  width: 360px;
+  margin: 20px 8px;
+}
+
 .card-product {
   overflow: hidden;
+  width: 96%;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   transition: all .1s ease-in;
-  margin-top: 16px;
+  margin: 8px auto;
   position: relative;
   top: 0;
   &:hover {
@@ -22,7 +34,7 @@
 }
 
 .card-product h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
   color: black;
@@ -41,30 +53,21 @@
   padding: 16px;
 }
 
+#btn-upload {
+  padding: 12px;
+  border-radius: 5px;
+}
+
 .links {
   display: flex;
 }
 
-.dashboard-pages-container {
-  position: absolute;
-  left: 40%;
+#small-heart {
+  font-size: 24px;
 }
 
-.dashboard_container h1 {
-  text-align: center;
-  margin-top: 5%;
-}
-
-.dashboardcards {
-  margin-top: 5%;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15%;
-  min-height: 5vh;
-  width: 95vw;
-  margin-left: 30px;
-  margin-right: 30px;
+.card-category {
+  border-radius: 10px 0px 10px 0px;
 }
 
 .card-category p {
@@ -73,5 +76,3 @@
   font-weight: bold;
   text-align: center;
 }
-
-
