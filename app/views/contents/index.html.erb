@@ -55,7 +55,9 @@
               <% end %>
             <% end %>
             <div class="bottom-row">
+              <%= link_to content_path(content), class: "card-link" do %>
               <span><%= content.title.capitalize %></span>
+              <% end %>
             </div>
           </div>
           <!--
