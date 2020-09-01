@@ -1,31 +1,27 @@
-.dashboard_container {
-    margin: auto;
-    max-width: 95vw;
+.dashboard-container {
+    margin: 50px auto;
+    width: 90vw;
 }
 
-.my-uploads {
-    padding-left: 0;
-}
-
-.my-uploads {
-    padding-right: 0;
-}
-
-.profilecard {
-  width: 35%;
-}
-
-.dashboard-pages-container {
-  width: 65%
-}
-
-.dashboardlinks p {
+.dashboard-links p {
   text-align: center;
-  margin-bottom: 9.6%;
-  margin-top: 5%;
 }
 
-.profilecard h1 {
-  font-size: 30px;
+.profilecardimage {
+  width: 80%;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
 }
 
+// #profilecard {
+//   position: sticky;
+//   top: 0;
+// }
+
+#username {
+  padding-top: 24px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
