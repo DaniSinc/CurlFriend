@@ -1,49 +1,159 @@
-<div class="new_container">
-  <div class="pages-container">
-    <div class="form">
-      <h2> Teach A Style </h2>
-      <%= simple_form_for(@content) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <fieldset class="radio_buttons required content_content_type">
-          <%# <legend class="col-form-label">Content type <abbr title="required">*</abbr></legend> %>
-          <%# <div class="content-type-choices">
-          <div class="row"> %>
-          <div id="choices">
-            <%= f.input :content_type, collection: ["Blog post", "Video"], label: false,  as: :radio_buttons, wrapper: :vertical_collection_inline %>
-          </div>
-            <%# <div class="form-check" id="blog-post">
-              <input class="hidden" type="radio" id="content_content_type" >
-
-              <label class="collection_radio_buttons" for="content_content_type_" value="Blog post" name="content[content_type]">Blog post</label>
-            </div>
-            <div class="form-check" id="video">
-              <input class="hidden" type="radio" id="content_content_type" >
-              <label class="collection_radio_buttons" for="content_content_type_" value="Video" name="content[content_type]">Video</label>
-            </div> %>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="photo_input hidden">
-            <%= f.input :blog_image, as: :file, id: "photo" %>
-            <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
-          </div>
-          <div class="video_input hidden">
-            <p class="d-flex align-items-center mb-2 mt-2"> Video URL
-              <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal">
-                ?
-              </span>
-            </p>
-            <%= render 'shared/modal'%>
-            <%= f.input :video_url, placeholder: "Insert URL here", id: "video", label: false %>
-          </div>
-        </fieldset>
-
-        <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
-        <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
-        <%= f.submit class: "btn btn-secondary" %>
+<div class="pages-container">
+  <div class="upload-form">
+    <h2> Teach A Style </h2>
+    <form class="simple_form new_content" id="new_content" novalidate="novalidate" enctype="multipart/form-data" action="/contents" accept-charset="UTF-8" method="post">
+      <input type="hidden" name="authenticity_token" value="5lQCHyAMcl2n/i/u/S8sYTfQCNplAv7+fti3W5Z+wO+eDayDwScOxmu/pc23rwKOqtSY+K52lii34mNX/cDs5Q==">
+      <div class="form-group string required content_title">
+        <input class="form-control string required" type="text" name="content[title]" id="content_title" placeholder = "Title">
       </div>
-    <% end %>
+      <div class="form-group text required content_description">
+        <textarea class="form-control text required" name="content[description]" id="content_description" placeholder = "Description">
+        Description
+        </textarea>
+      </div>
+      <fieldset class="radio_buttons required content_content_type">
+        <div id="choices">
+          <fieldset class="form-group radio_buttons optional content_content_type">
+            <input type="hidden" name="content[content_type]" value="">
+            <div class="form-check form-check-inline">
+              <input class="content-type-input" type="radio" value="Blog post" name="content[content_type]" id="content_content_type_blog_post">
+              <label class="content-type-label" for="content_content_type_blog_post">
+              Blog post
+              <i class="fa fa-check"></i>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+            <input class="content-type-input" type="radio" value="Video" name="content[content_type]" id="content_content_type_video">
+              <label class="content-type-label" for="content_content_type_video">
+              Video
+              <i class="fa fa-check"></i>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="photo_input hidden">
+          <div class="form-group file optional content_blog_image">
+            <label class="file optional" for="content_blog_image"> 
+            Blog image
+            </label>
+            <input class="form-control-file file optional" type="file" name="content[blog_image]" id="content_blog_image">
+          </div>
+          <div class="form-group text optional content_text">
+            <label class="text optional" for="content_text">
+            Write your blog down here!
+            </label>
+            <textarea class="form-control text optional" cols="5" rows="8" name="content[text]" id="content_text">
+            </textarea>
+          </div>
+        </div>
+        <div class="video_input hidden">
+          <p class="d-flex align-items-center mb-2 mt-2"> 
+            Video URL
+            <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal">
+              ?
+            </span>
+          </p>
+          <div class="modal fade" id="embedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">How to find your YouTube link</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  The Healthy Hair Hub uses YouTube "watch" links to upload your content. 
+                  This can be found by clicking on the "share" button below your video, 
+                  and copying the url, as seen below.... 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="form-group url optional content_video_url">
+              <input class="form-control string url optional" placeholder="Insert URL here" type="url" name="content[video_url]" id="content_video_url">
+            </div>
+        </div>
+      </fieldset>
+      <div class="form-group select required content_category">
+        <select class="form-control select required" name="content[category]" id="content_category">
+          <option value="">Category</option>
+          <option value="Artificial">Artificial</option>
+          <option value="Chemical treatment">Chemical treatment</option>
+          <option value="Natural">Natural</option>
+          <option value="Protection">Protection</option>
+        </select>
+      </div>
+      <div class="form-group select required content_style">
+        <select class="form-control select required" name="content[style]" id="content_style">
+          <option value="">Style</option>
+          <option value="Afro">Afro</option>
+          <option value="Bantu knots">Bantu knots</option>
+          <option value="Dreadlocks">Dreadlocks</option>
+          <option value="Extensions">Extensions</option>
+          <option value="Faux locks">Faux locks</option>
+          <option value="Headscarves and Headwraps">Headscarves and Headwraps</option>
+          <option value="Jerry-curl">Jerry-curl</option>
+          <option value="Relaxed">Relaxed</option>
+          <option value="S-curl">S-curl</option>
+          <option value="Plaits">Plaits</option>
+          <option value="Perms">Perms</option>
+          <option value="Weaves">Weaves</option>
+        </select>
+      </div>
+      <fieldset class="radio_buttons">
+        <div id="styles">
+          <fieldset class="form-group radio_buttons">
+            <input type="hidden" name="style" value="">
+            <div class="style-options">
+              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
+              <label class="content-type-label" for="afro-label">
+              <img src="afro.jpg" alt="">
+              Afro
+              </label>
+            </div>
+            <div class="style-options">
+              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
+              <label class="content-type-label" for="afro-label">
+              Bantu Knots
+              </label>
+            </div>
+            <div class="style-options">
+              <input class="content-type-input hidden" type="radio" value="Blog post" name="style" id="afro-input">
+              <label class="content-type-label" for="afro-label">
+              Dreadlocks
+              </label>
+            </div>
+          </fieldset>
+      <input type="submit" name="commit" value="Upload" id="upload" data-disable-with="Create Content">
+    </form>  
   </div>
 </div>
+<%# <%= simple_form_for(@content) do |f| %>
+  <%# <%= f.input :title %>
+  <%# <%= f.input :description %>
+  <%# <fieldset class="radio_buttons required content_content_type"> %>
+    <%# <div id="choices"> %>
+      <%# <%= f.input :content_type, collection: ["Blog post", "Video"], label: false,  as: :radio_buttons, wrapper: :vertical_collection_inline %>
+    <%# </div> %>
+  <%# </fieldset> %>
+  <%# <div class="photo_input hidden"> %>
+    <%# <%= f.input :blog_image, as: :file, id: "photo" %>
+    <%# <%= f.input :text, :input_html => { :cols => 5, :rows => 8 } %>
+  <%# </div> %>
+  <%# <div class="video_input hidden"> %>
+    <%# <p class="d-flex align-items-center mb-2 mt-2"> Video URL %>
+      <%# <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal"> %>
+        <%# ? %>
+      <%# </span> %>
+    <%# </p> %>
+    <%# <%= render 'shared/modal'%>
+    <%# <%= f.input :video_url, placeholder: "Insert URL here", id: "video", label: false %>
+  <%# </div> %>
+  <%# <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
+  <%# <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "Relaxed", "S-curl","Plaits", "Perms", "Weaves" ] %>
+  <%# <%= f.submit class: "btn btn-secondary" %>
+<%# <% end %>
