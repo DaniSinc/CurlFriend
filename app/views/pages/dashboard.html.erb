@@ -46,12 +46,16 @@
                 <div class="links">
                   <p>
                     <% if policy(content).update? %>
-                      <%= link_to 'Edit', edit_content_path(content) %>
+                      <%= link_to edit_content_path(content) do %>
+                      <i class="far fa-edit dashboard-icon"></i>
+                      <% end %>
                     <% end %>
                   </p>
                   <p>
                     <% if policy(content).destroy? %>
-                      <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <%= link_to content, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="fas fa-trash dashboard-icon"></i>
+                      <% end%>
                     <% end %>
                   </p>
                 </div>
