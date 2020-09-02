@@ -25,6 +25,7 @@
 
 
 #username {
+  text-transform: uppercase;
   padding-top: 24px;
   padding-bottom: 8px;
   text-align: center;
@@ -45,6 +46,6 @@
 }
 
 #favourites-heading {
-  background-color:#F4A261;
+  background-color: $red;
   border-radius: 10px 0px 10px 0px;
 }

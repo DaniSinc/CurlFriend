@@ -1,7 +1,6 @@
 .navbar-lewagon {
   position: absolute;
   justify-content: space-between;
-  background-color: #F4A261;
   top: 0;
   left: 0;
   right: 0;
@@ -19,11 +18,11 @@
 
 .nav-links {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px;
   color: #264653;
   &:hover {
-    color: black;
+    color: $green;
   }
 }
 
