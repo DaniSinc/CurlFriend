@@ -186,3 +186,12 @@
   padding-left: 10px;
 
 }
+
+ #upload-btn {
+  padding: 5px;
+  border-radius: 2px;
+  background-color: $orange;
+  &:hover {
+    background-color: $orange;
+  }
+ }
