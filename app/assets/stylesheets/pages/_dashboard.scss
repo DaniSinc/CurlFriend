@@ -1,5 +1,5 @@
 .dashboard-container {
-    margin: 50px auto;
+    margin: auto;
     width: 90vw;
 }
 
@@ -54,4 +54,7 @@
   font-size: 20px;
   padding-right: 10px;
   color: $orange;
+  &:hover {
+    color: $red;
+  }
 }
