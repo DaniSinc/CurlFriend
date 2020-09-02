@@ -134,6 +134,7 @@
   border-radius: 5px;
   opacity: .4;
   width: 80px;
+  position: relative;
   // flex: 0 0 30%;
   text-align: center;
   height: 80px;
@@ -146,6 +147,11 @@
   }
 }
 
+.label-text {
+  position: absolute;
+  bottom: -40px;
+  right: -7px;
+}
 
 
 .small-category-choice {
