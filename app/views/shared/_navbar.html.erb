@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-lewagon">
+<div class="height-nav navbar navbar-expand-sm navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "/assets/THHH-Logo-White.png" %>
   <% end %>
@@ -17,7 +17,7 @@
         <li class="nav-item">
           <%= link_to 'DASHBOARD', dashboard_path, class: "nav-links" %>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown pl-2">
           <% if current_user.profile_pic.attached? %>
 
            <%= cl_image_tag current_user.profile_pic.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -37,4 +37,3 @@
     </ul>
   </div>
 </div>
-

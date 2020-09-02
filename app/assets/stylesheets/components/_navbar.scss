@@ -1,4 +1,5 @@
-.navbar {
+.height-nav {
+  min-height: 152px;
 }
 
 .navbar-lewagon {
@@ -12,13 +13,13 @@
   z-index: 1000;
 }
 
-.navbar-nav {
-  margin-bottom: 40%;
-}
-
 .navbar-brand {
   text-align: center;
   margin-left: 47%;
+}
+
+.navbar-nav {
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -46,4 +47,8 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.up {
+  margin-bottom: 10px;
 }
