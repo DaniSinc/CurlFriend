@@ -19,11 +19,11 @@
         
         <% if current_user&.favorited?(@content) %>
           <%= link_to unfavorite_content_path(@content) do %>
-            <i id="blog-like" class="fas fa-heart"></i>
+            <i class="fas fa-heart" id="video-like"></i>
           <% end %>
         <% elsif current_user %>
           <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
-            <i id="blog-like" class="far fa-heart"></i>
+            <i class="far fa-heart" id="video-like"></i>
           <% end %>
         <% end %>
       </div>

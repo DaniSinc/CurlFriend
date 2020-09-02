@@ -14,7 +14,7 @@
   margin: 20px 0;
 }
 
-.form-check {
+#content-new-check {
   background: lightpink;
   border: pink 1px solid;
   padding: 20px;
@@ -78,7 +78,7 @@
   border-radius: 5px;
 }
 
-.form-inputs .btn {
+.form-inputs #form-input-btn {
   position: absolute;
   top: 45px;
   right: 8px;
@@ -111,7 +111,7 @@
     margin-bottom: 50px;
     margin-top: 0px;
   }
-  .btn {
+  #form-post-btn {
     width: 100%;
     padding: 10px;
     font-weight: bold;

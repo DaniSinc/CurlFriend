@@ -14,8 +14,7 @@
         <% else %>
             <%= image_tag "placeholder.jpg" %>
         <% end %>
-        <h3 id="username"><%= current_user.username.upcase %></h3>
-
+        <h3 id="username"><%= current_user.username %></h3>
         <div class="dashboard-links mt-5">
           <p><%= link_to 'Upload new content', new_content_path, id: "btn-upload" %></p>
         </div>
