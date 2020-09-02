@@ -35,6 +35,8 @@ import { activeCheckboxes } from '../components/category_choice';
 
 import { styleCheckboxes } from '../components/style_choice';
 
+import { activeFormCheckboxes } from '../components/form_category_choice';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -42,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   activeCheckboxes();
   styleCheckboxes();
+  activeFormCheckboxes();
 });

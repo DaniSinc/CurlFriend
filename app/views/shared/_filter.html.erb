@@ -1,48 +1,46 @@
-<h4>Filter by category</h4>
-<%= form_tag contents_path, method: :get do %>
-  <% Content::CATEGORIES.each do |category| %>
-    <div class="checkbox">
-      <%= check_box_tag "category[]", category %>
-      <%= category %>
-    </div>
- <!--    <fieldset class="radio_buttons required content_content_type">
+<%#= form_tag contents_path, method: :get do %>
+  <%# <% Content::CATEGORIES.each do |category| %>
+    <%# <div class="checkbox"> %>
+      <%# <%= check_box_tag "category[]", category %>
+      <%# <%= category %>
+    <%# </div> %>
+  <%# <% end %>
+  <%# <%= submit_tag "Filter", class: "btn btn-secondary filter-btn" %>
+<%# <% end %>
+
+    <h4>Filter by category</h4>
+      <fieldset class="radio_buttons required content_content_type">
         <div id="category">
           <fieldset class="form-group radio_buttons optional content_content_type">
             <input type="hidden" name="category[]" value="">
-            <div class="form-check form-check-inline">
-              <input class="content-type-input" type="radio" value="Natural" name="category[]">
+            <div class="form-check2 form-check-inline">
+              <input class="content-type-input hidden" type="radio" value="Natural" name="category[]">
               <label class="content-type-label">
               Natural
-              <i class="fa fa-check"></i>
               </label>
             </div>
-            <div class="form-check form-check-inline">
-            <input class="content-type-input" type="radio" value="Artificial" name="category[]">
+            <div class="form-check2 form-check-inline">
+              <input class="content-type-input hidden" type="radio" value="Artificial" name="category[]">
               <label class="content-type-label">
               Artifical
-              <i class="fa fa-check"></i>
               </label>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="content-type-input" type="radio" value="Chemical Treatment" name="category[]">
+            <div class="form-check2 form-check-inline">
+              <input class="content-type-input hidden" type="radio" value="Chemical Treatment" name="category[]">
               <label class="content-type-label">
               Chemical Treatment
-              <i class="fa fa-check"></i>
               </label>
             </div>
-            <div class="form-check form-check-inline">
-            <input class="content-type-input" type="radio" value="Protection" name="category[]">
+            <div class="form-check2 form-check-inline">
+            <input class="content-type-input hidden" type="radio" value="Protection" name="category[]">
               <label class="content-type-label">
               Protection
-              <i class="fa fa-check"></i>
               </label>
             </div>
           </fieldset>
-        </div> -->
+        </div>
+      </fieldset>
 
-  <% end %>
-  <%= submit_tag "Filter", class: "btn btn-secondary filter-btn" %>
-<% end %>
 
 <h4>Filter by style</h4>
 <%= form_tag contents_path, method: :get do %>
