@@ -142,7 +142,7 @@ wrap_blog = Content.new(
     title: "11 Places to Find Your Next Head Wraps for Natural Hair!",
     description: "We’ve pulled together some of the best places to find just the right head wrap for you!",
     content_type: "Blog post",
-    category: "Protective",
+    category: "Protection",
     style: "Headscarves and Headwraps",
     text: "1. The Wrap Life
     Born in Brooklyn, The Wrap Life has grown from just a thought to a thriving brand since going live in 2014. In an effort to simply fill her own need for head wraps, creator Nnenna Stella started a business that now ships hand-printed designs to women across the globe! And thanks to the simple wrap tutorials right there on the site, you’ll always have a fun, new way to style your head wrap.
@@ -153,7 +153,7 @@ wrap_blog = Content.new(
 )
 file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'braids_blog.jpg'))
 wrap_blog.blog_image.attach(io: file, filename: 'braids_blog.jpg', content_type: "image/jpg")
-wrap_blog.save
+wrap_blog.save!
 
 growth_blog = Content.new(
     user_id: user_2.id,
@@ -161,6 +161,7 @@ growth_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
+    style: "Afro",
     text: "By now I am sure you have heard a thousand times over about the benefits of protective styling. Sometimes you just want your hair to be free!
 
     Yes, protective styles are definitely effective, but you can retain hair length with a low manipulation regimen, too.
@@ -169,7 +170,7 @@ growth_blog = Content.new(
 )
 file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'growth_blog.jpg'))
 growth_blog.blog_image.attach(io: file, filename: 'growth_blog.jpg', content_type: "image/jpg")
-growth_blog.save
+growth_blog.save!
 
 half_up_blog = Content.new(
     user_id: user_3.id,
@@ -177,6 +178,7 @@ half_up_blog = Content.new(
     description: "Lorem ipsum",
     content_type: "Blog post",
     category: "Natural",
+    style: "Afro",
     text: "We all have those days where we need a little variety and versatility added to our favorite natural hairstyle.
 
     If you frequent my site, Natural Hair Rules.com, you know that my favorite natural hair style is the Twist Out. It’s easy and works for any length of hair.
@@ -189,7 +191,7 @@ half_up_blog = Content.new(
 )
 file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'half_up_blog.jpg'))
 half_up_blog.blog_image.attach(io: file, filename: 'half_up_blog.jpg', content_type: "image/jpg")
-half_up_blog.save
+half_up_blog.save!
 
 puts "Deleting all comments..."
 Comment.destroy_all
