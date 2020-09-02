@@ -25,7 +25,7 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :profile_pic, as: :file %>
-          <%= f.button :submit, "Sign up", class: "btn btn-secondary" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-secondary", id: "login-btn" %>
           <% end %>
           <%= render "devise/shared/links" %>
         </div>
