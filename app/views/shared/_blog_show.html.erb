@@ -15,7 +15,7 @@
           <!-- favourite heart -->
           <% if current_user&.favorited?(@content) %>
             <%= link_to unfavorite_content_path(@content) do %>
-              <i class="fas fa-heart"></i>
+              <i id="blog-like" class="fas fa-heart"></i>
             <% end %>
           <% elsif current_user %>
             <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
