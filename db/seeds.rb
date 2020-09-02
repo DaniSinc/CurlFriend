@@ -18,7 +18,7 @@ user_1 = User.new(
     password: "123456",
     username: "littlemissafro"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1561786527-999d27422f3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_1.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_1.save!
 
@@ -26,7 +26,7 @@ user_2 = User.new(
     email: "littlemissdreads@gmail.com",
     password: "123456",
     username: "littlemissdreads")
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1523983254932-c7e6571c9d60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=519&q=80')
 user_2.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_2.save!
 
@@ -34,7 +34,7 @@ user_3 = User.new(
     email: "littlemissweave@gmail.com",
     password: "123456",
     username: "littlemissweave")
-file = URI.open('https://images.unsplash.com/photo-1561786527-999d27422f3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_3.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 
@@ -42,7 +42,7 @@ user_4 = User.new(
     email: "littlemissnatural@gmail.com",
     password: "123456",
     username: "littlemissnatural")
-file = URI.open('https://images.unsplash.com/photo-1523983254932-c7e6571c9d60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=519&q=80')
+file = URI.open('https://images.unsplash.com/photo-1558622567-2adb5927265d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_4.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_4.save!
 
@@ -199,7 +199,7 @@ user_am = User.new(
     password: "123456",
     username: "Adanna Madueke"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1573617868564-673610c60d5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=528&q=80')
 user_am.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_am.save!
 
@@ -243,7 +243,7 @@ user_ls = User.new(
     password: "123456",
     username: "Latonya Staubs"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1553226141-1b4e9f1ccd62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_ls.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_ls.save!
 
@@ -291,7 +291,7 @@ user_iu = User.new(
     password: "123456",
     username: "indeeuniverse"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1581031784499-049b37b3cee0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=463&q=80')
 user_iu.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_iu.save!
 
@@ -318,7 +318,7 @@ user_ep = User.new(
     password: "123456",
     username: "Enly10me Plz"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1597004897768-c503466472cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_ep.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_ep.save!
 
@@ -339,7 +339,7 @@ user_jgs = User.new(
     password: "123456",
     username: "JuGalaxSea"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1563076767-5cda445a4f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_jgs.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_jgs.save!
 
@@ -362,7 +362,7 @@ user_sr = User.new(
     password: "123456",
     username: "Slim Reshae"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1568419141482-eccdc7b62188?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_sr.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_sr.save!
 
@@ -389,7 +389,7 @@ user_mn = User.new(
     password: "123456",
     username: "MNHE"
 )
-file = URI.open('https://images.unsplash.com/flagged/photo-1580820258381-20c91a156841?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
+file = URI.open('https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 user_mn.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_mn.save!
 
