@@ -1,9 +1,33 @@
-.blog_show_container {
-  margin: auto;
+.blog-show-container {
+  margin: 25px auto;
   max-width: 1000px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 25px;
+  padding: 0 10px;
+  background-color: white;
+  border-top: $green 8px solid;
+  padding-bottom: 40px;
+}
+
+.blog-content {
+  width: 800px;
+  margin: auto;
+}
+
+#blog-header{
+  text-align:center;
+  padding: 20px 0;
+  h2 {
+    font-size: 32px;
+  }
+}
+
+.username-info {
+  h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
 }
 
 .blog_banner{
@@ -14,8 +38,15 @@
   }
 }
 
-.blog-img{
-/*   position: relative; */
+.blog-description{
+  margin: 30px 0;
+  border-bottom: $green 2px solid;
+}
+
+.blog-text {
+  background-color: #ECECEC;
+  border-radius: 10px 0 10px 0;
+  padding: 20px;
 }
 
 .fav-heart{
@@ -23,15 +54,7 @@
   margin-top: 5px;
 }
 
-.blog-description{
-  margin-top:30px;
-}
-
-#blog-header{
-text-align:center;
-}
-
 #blog-like{
   font-size:50px;
-  text-shadow: 2px 1px 2px #423b3b; 
+  text-shadow: 2px 1px 2px grey;
 }
