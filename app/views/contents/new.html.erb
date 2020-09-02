@@ -15,16 +15,14 @@
             <input type="hidden" name="content[content_type]" value="">
             <div class="form-check form-check-inline" id="content-new-check">
               <input class="content-type-input" type="radio" value="Blog post" name="content[content_type]" id="content_content_type_blog_post">
-              <label class="content-type-label" for="content_content_type_blog_post">
+              <label class="content-type-label mb-0" for="content_content_type_blog_post">
               Blog post
-              <i class="fa fa-check"></i>
               </label>
             </div>
             <div class="form-check form-check-inline" id="content-new-check">
             <input class="content-type-input" type="radio" value="Video" name="content[content_type]" id="content_content_type_video">
-              <label class="content-type-label" for="content_content_type_video">
+              <label class="content-type-label mb-0" for="content_content_type_video">
               Video
-              <i class="fa fa-check"></i>
               </label>
             </div>
           </fieldset>
@@ -87,7 +85,7 @@
 
 
       <div class="form-group">
-        <label class="control-label check_boxes optional">Categories</label>
+        <label class="control-label check_boxes optional">Styles</label>
         <input type="hidden" name="content[style][]" value="">
         <div class="category-choices">
           <% Content::STYLES.each do |style| %>
