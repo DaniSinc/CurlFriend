@@ -37,7 +37,7 @@
     <% end %>
     <%= render 'shared/flashes' %>
     </div>
-    <div class="body-container2">
+    <div class="<%= 'body-container2' unless params[:controller] == 'pages' && params[:action] == 'home' %>">
     <%= yield %>
     </div>
     <% unless @hide_footer %>
