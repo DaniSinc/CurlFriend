@@ -1,16 +1,15 @@
 .upload-form-image-background {
-  margin-top: 60px;
   background:asset-url('index/left2.jpg') no-repeat;
   background-size: cover;
-  max-height:100vh;
   display: flex;
   justify-content: flex-end; 
 }
 
 .upload-form {
-  width: 50%;
-  max-height: 100vh;
-  background: white;
-  opacity: 0.9;
-  padding: 20px;
+    width: 50%;
+    background: white;
+    opacity: 0.98;
+    padding: 20px;
+    max-height:100vh;
+    overflow: scroll;
 }

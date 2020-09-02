@@ -5,13 +5,11 @@
   position: absolute;
   justify-content: space-between;
   background-color: #264653;
-
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1000;
-  opacity: 90%;
 }
 
 .navbar-nav {
@@ -32,14 +30,13 @@
 }
 
 .nav-links {
-  font-weight: 500;
-  font-size: 16px;
-
+  font-weight: 600;
+  font-size: 18px;
   padding: 10px;
-  color: #F4A261;
-  margin-bottom: 50%;
+  color: #E76F51;
+  margin-top: 100%;
   &:hover {
-    color: $green;
+    color: $black;
   }
 }
 

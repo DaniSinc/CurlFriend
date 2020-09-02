@@ -1,6 +1,4 @@
-<div class="blog_show_container mb-4">
-  <div class="pages-container">
-
+<div class="blog-show-container">
     <div class="blog_text">
       <div id="blog-header">
         <h1><%= @content.title %></h1>
@@ -30,11 +28,14 @@
       <div class="blog-description">
         <h3><%= @content.description %></h3>
       </div>
-
+    </div>
+    <div class="blog-description">
+      <h3><%= @content.description %></h3>
     </div>
 
-    <div class="blog-content mt-4">
+    <div class="blog-text">
       <p> <%= @content.text %> </p>
     </div>
   </div>
+
 </div>
