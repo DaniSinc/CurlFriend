@@ -15,7 +15,15 @@
         Natural
       </label>
     </div> -->
-
+<form>
+    <ul class="ks-cboxtags">
+    <li><input type="checkbox" id="checkboxOne" name="category[]" id="category_" value="Natural"><label for="checkboxOne">Natural</label></li>
+    <li><input type="checkbox" id="checkboxTwo" name="category[]" id="category_" value="Artificial"><label for="checkboxTwo">Artificial</label></li>
+    <li><input type="checkbox" id="checkboxThree" name="category[]" id="category_" value="Chemical Treatment"><label for="checkboxThree">Chemical Treatment</label></li>
+    <li><input type="checkbox" id="checkboxFour" name="category[]" id="category_" value="Protection"><label for="checkboxFour">Protection</label></li>
+  </ul>
+<!-- </form>
+<form>
     <div class="checkbox">
       <input type="checkbox" name="category[]" id="category_" value="Natural">
       Natural
@@ -31,9 +39,8 @@
     <div class="checkbox">
       <input type="checkbox" name="category[]" id="category_" value="Protection">
       Protection
-    </div>
+    </div> -->
   <input type="submit" name="commit" value="Filter" class="btn btn-secondary filter-btn" data-disable-with="Filter">
-  <br>
 </form>
 
  <!--      <%= form_tag contents_path, method: :get do %>
