@@ -7,8 +7,37 @@
   <%# <% end %>
   <%# <%= submit_tag "Filter", class: "btn btn-secondary filter-btn" %>
 <%# <% end %>
+<!--
+<form action="/contents" accept-charset="UTF-8" method="get">
+    <div class="form-check2 form-check-inline checkbox">
+      <input type="checkbox" name="category[]" id="category_" value="Natural" class="content-type-input hidden">
+      <label class="content-type-label">
+        Natural
+      </label>
+    </div> -->
 
-    <h4>Filter by category</h4>
+    <div class="checkbox">
+      <input type="checkbox" name="category[]" id="category_" value="Natural">
+      Natural
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="category[]" id="category_" value="Artificial">
+      Artificial
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="category[]" id="category_" value="Chemical treatment">
+      Chemical treatment
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="category[]" id="category_" value="Protection">
+      Protection
+    </div>
+  <input type="submit" name="commit" value="Filter" class="btn btn-secondary filter-btn" data-disable-with="Filter">
+  <br>
+</form>
+
+ <!--      <%= form_tag contents_path, method: :get do %>
+      <h4>Filter by category</h4>
       <fieldset class="radio_buttons required content_content_type">
         <div id="category">
           <fieldset class="form-group radio_buttons optional content_content_type">
@@ -40,8 +69,10 @@
           </fieldset>
         </div>
       </fieldset>
-
-
+      <%= submit_tag "Filter", class: "btn btn-secondary filter-btn" %>
+    <% end %>
+ -->
+<br>
 <h4>Filter by style</h4>
 <%= form_tag contents_path, method: :get do %>
    <div class="category-choices-index">
