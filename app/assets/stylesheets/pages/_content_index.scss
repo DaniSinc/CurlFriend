@@ -66,6 +66,15 @@
   }
 }
 
+.vertical-choice p {
+  position: relative;
+    top: 20px;
+    right: 25px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 20%;
+    font-weight: 500;
+}
 // search bar styling
 .search-form {
   position: relative;
