@@ -123,6 +123,8 @@ span {
 }
 
 ul.ks-cboxtags {
+    display: flex;
+    flex-flow: column;
     list-style: none;
     padding: 20px;
 }
