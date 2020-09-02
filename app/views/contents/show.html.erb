@@ -24,14 +24,15 @@
           </div>
         </div>
       <% end %>
-       <div class="form-inputs">
-        <%= simple_form_for [@content, @comment], remote: true do |f| %>
-          <%= f.input :text, label: "Leave a comment" %>
-        <%# <div class="form-actions btn"> %>
-          <%= f.button :submit, class: "btn btn-secondary" %>
-        <%#  </div> %>
-        <% end %>
-       </div>
+    <% end %>
+    <div class="form-inputs">
+      <%= simple_form_for [@content, @comment], remote: true do |f| %>
+        <%= f.input :text, label: "Leave a comment" %>
+      <%# <div class="form-actions btn"> %>
+        <%= f.button :submit, class: "btn btn-secondary" %>
+      <%#  </div> %>
+      <% end %>
+    </div>
   </div>
   <!--
   <div class="links">
