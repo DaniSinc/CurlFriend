@@ -1,17 +1,32 @@
-<h1>#<%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <div class="author">
-        <span class="avatar"><%= cl_image_tag message.user.profile_pic.key %></span>
-        <span><%= message.user.username %></span>
-        <small><%= message.created_at.strftime("%a %b %e") %></small>
-      </div>
-      <p class="ml-5 pl-2"><%= message.content %></p>
-    </div>
-  <% end %>
-</div>
+<div class="chat-container">
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Comment on ##{@chatroom.name}" %>
-<% end %>
+  <div class="forums">
+    <h4>Forums</h4>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to "##{chatroom.name}", chatroom_path(chatroom), id: "forum-name" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="chatroom">
+    <h1>#<%= @chatroom.name %></h1>
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <div class="message-container" id="message-<%= message.id %>">
+          <div class="author">
+            <span class="avatar"><%= cl_image_tag message.user.profile_pic.key %></span>
+            <span><%= message.user.username %></span>
+            <small id="orange"><%= message.created_at.strftime("%a %b %e") %></small>
+          </div>
+          <p class="ml-5 pl-2"><%= message.content %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Comment on ##{@chatroom.name}" %>
+    <% end %>
+  </div>
+
+</div>

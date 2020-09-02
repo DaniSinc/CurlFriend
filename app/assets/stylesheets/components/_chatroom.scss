@@ -1,6 +1,39 @@
+.chat-container {
+  display: flex;
+  margin-top: 150px;
+}
+
+.forums {
+  width: 22%;
+  left: 0;
+  background-color: $red;
+  color: whitesmoke;
+  padding: 20px;
+  h4 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  ul {
+    border-top: whitesmoke 1px solid;
+    border-bottom: whitesmoke 1px solid;
+    list-style: none;
+    padding: 20px 0;
+  }
+  li {
+    &:hover {
+      background-color: $orange;
+    }
+  }
+}
+
+#forum-name {
+  color: whitesmoke;
+}
+
 .chatroom {
+  width: 78%;
   background: white;
-  height: calc(100vh - 66px);
+  height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,7 +41,7 @@
 
   h1 {
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid lightpink;
+    border-bottom: 1px solid $orange;
     margin-bottom: 0;
   }
 }
@@ -17,14 +50,18 @@
   padding: 0 1rem;
   padding-top: 1rem;
   overflow: scroll;
-  max-height: calc(100vh - 66px - 65px - 71px);
+  height: calc(100vh - 66px - 65px - 71px);
 }
 
 #new_message {
   padding: 1rem;
-  border-top: 1px solid lightpink;
+  border-top: 1px solid $orange;
 
   .form-group {
     margin-bottom: 0;
   }
+}
+
+.author #orange {
+  color: $orange;
 }
