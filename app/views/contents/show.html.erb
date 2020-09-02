@@ -1,29 +1,28 @@
-<div class="pages-container">
+<div class="container">
   <% if @content.video_url? %>
       <%= render 'shared/video_show'%>
   <% elsif @content.blog_image %>
     <%= render 'shared/blog_show' %>
   <% end %>
 
- <div class="comments mt-5 comment-card">
-      <h3 id="comments">Comments</h3>
-      <% if @content.comments.blank? %>
-        <p>Be the first to leave a comment :)</p>
-      <% else %>
-          <% @content.comments.each do |comment| %>
-              <div class= "d-flex comment-box align-items-center mb-2">
-                <%= cl_image_tag @content.user.profile_pic.key, class: "comment-img" %>
-                <div class="d-block">
-                    <strong><%= comment.user.username %></strong>
-                  <% if policy(comment).destroy? %>
-                    <%= link_to content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
-                    <i class="fas fa-trash"></i>
-                    <% end %>
-                  <% end %>
-                    <p class="m-0"><%= comment.text %></p>
-                </div>
-              </div>
+  <div class="comments mt-5 comment-card">
+    <h3 id="comments">Comments</h3>
+    <% if @content.comments.blank? %>
+      <p>Be the first to leave a comment :)</p>
+    <% else %>
+      <% @content.comments.each do |comment| %>
+        <div class= "d-flex comment-box align-items-center mb-2">
+          <%= cl_image_tag @content.user.profile_pic.key, class: "comment-img" %>
+          <div class="d-block">
+              <strong><%= comment.user.username %></strong>
+            <% if policy(comment).destroy? %>
+              <%= link_to content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
             <% end %>
+            <p class="m-0"><%= comment.text %></p>
+          </div>
+        </div>
       <% end %>
        <div class="form-inputs">
         <%= simple_form_for [@content, @comment], remote: true do |f| %>
@@ -33,7 +32,6 @@
         <%#  </div> %>
         <% end %>
        </div>
-
   </div>
   <!--
   <div class="links">

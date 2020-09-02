@@ -4,7 +4,7 @@
   <div class="all-dash-col">
 
     <div class="dash-col" id="profilecard">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-category" id="profile-heading">
         <p>Profile</p>
       </div>
       <div class="profilecardsticky">
@@ -16,14 +16,14 @@
         <% end %>
         <h3 id="username"><%= current_user.username.upcase %></h3>
 
-        <div class="dashboard-links mt-3">
-          <p><%= link_to 'Upload new content', new_content_path, class: "btn btn-secondary", id: "btn-upload" %></p>
+        <div class="dashboard-links mt-5">
+          <p><%= link_to 'Upload new content', new_content_path, id: "btn-upload" %></p>
         </div>
       </div>
     </div>
 
     <div class="dash-col" id="my-uploads">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      <div class="card-category" id="uploads-heading">
         <p>Uploads</p>
       </div>
         <!-- Uploads iterator -->
@@ -66,7 +66,7 @@
     </div>
 
     <div class="dash-col" id="my-favourites">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+      <div class="card-category" id="favourites-heading">
         <p>Favourites</p>
       </div>
       <!-- Favourites iterator -->
@@ -109,4 +109,3 @@
   </div>
 
 </div>
-

@@ -1,7 +1,7 @@
 <div class="pages-container">
 
   <div class="container mt-4">
-    <div class="search-form-control form-group">
+    <div class="search-form-control form-group" >
       <%= form_tag contents_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -13,14 +13,15 @@
     </div>
   </div>
 
+
 </div>
 
 
 <div class="index-card-container">
-
   <div class="filter-form">
     <%= render 'shared/filter' %>
   </div>
+
 
   <div class="all-cards" >
     <% @contents.each do |content| %>

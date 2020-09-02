@@ -16,10 +16,13 @@
   border-radius: 50%;
 }
 
-// #profilecard {
-//   position: sticky;
-//   top: 0;
-// }
+.card-category p {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 #username {
   padding-top: 24px;
@@ -28,4 +31,20 @@
   font-size: 24px;
   font-weight: bold;
   border-bottom: black 1px solid;
+}
+
+#profile-heading{
+  background-color:#2A9D8F;
+  border-radius: 10px 0px 10px 0px;
+
+}
+
+#uploads-heading {
+  background-color:#E9C46A;
+  border-radius: 10px 0px 10px 0px;
+}
+
+#favourites-heading {
+  background-color:#F4A261;
+  border-radius: 10px 0px 10px 0px;
 }
