@@ -83,7 +83,7 @@ end
   private
 
   def content_params
-    params.require(:content).permit(:title, :category, :description, :photo, :content_type, :blog_image, :video_url, :text)
+    params.require(:content).permit(:title, :category, :description, :content_type, :blog_image, :video_url, :text)
   end
 
   def set_content
