@@ -157,12 +157,14 @@
 
 .category-choices-index {
   flex-wrap: wrap;
+  display: flex;
 }
 .vertical-choice {
-  display: flex;
-  flex: 0 0 33.333333%;
-  align-items: center;
-  justify-content: flex-start;
+  width: 33.33%;
+//   display: flex;
+//   flex: 0 0 33.333333%;
+//   align-items: center;
+//   justify-content: flex-start;
 }
 
 .search-form-control {

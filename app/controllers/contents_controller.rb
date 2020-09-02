@@ -15,9 +15,11 @@ class ContentsController < ApplicationController
       @contents = @contents.where(category: params[:category])
       @filter = params[:category]
     end
-    if params[:style].present?
-      @contents = @contents.where(style: params[:style])
-      @filter = params[:style]
+    if params[:content].present?
+      if params[:content][:style].present?
+      @contents = @contents.where(style: params[:content][:style])
+      @filter = params[:content][:style]
+      end
     end
   end
 
@@ -67,7 +69,7 @@ class ContentsController < ApplicationController
     current_user.favorite(@content)
 #     redirect_to contents_path(anchor: "content-#{@content.id}")
     respond_to do |format|
-       format.html { redirect_to contents_path } 
+       format.html { redirect_to contents_path }
       format.js
     end
   end
@@ -76,7 +78,7 @@ class ContentsController < ApplicationController
     current_user.unfavorite(@content)
 #     redirect_to contents_path(anchor: "content-#{@content.id}")
     respond_to do |format|
-      format.html { redirect_to contents_path } 
+      format.html { redirect_to contents_path }
       format.js
   end
 end
