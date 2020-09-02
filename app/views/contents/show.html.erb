@@ -19,11 +19,11 @@
               <%= link_to content_comment_path(@content, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
                 <i class="fas fa-trash"></i>
               <% end %>
-            <% end %>
+        <% end %>
             <p class="m-0"><%= comment.text %></p>
           </div>
         </div>
-      <% end %>
+    <% end %>
        <div class="form-inputs">
         <%= simple_form_for [@content, @comment], remote: true do |f| %>
           <%= f.input :text, label: "Leave a comment" %>
@@ -31,6 +31,7 @@
           <%= f.button :submit, class: "btn btn-secondary" %>
         <%#  </div> %>
         <% end %>
+  <% end %>
        </div>
   </div>
   <!--
