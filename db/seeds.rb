@@ -7,10 +7,10 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# puts "Destroy content"
-# Content.destroy_all
-# puts "Destroy users"
-# User.destroy_all
+ puts "Destroy content"
+ Content.destroy_all
+ puts "Destroy users"
+ User.destroy_all
 
 puts "Create users"
 user_1 = User.new(
@@ -57,7 +57,7 @@ afro_video_1 = Content.new(
     style: "Afro",
     video_url: "https://www.youtube.com/embed/ov9xP0lymQc"
 )
-afro_video_1.save
+afro_video_1.save!
 
 dreads_video_1 = Content.new(
     user_id: user_2.id,
@@ -68,7 +68,7 @@ dreads_video_1 = Content.new(
     style: "Dreadlocks",
     video_url: "https://www.youtube.com/embed/8rlE1pWv290"
 )
-dreads_video_1.save
+dreads_video_1.save!
 
 bantu_video_1 = Content.new(
     user_id: user_3.id,
@@ -79,7 +79,7 @@ bantu_video_1 = Content.new(
     style: "Bantu knots",
     video_url: "https://www.youtube.com/embed/fFtt3Y9-cBY"
 )
-bantu_video_1.save
+bantu_video_1.save!
 
 scurl_video_1 = Content.new(
     user_id: user_4.id,
@@ -98,7 +98,7 @@ scurl_video_1 = Content.new(
     style: "S-curl",
     video_url: "https://www.youtube.com/embed/2p5EIUtLCxE"
 )
-scurl_video_1.save
+scurl_video_1.save!
 
 jerrycurl_video_1 = Content.new(
     user_id: user_1.id,
@@ -113,7 +113,7 @@ jerrycurl_video_1 = Content.new(
     style: "Jerry-curl",
     video_url: "https://www.youtube.com/embed/NlmWom02M80"
 )
-jerrycurl_video_1.save
+jerrycurl_video_1.save!
 
 relaxed_video_1 = Content.new(
     user_id: user_3.id,
@@ -135,7 +135,7 @@ relaxed_video_1 = Content.new(
     style: "Shaved",
     video_url: "https://www.youtube.com/embed/-vFmWIcVgss"
 )
-relaxed_video_1.save
+relaxed_video_1.save!
 
 wrap_blog = Content.new(
     user_id: user_1.id,

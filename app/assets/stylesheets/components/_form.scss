@@ -14,7 +14,7 @@
   margin: 20px 0;
 }
 
-.form-check {
+#content-new-check {
   background: lightpink;
   border: pink 1px solid;
   padding: 20px;
@@ -78,10 +78,10 @@
   border-radius: 5px;
 }
 
-.form-inputs .btn {
-  position: absolute;
+.form-inputs #form-input-btn {
   top: 45px;
   right: 8px;
+  background-color:#2A9D8F;
 }
 
 .form-inputs{
@@ -111,7 +111,7 @@
     margin-bottom: 50px;
     margin-top: 0px;
   }
-  .btn {
+  #form-post-btn {
     width: 100%;
     padding: 10px;
     font-weight: bold;
@@ -134,6 +134,7 @@
   border-radius: 5px;
   opacity: .4;
   width: 80px;
+  position: relative;
   // flex: 0 0 30%;
   text-align: center;
   height: 80px;
@@ -146,6 +147,11 @@
   }
 }
 
+.label-text {
+  position: absolute;
+  bottom: -40px;
+  right: -7px;
+}
 
 
 .small-category-choice {
@@ -169,4 +175,9 @@
 
 .search-form-control {
   margin-left: 20%;
+  max-width: 600px;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+
 }
