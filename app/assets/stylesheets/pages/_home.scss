@@ -9,7 +9,7 @@
 
 .home-h1{
   position: absolute;
-  top: 40%;
+  top: 15%;
   width:100%;
   height: auto;
   z-index: 1;
@@ -30,8 +30,8 @@
 
 .home-button  {
   position: absolute;
-  top: 60%;
-  right:45%;
+  top: 65%;
+  right:44%;
   height: auto;
   z-index: 2;
   flex: 1 1 auto;
@@ -46,7 +46,8 @@
   text-shadow: 0px 0px 6px rgba(0,0,0,0.2);
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #F4A261 0%, #299D8F 51%, #F4A261 100%);
+  color: #E76F51;
+  background-color: #264653;
   // font-family: 'Krona One', sans-serif;
   // background:  transparent;
   // height:  38px;
@@ -62,7 +63,8 @@
 .home-button:hover  {
   background-position: right center;
   transform: scale(1.1);
-  color:  #ffffff;
+  color:  #264653;
+  background-color: #E76F51;
   // background:  rgba(255, 255, 255, 0.2);
 }
 
