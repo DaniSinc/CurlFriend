@@ -70,16 +70,17 @@
     right: 10px;
     font-size: 30px;
     z-index: 1000;
+    color: $orange;
   }
 }
 
 a {
   z-index:2;
-  color: pink;
+  color: $orange;
   font-weight: bold;
   right: 0;
    &:hover {
-     color: pink;
+     color: $orange;
      text-decoration: none;
   }
 }

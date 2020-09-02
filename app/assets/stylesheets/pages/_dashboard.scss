@@ -1,6 +1,7 @@
 .dashboard-container {
     margin: 50px auto;
     width: 90vw;
+    margin-top: 130px;
 }
 
 .dashboard-links p {
@@ -48,4 +49,10 @@
 #favourites-heading {
   background-color: $red;
   border-radius: 10px 0px 10px 0px;
+}
+
+.dashboard-icon{
+  font-size: 20px;
+  padding-right: 10px;
+  color: $orange;
 }

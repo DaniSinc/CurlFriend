@@ -16,14 +16,13 @@
           <% end %>
           <p><%= @content.user.username %></p>
         </div>
-        
         <% if current_user&.favorited?(@content) %>
           <%= link_to unfavorite_content_path(@content) do %>
-            <i class="fas fa-heart" id="video-like"></i>
+          <i class="fas fa-heart" id="video-like"></i><%= @content.favorited.count %>
           <% end %>
         <% elsif current_user %>
           <%= link_to favorite_content_path(@content), id:"like-button", remote: true do %>
-            <i class="far fa-heart" id="video-like"></i>
+          <i class="far fa-heart" id="video-like"></i><%= @content.favorited.count %>
           <% end %>
         <% end %>
       </div>
