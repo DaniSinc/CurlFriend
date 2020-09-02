@@ -22,6 +22,16 @@
   margin: 20px;
 }
 
+#login-btn {
+  margin-bottom: 20px;
+  background-color: $red;
+  border: none;
+  padding: 8px 24px;
+  &:hover {
+    background-color: $orange;
+  }
+}
+
 // .form-login {
 //   background: white;
 //   padding: 10px 20px;

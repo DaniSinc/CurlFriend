@@ -6,10 +6,15 @@
 }
 
 .upload-form {
-    width: 50%;
-    background: white;
-    opacity: 0.98;
-    padding: 20px;
-    max-height:100vh;
-    overflow: scroll;
+  width: 50%;
+  background: white;
+  opacity: 0.98;
+  padding: 20px;
+  max-height:100vh;
+  overflow: scroll;
+  h2 {
+    font-weight: 400;
+    font-family: 'Open sans';
+    margin-bottom: 16px;
+  }
 }
