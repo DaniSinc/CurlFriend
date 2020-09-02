@@ -31,7 +31,7 @@
 .home-button  {
   position: absolute;
   top: 60%;
-  right: 42.5%;
+  right:45%;
   height: auto;
   z-index: 2;
   flex: 1 1 auto;
@@ -42,10 +42,11 @@
   transition: all .6s ease-in-out;
   background-size: 200% auto;
   color: white;
+  font-size: 25px;
   text-shadow: 0px 0px 6px rgba(0,0,0,0.2);
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
-  background-image: linear-gradient(to right, #ECABB6 0%, #a6c1ee 51%, #ECABB6 100%);
+  background-image: linear-gradient(to right, #F4A261 0%, #299D8F 51%, #F4A261 100%);
   // font-family: 'Krona One', sans-serif;
   // background:  transparent;
   // height:  38px;
