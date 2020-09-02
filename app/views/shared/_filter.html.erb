@@ -83,7 +83,7 @@
 <br>
 <h4>Filter by Style</h4>
 <%= form_tag contents_path, method: :get do %>
-   <div class="category-choices-index">
+   <div class="category-choices-index2">
       <% Content::STYLES.each do |style| %>
         <div class="vertical-choice">
           <input type="checkbox" class="hidden" value="<%= style %>" name="content[style][]" id="post_category_ids_<%= style %>">
