@@ -1,17 +1,17 @@
 <div class="upload-form-image-background">
   <div class="upload-form">
-    <h2> Teach A Style </h2>
+    <h2 class="ml-4"> Teach A Style </h2>
     <form class="simple_form new_content" id="new_content" novalidate="novalidate" enctype="multipart/form-data" action="/contents" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" value= "<%= form_authenticity_token %>">
-      <div class="form-group string required content_title">
+      <div class="form-group string required content_title ml-4">
         <input class="form-control string required" type="text" name="content[title]" id="content_title" placeholder = "Title">
       </div>
-      <div class="form-group text required content_description">
+      <div class="form-group text required content_description  ml-4">
         <textarea class="form-control text required" name="content[description]" id="content_description" placeholder = "Description"></textarea>
       </div>
       <fieldset class="radio_buttons required content_content_type">
         <div id="choices">
-          <fieldset class="form-group radio_buttons optional content_content_type">
+          <fieldset class="form-group radio_buttons optional content_content_type ml-4">
             <input type="hidden" name="content[content_type]" value="">
             <div class="form-check form-check-inline" id="content-new-check">
               <input class="content-type-input" type="radio" value="Blog post" name="content[content_type]" id="content_content_type_blog_post">
@@ -29,20 +29,20 @@
         </div>
         <div class="photo_input hidden">
           <div class="form-group file optional content_blog_image">
-            <label class="file optional" for="content_blog_image"> 
+            <label class="file optional ml-4" for="content_blog_image"> 
             Blog image
             </label>
-            <input class="form-control-file file optional btn-comment2" type="file" name="content[blog_image]" id="content_blog_image">
+            <input class="form-control-file file optional btn btn-outline-warning" type="file" name="content[blog_image]" id="content_blog_image">
           </div>
           <div class="form-group text optional content_text">
             <label class="text optional" for="content_text">
             Write your blog down here!
             </label>
-            <textarea class="form-control text optional" cols="5" rows="8" name="content[text]" wrap="hard" id="content_text"></textarea>
+            <textarea class="form-control text optional ml-4" cols="5" rows="8" name="content[text]" wrap="hard" id="content_text"></textarea>
           </div>
         </div>
         <div class="video_input hidden">
-          <p class="d-flex align-items-center mb-2 mt-2"> 
+          <p class="d-flex align-items-center mb-2 mt-2  ml-4"> 
             Video URL
             <span class="question-mark mt-0" data-toggle="modal" data-target="#embedModal">
               ?
@@ -73,7 +73,7 @@
             </div>
         </div>
       </fieldset>
-      <div class="form-group select required content_category">
+      <div class="form-group select required content_category ml-4">
         <select class="form-control select required" name="content[category]" id="content_category">
           <option value="">Category</option>
           <option value="Artificial">Artificial</option>
@@ -85,7 +85,7 @@
 
 
       <div class="form-group">
-        <label class="control-label check_boxes optional">Styles</label>
+        <label class="control-label check_boxes optional ml-4">Styles</label>
         <input type="hidden" name="content[style][]" value="">
         <div class="category-choices">
           <% Content::STYLES.each do |style| %>
@@ -98,7 +98,7 @@
       </div>
 
       
-      <input type="submit" name="commit" value="Upload" class="btn btn-outline-warning" data-disable-with="Create Content">
+      <input type="submit" name="commit" value="Upload" class="btn btn-outline-warning ml-4" data-disable-with="Create Content">
     </form>  
   </div>
 </div>
