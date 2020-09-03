@@ -5,8 +5,7 @@
 }
 
 .dash-col {
-  width: 360px;
-  margin: 20px 8px;
+  width: 33.33%;
 }
 
 .card-product {
@@ -68,4 +67,16 @@
 #small-heart {
   font-size: 24px;
   color: $orange;
+}
+
+#profilecard {
+  background-color: #cee5e2;
+}
+
+#my-uploads {
+  background-color: #edddb8;
+}
+
+#my-favourites{
+  background-color: #f2baab;
 }
