@@ -28,8 +28,8 @@
             <%= image_tag "placeholder.jpg" %>
         <% end %>
         <h3 id="username"><%= current_user.username %></h3>
-        <div class="dashboard-links mt-5">
-          <p><%= link_to 'Upload new content', new_content_path, id: "btn-upload" %></p>
+        <div class="dashboard-links">
+          <%= link_to 'Upload new content', new_content_path, id: "btn-upload" %>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
       </div>
         <!-- Uploads iterator -->
       <% if current_user.contents.empty? %>
-        <p>No uploads yet</p>
+        <p id="p-text">No uploads yet</p>
       <% else %>
         <% current_user.contents.each do |content| %>
 
@@ -87,7 +87,7 @@
       </div>
       <!-- Favourites iterator -->
       <% if current_user.favorites.empty?%>
-        <p>No favourites yet</p>
+        <p id="p-text">No favourites yet</p>
       <% else %>
 
         <% current_user.favorites.each do |favorite| %>
