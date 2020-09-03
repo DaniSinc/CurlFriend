@@ -59,6 +59,10 @@
   color: white;
   margin-top: 5px;
   margin-bottom: 20px;
+  transition: ease .2s;
+  &:hover {
+    background-color: $charcoal;
+  }
 }
 
 .links {
