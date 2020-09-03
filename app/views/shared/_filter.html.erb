@@ -16,7 +16,7 @@
       </label>
     </div> -->
 <div class="sticky-filter" id="filter-fixed">
-<h4>FILTER BY CATEGORY</h4>
+<h4 class="border-bottom border-secondary filter-header">CATEGORY</h4>
 <form>
     <ul class="ks-cboxtags">
     <li><input type="checkbox" id="checkboxOne" name="category[]" id="category_" value="Natural"><label for="checkboxOne">Natural</label></li>
@@ -82,7 +82,7 @@
     <% end %>
  -->
 
-<h4>FILTER BY STYLE</h4>
+<h4 class="border-bottom border-secondary filter-header">STYLE</h4>
 <%= form_tag contents_path, method: :get do %>
    <div class="category-choices-index2">
       <% Content::STYLES.each do |style| %>
