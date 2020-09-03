@@ -66,6 +66,15 @@
   }
 }
 
+.vertical-choice p {
+  position: relative;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 20%;
+    font-weight: 500;
+}
 // search bar styling
 .search-form {
   position: relative;
@@ -114,6 +123,8 @@ span {
 }
 
 ul.ks-cboxtags {
+    display: flex;
+    flex-flow: column;
     list-style: none;
     padding: 20px;
 }

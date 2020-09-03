@@ -1,6 +1,29 @@
+.body {
+  background-color: $yellow;
+}
+
+// top images
+
+.row2 {
+  // object-fit: cover;
+  // width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.column2 {
+  float: left;
+  width: 33.33%;
+  img {
+    padding: 0 !important;
+  }
+}
+
+//main page
+
 .dashboard-container {
-    margin: 50px auto;
-    width: 90vw;
+    width: 100vw;
 }
 
 .dashboard-links p {
@@ -54,4 +77,9 @@
   font-size: 20px;
   padding-right: 10px;
   color: $orange;
+
+}
+  &:hover {
+    color: $red;
+  }
 }
