@@ -1,8 +1,7 @@
 .edit-page-container {
   background:asset-url('edit/ladies.jpg') no-repeat;
   background-size: cover;
-  height:100vh;
-  
+  height: auto;
 }
 
 .photo-background {
@@ -16,6 +15,10 @@
   background: white;
   opacity: 0.9;
   padding:20px;
+}
+
+#edit-form {
+  height: auto;
 }
 
 .form-inputs {
