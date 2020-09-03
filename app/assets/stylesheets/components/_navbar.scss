@@ -33,14 +33,14 @@
 }
 
 .nav-links {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   padding: 10px;
   color: #E76F51;
   margin-top: 100%;
-  transition: ease-in-out .3s;
+  transition: ease-in-out .2s;
   &:hover {
-    color: $green;
+    color: $orange;
   }
 }
 
