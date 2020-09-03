@@ -2,7 +2,7 @@
 
 .index-banner {
   // object-fit: cover;
-  height: 400px;
+  height: 420px;
   // width: 100%;
   background-size: cover;
   background-position: center;
@@ -30,6 +30,7 @@
   padding: 20px;
   position:relative;
   margin-top: 8px;
+  border-right: $red 2px solid;
   h4 {
     font-size: 18px !important;
   }
@@ -44,7 +45,11 @@
     margin-top: 8px;
     font-size: 14px;
     letter-spacing: .1em;
-    background-color:#3b5763;
+    background-color:$orange;
+    border: none;
+    &:hover {
+      background-color: $red;
+    }
   }
 }
 

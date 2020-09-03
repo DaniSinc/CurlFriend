@@ -1,15 +1,15 @@
-<div class="index-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "indexcover.jpg" %>);">
+<div class="index-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= image_path "indexcover.jpg" %>);">
 
-    <div class="search-form-control form-group" >
-      <%= form_tag contents_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Please enter a style"
-        %>
-        <%= submit_tag "Search", class: "btn btn-secondary", id: "search-btn" %>
-      <% end %>
-    </div>
+  <div class="search-form-control form-group" >
+    <%= form_tag contents_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Please enter a style"
+      %>
+      <%= submit_tag "Search", class: "btn btn-secondary", id: "search-btn" %>
+    <% end %>
+  </div>
 </div>
 <%# <div class="pages-container2">
   <div class="container">
@@ -20,7 +20,7 @@
 
 
 <div class="index-card-container">
-  <div class="filter-form border-right border-secondary">
+  <div class="filter-form">
     <%= render 'shared/filter' %>
   </div>
 
