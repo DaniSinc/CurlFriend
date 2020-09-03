@@ -26,9 +26,10 @@
 .filter-form {
   width: 23%;
   height: auto;
-  background-color: $red;
+  background-color: white;
   padding: 20px;
   position:relative;
+  margin-top: 8px;
   h4 {
     font-size: 18px !important;
   }
@@ -72,7 +73,7 @@
 
 .vertical-choice p {
   position: relative;
-    top: 20px;
+    top: 41px;
     right: 20px;
     font-size: 9px;
     text-align: center;
@@ -83,7 +84,7 @@
 .category-choices-index2 {
   flex-wrap: wrap;
   display: flex;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 5px;
 }
 
@@ -142,9 +143,10 @@ ul.ks-cboxtags {
 /*     display: flex;
     flex-flow: column; */
     list-style: none;
-    padding-left:20px;
+    padding-left: 0;
     padding-right:20px;
     margin-bottom:0.5rem;
+    margin-top: 10px;
 }
 ul.ks-cboxtags li{
   display: inline;
