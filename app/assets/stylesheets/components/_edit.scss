@@ -1,0 +1,33 @@
+.edit-page-container {
+  background:asset-url('edit/ladies.jpg') no-repeat;
+  background-size: cover;
+  height:100vh;
+  
+}
+
+.photo-background {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.edit-form {
+  width: 40%;
+  height: 100vh;
+  background: white;
+  opacity: 0.9;
+  padding:20px;
+}
+
+.form-inputs {
+  margin: 20px;
+}
+
+#edit-btn {
+  margin-bottom: 20px;
+  background-color: $red;
+  border: none;
+  padding: 8px 24px;
+  &:hover {
+    background-color: $orange;
+  }
+}
