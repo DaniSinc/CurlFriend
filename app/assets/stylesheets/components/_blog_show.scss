@@ -1,5 +1,6 @@
 .blog-show-container {
-  margin: 25px auto;
+  margin: auto;
+  margin-bottom: 60px;
   max-width: 1000px;
   padding: 0 10px;
   background-color: white;
@@ -41,6 +42,9 @@
 .blog-description{
   margin: 30px 0;
   border-bottom: $green 2px solid;
+  h3 {
+    font-size: 20px;
+  }
 }
 
 .blog-text {
@@ -52,7 +56,7 @@
 .fav-heart{
 /*   margin-left: -60px;
   margin-top: 5px; */
-  color: $orange;
+  color: $red;
   width: 65px;
   p{
     margin:0;
@@ -62,5 +66,5 @@
 
 #blog-like{
   font-size:40px;
-  text-shadow: 2px 1px 2px #423b3b; 
+  text-shadow: 2px 1px 2px grey; 
 }
