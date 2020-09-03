@@ -38,8 +38,9 @@
   padding: 10px;
   color: #E76F51;
   margin-top: 100%;
+  transition: ease-in-out .3s;
   &:hover {
-    color: $black;
+    color: $green;
   }
 }
 
