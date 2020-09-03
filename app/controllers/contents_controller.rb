@@ -4,7 +4,6 @@ class ContentsController < ApplicationController
 
   def index
     @contents = policy_scope(Content)
-    @chatrooms = Chatroom.all
     if params[:query].present?
       sql_query = "title ILIKE :query
                   OR category ILIKE :query
