@@ -1,14 +1,18 @@
-<div class="pages-container">
-  <div class="form">
-    <h2> Edit your upload </h2>
-    <%= simple_form_for(@content) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :text %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
-      <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "S-curl", "Shaved", "Plaits", "Perms", "Weaves" ] %>
-      <%= f.submit class: "btn btn-secondary" %>
-    <% end %>
+<div class="edit-page-container">
+  <div class="photo-background">
+    <div class="login-form">
+      <div class="simple-form-edit ml-4 mt-4 mr-4">
+        <h2> Edit your upload </h2>
+        <%= simple_form_for(@content) do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :text %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :category, as: :select, collection: ["Artificial", "Chemical treatment", "Natural", "Protection" ] %>
+          <%= f.input :style, as: :select, collection: [ "Afro", "Bantu knots", "Dreadlocks", "Extensions",  "Faux locks", "Headscarves and Headwraps", "Jerry-curl", "S-curl", "Shaved", "Plaits", "Perms", "Weaves" ] %>
+          <%= f.submit class: "btn btn-secondary", id: "edit-btn" %>
+        <% end %>
+        </div>
+    </div>
   </div>
 </div>
