@@ -46,7 +46,169 @@ file = URI.open('https://images.unsplash.com/photo-1558622567-2adb5927265d?ixlib
 user_4.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 user_4.save!
 
+user_ls = User.new(
+    email: "ls@gmail.com",
+    password: "123456",
+    username: "Latonya Staubs"
+)
+file = URI.open('https://images.unsplash.com/photo-1553226141-1b4e9f1ccd62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+user_ls.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_ls.save!
+
+
+
 puts "Create contents"
+
+user_jgs = User.new(
+    email: "jgs@gmail.com",
+    password: "123456",
+    username: "JuGalaxSea"
+)
+file = URI.open('https://images.unsplash.com/photo-1563076767-5cda445a4f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+user_jgs.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_jgs.save!
+
+jgs_video_1 = Content.new(
+    user_id: user_jgs.id,
+    title: "S'Curl Comb Thru -Texturizer || StylezByJuBae",
+    description: "Magic Twist: https://youtu.be/BerdU9UIxw8
+ Instagram: @JuGalaxSea
+ Snapchat: @JuGalaxSea",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "S-curl",
+    video_url: "https://www.youtube.com/embed/5ka-Vyv4ejc"
+)
+jgs_video_1.save!
+
+
+user_sr = User.new(
+    email: "sr@gmail.com",
+    password: "123456",
+    username: "Slim Reshae"
+)
+file = URI.open('https://images.unsplash.com/photo-1568419141482-eccdc7b62188?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+user_sr.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_sr.save!
+
+sr_video_1 = Content.new(
+    user_id: user_sr.id,
+    title: "LIGHTWEIGHT CROCHET FAUX LOCS feat. Freetress Braid - Hipsta Loc",
+    description: "So I tried out the new hipsta locs - lightweight crochet faux locs that 
+                can be installed not only with individual methods but also great for cornrows 
+                and knotless. Watch the full video for details on how many I have in my head 
+                total, how long it took, and how many packs I used! This is an easy protective 
+                style for natural hair! Super excited for this hair to launch! Here’s an early 
+                access sneak peak of the hipsta locs! Let me know if you guys like this style 
+                in the comments & until next time…xoxo, slim ",
+    content_type: "Video",
+    category: "Artificial",
+    style: "Faux locks",
+    video_url: "https://www.youtube.com/embed/hr0WALIhPtw"
+)
+sr_video_1.save!
+
+
+user_mn = User.new(
+    email: "mn@gmail.com",
+    password: "123456",
+    username: "MNHE"
+)
+file = URI.open('https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+user_mn.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_mn.save!
+
+mn_blog_1 = Content.new(
+    user_id: user_mn.id,
+    title: "How to Blend Clip-Ins",
+    description: "Hair extensions or kinky curly clip-ins are in high demand and the challenge to supply extensions is rising Pick up some tips here!",
+    content_type: "Blog post",
+    category: "Artificial",
+    style: "Weaves",
+    text: "Clip-ins have style flexibility that has become a hype in modern society. You will 
+          be amazed to know that hair extensions date as far back to medieval ages where the 
+          Egyptians wore them. Those extensions were either made from human hair or sheep’s 
+          wool dyed with beeswax and resin. All the wigs and extensions of the by-gone days 
+          have paved the way for the modern hair extensions where all types of hair are 
+          included and variety is abundant. The growth of natural hair movement has made the 
+          coily clip-in hair extensions popular for women who want a natural body texture. 
+          Always put the safety first before you go for selecting clip-ins. Do not let any 
+          artificial hair styling make suffering to your natural hair."
+)
+file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'blend_blog.jpg'))
+mn_blog_1.blog_image.attach(io: file, filename: 'blend_blog.jpg', content_type: "image/jpg")
+mn_blog_1.save!
+
+
+
+user_am = User.new(
+    email: "am@gmail.com",
+    password: "123456",
+    username: "Adanna Madueke"
+)
+file = URI.open('https://images.unsplash.com/photo-1573617868564-673610c60d5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=528&q=80')
+user_am.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_am.save!
+
+am_video_1 = Content.new(
+    user_id: user_am.id,
+    title: "EASIEST PROTECTIVE STYLE | JUMBO SENEGALESE ROPE TWIST On 4C Natural Hair",
+    description: "Today's video is a detailed Easiest Protective style Tutorial where I will 
+                  be showing you how to achieve the Jumbo Senegalese Rope Twist On 4C Natural 
+                  Hair using the Rubber band method. This method is perfect for those of us that 
+                  struggle with gripping the root of our braid or twist and literally also very 
+                  quick as it took me under 2 hours (1 hour 30 minutes) to achieve. You can also 
+                  never go wrong with a protective style this winter season, hence, this hairstyle 
+                  and of course this hairstyle would rock really nice too during the spring/summer. 
+                  These jumbo senegalese rope twist are literally sooo convenient and its also not 
+                  heavy.",
+    content_type: "Video",
+    category: "Protection",
+    style: "Plaits",
+    video_url: "https://www.youtube.com/embed/Jigx285uI7E"
+)
+am_video_1.save!
+
+
+
+ls_blog_2 = Content.new(
+    user_id: user_ls.id,
+    title: "HOW TO STYLE A HEAD WRAP",
+    description: "Learn how to style a simple head wrap!",
+    content_type: "Blog post",
+    category: "Protection",
+    style: "Headscarves and Headwraps",
+    text: "There are many reasons to wear a head wrap; for every person you will usually 
+          find that a head wrap holds a different meaning. Here are a few of my reasons: 
+          it serves as a protective layer for my natural hair on days when I don't want 
+          to touch my hair, it locks in moisture (essential for the summertime), and it's 
+          a great stylish addition to every outfit."
+)
+file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'wrap_blog_2.png'))
+ls_blog_2.blog_image.attach(io: file, filename: 'wrap_blog_2.png', content_type: "image/png")
+ls_blog_2.save!
+
+
+user_ep = User.new(
+    email: "ep@gmail.com",
+    password: "123456",
+    username: "Enly10me Plz"
+)
+file = URI.open('https://images.unsplash.com/photo-1597004897768-c503466472cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+user_ep.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+user_ep.save!
+
+ep_video_1 = Content.new(
+    user_id: user_ep.id,
+    title: "How To Get BIG Ringlet Curls",
+    description: "Texturizing 4c Natural Hair",
+    content_type: "Video",
+    category: "Chemical treatment",
+    style: "Jerry-curl",
+    video_url: "https://www.youtube.com/embed/fnaxBHp9cSM"
+)
+ep_video_1.save!
+
 
 afro_video_1 = Content.new(
     user_id: user_1.id,
@@ -194,34 +356,6 @@ half_up_blog.blog_image.attach(io: file, filename: 'half_up_blog.jpg', content_t
 half_up_blog.save!
 
 
-user_am = User.new(
-    email: "am@gmail.com",
-    password: "123456",
-    username: "Adanna Madueke"
-)
-file = URI.open('https://images.unsplash.com/photo-1573617868564-673610c60d5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=528&q=80')
-user_am.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_am.save!
-
-am_video_1 = Content.new(
-    user_id: user_am.id,
-    title: "EASIEST PROTECTIVE STYLE | JUMBO SENEGALESE ROPE TWIST On 4C Natural Hair",
-    description: "Today's video is a detailed Easiest Protective style Tutorial where I will 
-                  be showing you how to achieve the Jumbo Senegalese Rope Twist On 4C Natural 
-                  Hair using the Rubber band method. This method is perfect for those of us that 
-                  struggle with gripping the root of our braid or twist and literally also very 
-                  quick as it took me under 2 hours (1 hour 30 minutes) to achieve. You can also 
-                  never go wrong with a protective style this winter season, hence, this hairstyle 
-                  and of course this hairstyle would rock really nice too during the spring/summer. 
-                  These jumbo senegalese rope twist are literally sooo convenient and its also not 
-                  heavy.",
-    content_type: "Video",
-    category: "Protection",
-    style: "Plaits",
-    video_url: "https://www.youtube.com/embed/Jigx285uI7E"
-)
-am_video_1.save!
-
 am_video_2 = Content.new(
     user_id: user_am.id,
     title: "4C Natural Hair Slick down 2 Jumbo Braids Pigtail using Braiding Hair | Short Hair Protective Style",
@@ -237,15 +371,6 @@ am_video_2 = Content.new(
 )
 am_video_2.save!
 
-
-user_ls = User.new(
-    email: "ls@gmail.com",
-    password: "123456",
-    username: "Latonya Staubs"
-)
-file = URI.open('https://images.unsplash.com/photo-1553226141-1b4e9f1ccd62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-user_ls.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_ls.save!
 
 ls_blog_1 = Content.new(
     user_id: user_ls.id,
@@ -268,22 +393,7 @@ file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'wrap
 ls_blog_1.blog_image.attach(io: file, filename: 'wrap_blog_1.png', content_type: "image/png")
 ls_blog_1.save!
 
-ls_blog_2 = Content.new(
-    user_id: user_ls.id,
-    title: "HOW TO STYLE A HEAD WRAP",
-    description: "Learn how to style a simple head wrap!",
-    content_type: "Blog post",
-    category: "Protection",
-    style: "Headscarves and Headwraps",
-    text: "There are many reasons to wear a head wrap; for every person you will usually 
-          find that a head wrap holds a different meaning. Here are a few of my reasons: 
-          it serves as a protective layer for my natural hair on days when I don't want 
-          to touch my hair, it locks in moisture (essential for the summertime), and it's 
-          a great stylish addition to every outfit."
-)
-file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'wrap_blog_2.png'))
-ls_blog_2.blog_image.attach(io: file, filename: 'wrap_blog_2.png', content_type: "image/png")
-ls_blog_2.save!
+
 
 
 user_iu = User.new(
@@ -311,108 +421,6 @@ iu_video_1 = Content.new(
     video_url: "https://www.youtube.com/embed/si84Pd8ajUI"
 )
 iu_video_1.save!
-
-
-user_ep = User.new(
-    email: "ep@gmail.com",
-    password: "123456",
-    username: "Enly10me Plz"
-)
-file = URI.open('https://images.unsplash.com/photo-1597004897768-c503466472cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-user_ep.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_ep.save!
-
-ep_video_1 = Content.new(
-    user_id: user_ep.id,
-    title: "How To Get BIG Ringlet Curls",
-    description: "Texturizing 4c Natural Hair",
-    content_type: "Video",
-    category: "Chemical treatment",
-    style: "Jerry-curl",
-    video_url: "https://www.youtube.com/embed/fnaxBHp9cSM"
-)
-ep_video_1.save!
-
-
-user_jgs = User.new(
-    email: "jgs@gmail.com",
-    password: "123456",
-    username: "JuGalaxSea"
-)
-file = URI.open('https://images.unsplash.com/photo-1563076767-5cda445a4f9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-user_jgs.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_jgs.save!
-
-jgs_video_1 = Content.new(
-    user_id: user_jgs.id,
-    title: "S'Curl Comb Thru -Texturizer || StylezByJuBae",
-    description: "Magic Twist: https://youtu.be/BerdU9UIxw8
- Instagram: @JuGalaxSea
- Snapchat: @JuGalaxSea",
-    content_type: "Video",
-    category: "Chemical treatment",
-    style: "S-curl",
-    video_url: "https://www.youtube.com/embed/5ka-Vyv4ejc"
-)
-jgs_video_1.save!
-
-
-user_sr = User.new(
-    email: "sr@gmail.com",
-    password: "123456",
-    username: "Slim Reshae"
-)
-file = URI.open('https://images.unsplash.com/photo-1568419141482-eccdc7b62188?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-user_sr.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_sr.save!
-
-sr_video_1 = Content.new(
-    user_id: user_sr.id,
-    title: "LIGHTWEIGHT CROCHET FAUX LOCS feat. Freetress Braid - Hipsta Loc",
-    description: "So I tried out the new hipsta locs - lightweight crochet faux locs that 
-                can be installed not only with individual methods but also great for cornrows 
-                and knotless. Watch the full video for details on how many I have in my head 
-                total, how long it took, and how many packs I used! This is an easy protective 
-                style for natural hair! Super excited for this hair to launch! Here’s an early 
-                access sneak peak of the hipsta locs! Let me know if you guys like this style 
-                in the comments & until next time…xoxo, slim ",
-    content_type: "Video",
-    category: "Artificial",
-    style: "Faux locks",
-    video_url: "https://www.youtube.com/embed/hr0WALIhPtw"
-)
-sr_video_1.save!
-
-
-user_mn = User.new(
-    email: "mn@gmail.com",
-    password: "123456",
-    username: "MNHE"
-)
-file = URI.open('https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-user_mn.profile_pic.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-user_mn.save!
-
-mn_blog_1 = Content.new(
-    user_id: user_mn.id,
-    title: "How to Blend Clip-Ins",
-    description: "Hair extensions or kinky curly clip-ins are in high demand and the challenge to supply extensions is rising Pick up some tips here!",
-    content_type: "Blog post",
-    category: "Artificial",
-    style: "Weaves",
-    text: "Clip-ins have style flexibility that has become a hype in modern society. You will 
-          be amazed to know that hair extensions date as far back to medieval ages where the 
-          Egyptians wore them. Those extensions were either made from human hair or sheep’s 
-          wool dyed with beeswax and resin. All the wigs and extensions of the by-gone days 
-          have paved the way for the modern hair extensions where all types of hair are 
-          included and variety is abundant. The growth of natural hair movement has made the 
-          coily clip-in hair extensions popular for women who want a natural body texture. 
-          Always put the safety first before you go for selecting clip-ins. Do not let any 
-          artificial hair styling make suffering to your natural hair."
-)
-file = File.open(Rails.root.join('app', 'assets', 'images', 'blog_images', 'blend_blog.jpg'))
-mn_blog_1.blog_image.attach(io: file, filename: 'blend_blog.jpg', content_type: "image/jpg")
-mn_blog_1.save!
 
 
 
